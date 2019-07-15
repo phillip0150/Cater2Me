@@ -1,6 +1,12 @@
 module.exports = function(sequelize, DataTypes){
   var User = sequelize.define("User", {
-    name: {
+    userid: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true, 
+      autoIncrement: true,
+    },
+      name: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
@@ -24,5 +30,15 @@ module.exports = function(sequelize, DataTypes){
     }
   });
  
+
+  // User.associate = function(models) {
+  //   // Associating Author with Posts
+  //   // When an Author is deleted, also delete any associated Posts
+  //   User.hasMany(models.Events, {
+  //     onDelete: "cascade"
+  //   });
+  // };
+
+
   return User;
- }
+ };

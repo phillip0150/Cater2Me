@@ -1,5 +1,11 @@
 module.exports = function(sequelize, DataTypes){
     var Vendor = sequelize.define("Vendor", {
+        vendorid: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true, 
+            autoIncrement: true,
+          },
       name: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -32,4 +38,4 @@ module.exports = function(sequelize, DataTypes){
     });
    
     return Vendor;
-   }
+   };
