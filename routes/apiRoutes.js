@@ -29,6 +29,7 @@ module.exports = function(app) {
   //Geting all events
   app.get("/api/events", function(req, res){
     db.Event.findAll({}).then(function(caterdb){
+      //we are creating this object, because we want to send it to our handlebars
       var hbsObject = {
         event: caterdb
       };
@@ -43,6 +44,7 @@ module.exports = function(app) {
         userid: req.params.id
       }
     }).then(function(caterdb) {
+      //we are creating this object, because we want to send it to our handlebars
       var hbsObject = {
         event: caterdb
       };
@@ -76,6 +78,7 @@ module.exports = function(app) {
         eventid: req.params.id
       }
     }).then(function(caterdb) {
+      //we are creating this object, because we want to send it to our handlebars
       var hbsObject = {
         event: caterdb
       };
