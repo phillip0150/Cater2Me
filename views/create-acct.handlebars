@@ -1,64 +1,65 @@
-<div id="createAcct">
+    <div id="createAcct">
 
-    <div class="jumbotron jumbotron-fluid fixed-top jumbotron-custom">
-        <div class="container text-center">
-            <h1 class="display-4">Cater to Me</h1>
-            <p class="lead">The Solution for Planning your Next Catering Event.</p>
+        <div class="jumbotron jumbotron-fluid jumbotron-custom">
+            <div class="container text-center">
+                <h1 class="display-4">Cater to Me</h1>
+                <p class="lead">The Solution for Planning your Next Catering Event.</p>
+            </div>
         </div>
-    </div>
 
-
-    <div class="container createAcct-body-container">
-        <div class="row login-row">
-            <div class="col-8 offset-1 login-col">
-                <h3>Login: </h3>
-                <form class="clearfix mb-4" action="">
-                    <div class="form-group">
-                        <label for="example-text">Name</label>
-                        <input type="text" id="example-text" class="form-control" aria-describedby="example-text"
-                            placeholder="Enter Example Text">
-                        <label for="example-text">Email</label>
-                        <input type="text" id="example-text" class="form-control" aria-describedby="example-text"
-                            placeholder="Enter Example Text">
-                    </div>
-                    <div class="form-group">
-                        <label for="example-description">Password</label>
-                        <textarea class="form-control" id="example-description" aria-describedby="example-description"
-                            placeholder="Enter Example Description"></textarea>
-                        <label for="userTypeSelect">User Type</label>
-                        <select class="form-control" id="userTypeSelect">
-                            <option>User</option>
-                            <option>Vendor</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="foodTypeSelect">Example select</label>
-                        <select class="form-control" id="foodTypeSelect">
-                            <option>American</option>
-                            <option>Chinese</option>
-                            <option>Cajun/Creole</option>
-                            <option>Italian</option>
-                            <option>Japanese</option>
-                            <option>Mediterranean</option>
-                            <option>Mexican</option>
-                            <option>Southern</option>
-                            <option>Thai</option>
-                            <option>Tex-Mex</option>
-                        </select>
-                    </div>
-                    <button id="submit" class="btn btn-primary float-right">Submit</button>
-                </form>
-
-                {{!-- <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul> --}}
+    <!-- Create an Account Form Container-->
+        <div class="container createAcct-body-container">
+            <div class="row createAcct-row">
+                <div class="col-8 offset-2 createAcct-col">
+                    <h3>Create an Account: </h3>
+                    <form class="clearfix mb-4" action="">
+                        <div class="row form-row">
+                            <div class="col">
+                                <label for="nameInput">Name</label>
+                                <input type="text" id="nameInput" class="form-control"
+                                    aria-describedby="nameInput" placeholder="Johnny Appleseed">
+                            </div>
+                            <div class="col">
+                                <label for="emailInput">Email</label>
+                                <input type="text" id="emailInput" class="form-control"
+                                    aria-describedby="emailInput" placeholder="jappleseed@gmail.com">
+                            </div>
+                        </div>
+                        <div class="row form-row">
+                            <div class="col">
+                                <label for="pwInput">Password</label>
+                                <input type="text" id="pwInput" class="form-control"
+                                    aria-describedby="pwInput" placeholder="More than 8 characters">
+                            </div>
+                            <div class="col">
+                                <label for="userTypeSelect">User Type</label>
+                                <select class="form-control" id="userTypeSelect">
+                                    <option>User</option>
+                                    <option>Vendor</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- This should only appear if the user has selected Vendor above. -->
+                        <div class="row form-row">
+                            <div class="col">
+                                <label for="foodTypeSelect">Categeory of Food</label>
+                                <select class="form-control" id="foodTypeSelect">
+                                    <option>American</option>
+                                    <option>Chinese</option>
+                                    <option>Cajun/Creole</option>
+                                    <option>Italian</option>
+                                    <option>Japanese</option>
+                                    <option>Mediterranean</option>
+                                    <option>Mexican</option>
+                                    <option>Southern</option>
+                                    <option>Thai</option>
+                                    <option>Tex-Mex</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button id="submit" class="btn btn-primary float-right">Submit</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
