@@ -1,3 +1,30 @@
+body {
+  background-image: url("https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80")
+}
+
+
 .list-group-item {
   line-height: 2.5;
+}
+
+.index-body-container {
+  max-width: 800px;
+  margin-top: 320px;
+  background-color:rgba(255, 255, 255, 0.931);
+  border-radius: 25px;
+  
+}
+
+.login-row {
+  padding: 30px 10px 20px 10px;
+  
+}
+
+.login-col {
+  min-width: 650px;
+}
+
+.jumbotron-custom {
+  max-height: 220px;
+  background-color:rgba(255, 255, 255, 0.822);
 }
