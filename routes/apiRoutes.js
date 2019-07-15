@@ -14,7 +14,7 @@ module.exports = function(app) {
   });
   
   //Create vendor
-  app.post("/api/createUser", function(req, res) {
+  app.post("/api/createVendor", function(req, res) {
     db.Vendor.create({
       name: req.body.name,
       phone: req.body.phone,
@@ -28,7 +28,24 @@ module.exports = function(app) {
   //Geting all events
   app.get("/api/events", function(req, res){
     db.Event.findAll({}).then(function(caterdb){
-      res.json(caterdb);
+      var hbsObject = {
+        event: caterdb
+      }
+      res.render("vendor", hbsObject);
+    });
+  });
+  
+  //Getting an event based on a user
+  app.get("/api/events/:id", function(req,res){
+    db.Event.findAll({
+      where: {
+        userid: req.params.id
+      }
+    }).then(function(caterdb) {
+      var hbsObject = {
+        event: caterdb
+      }
+      res.render("user", hbsObject);
     });
   });
   
@@ -50,7 +67,7 @@ module.exports = function(app) {
       res.json(caterdb);
     });
   });
-
+  
   //Look at event
   app.get("/api/event/:id", function(req, res) {
     db.Event.findOne({
@@ -58,7 +75,10 @@ module.exports = function(app) {
         eventid: req.params.id
       }
     }).then(function(caterdb) {
-      res.json(caterdb);
+      var hbsObject = {
+        event: caterdb
+      }
+      res.render("event", hbsObject);
     });
   });
   
