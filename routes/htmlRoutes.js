@@ -17,5 +17,34 @@ module.exports = function(app) {
     res.render("404");
   });
 
+  //login user
+  app.get("/login/user", function(req,res){
+    db.User.findOne({
+      where: {
+        email: req.boyd.email,
+        password: req.body.password
+      }
+    }).then(function(caterdb) {
+      var hbsObject = {
+        user: caterdb
+      };
+      res.render("user", hbsObject);
+    });
+  });
+
+  //login vendor
+  app.get("/login/vendor", function(req,res){
+    db.Vendor.findOne({
+      where: {
+        email: req.boyd.email,
+        password: req.body.password
+      }
+    }).then(function(caterdb) {
+      var hbsObject = {
+        vendor: caterdb
+      };
+      res.render("user", hbsObject);
+    });
+  });
 
 };

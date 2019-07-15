@@ -2,6 +2,7 @@ var db = require("../models");
 
 module.exports = function(app) {
   
+
   //Create user
   app.post("/api/createUser", function(req, res) {
     db.User.create({
