@@ -31,7 +31,7 @@ module.exports = function(app) {
     db.Event.findAll({}).then(function(caterdb){
       var hbsObject = {
         event: caterdb
-      }
+      };
       res.render("vendor", hbsObject);
     });
   });
@@ -45,7 +45,7 @@ module.exports = function(app) {
     }).then(function(caterdb) {
       var hbsObject = {
         event: caterdb
-      }
+      };
       res.render("user", hbsObject);
     });
   });
@@ -78,7 +78,7 @@ module.exports = function(app) {
     }).then(function(caterdb) {
       var hbsObject = {
         event: caterdb
-      }
+      };
       res.render("event", hbsObject);
     });
   });
