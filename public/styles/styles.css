@@ -30,7 +30,6 @@ body {
 
 .login-row {
   padding: 30px 10px 20px 10px;
-  
 }
 
 .login-col {
@@ -39,11 +38,14 @@ body {
 
 /* Create Account Page Styling */
 /* =================================================================== */
+.clearfix.row {
+  margin: 30px 0px 30px 0px;
+}
+
 .createAcct-body-container {
   /* max-width: 1100px; */
   background-color:rgb(255, 255, 255);
   border-radius: 25px;
-  
 }
 
 .createAcct-row {
@@ -56,4 +58,27 @@ body {
 
 .form-row {
   margin: 1rem 0rem;
+}
+
+/* Vendor Homepage Page Styling */
+/* =================================================================== */
+.vendorHome-container {
+  background-color: #132149;
+  padding: 1rem;
+  border-radius: 20px;
+}
+
+#vendorTitle{
+  color:white;
+}
+
+.eventList {
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  background-color: white;
+  border-radius: 15px;
+}
+
+#eventSearchSubmit {
+  margin-left: 4rem;
 }
