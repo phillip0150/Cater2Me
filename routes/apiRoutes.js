@@ -28,7 +28,7 @@ module.exports = function(app) {
     });
   });
   
-  //Geting all events
+  //Getting all events
   app.get("/api/events", function(req, res){
     db.Events.findAll({}).then(function(caterdb){
       //we are creating this object, because we want to send it to our handlebars
@@ -58,6 +58,7 @@ module.exports = function(app) {
   app.post("/api/createEvent/:id", function(req, res) {
     db.Events.create({
       userid: req.params.id,
+      vendorid: null,
       phone: req.body.phone,
       city: req.body.city,
       state: req.body.state,

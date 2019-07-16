@@ -47,4 +47,10 @@ module.exports = function(app) {
     });
   });
 
+  //  create event page
+  app.get("/event/create", function(req,res){
+    res.render("create-event");
+  });
+
+
 };
