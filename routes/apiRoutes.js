@@ -1,7 +1,7 @@
 var db = require("../models");
-var Sequelize = require("sequelize");
+// var Sequelize = require("sequelize");
 
-var Op = Sequelize.Op;
+// var Op = Sequelize.Op;
 
 module.exports = function(app) {
   
@@ -96,7 +96,7 @@ module.exports = function(app) {
       where: {
         size: {
           //size less than or = to params
-          [Op.lte]:req.params.size
+          "$lte":req.params.size
         }
       }
     }).then(function(caterdb){
@@ -104,7 +104,7 @@ module.exports = function(app) {
       var hbsObject = {
         event: caterdb
       };
-      // res.render("vendor", hbsObject);
+      res.render("vendor", hbsObject);
       res.json(caterdb);
 
     });
@@ -122,7 +122,7 @@ module.exports = function(app) {
       var hbsObject = {
         event: caterdb
       };
-      // res.render("vendor", hbsObject);
+      res.render("vendor", hbsObject);
       res.json(caterdb);
 
     });
@@ -133,13 +133,13 @@ module.exports = function(app) {
     db.Events.findAll({
       where: {
         decor:req.params.decor
-        }      
+      }      
     }).then(function(caterdb){
       //we are creating this object, because we want to send it to our handlebars
       var hbsObject = {
         event: caterdb
       };
-      // res.render("vendor", hbsObject);
+      res.render("vendor", hbsObject);
       res.json(caterdb);
     });
   });
