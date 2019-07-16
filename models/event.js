@@ -14,7 +14,8 @@ module.exports = function (sequelize, DataTypes) {
     vendorid: {
       type: DataTypes.INTEGER,
       model: "Vendor",
-      key: "vendorid"
+      key: "vendorid",
+      allowNull:true
     },
     phone: {
       type: DataTypes.STRING,
