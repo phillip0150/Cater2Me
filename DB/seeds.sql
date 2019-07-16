@@ -67,6 +67,11 @@ VALUES
 );
 
 
+-- pluralize this shit
+select * from events;
+select * from users;
+select * from vendors;
+--  new syntax
 
 
 select * from events;
