@@ -1,132 +1,81 @@
-<<<<<<< HEAD
     <div id="createAcct">
-
-        <div class="jumbotron jumbotron-fluid jumbotron-custom">
-            <div class="container text-center">
-                <h1 class="display-4">Cater to Me</h1>
-                <p class="lead">The Solution for Planning your Next Catering Event.</p>
-            </div>
-        </div>
-
-    <!-- Create an Account Form Container-->
         <div class="container createAcct-body-container">
-            <div class="row createAcct-row">
-                <div class="col-8 offset-2 createAcct-col">
-                    <h3>Create an Account: </h3>
-                    <form class="clearfix mb-4" action="">
-                        <div class="row form-row">
-                            <div class="col">
-                                <label for="nameInput">Name</label>
-                                <input type="text" id="nameInput" class="form-control"
-                                    aria-describedby="nameInput" placeholder="Johnny Appleseed">
-                            </div>
-                            <div class="col">
-                                <label for="emailInput">Email</label>
-                                <input type="text" id="emailInput" class="form-control"
-                                    aria-describedby="emailInput" placeholder="jappleseed@gmail.com">
-                            </div>
+            <div class="row login-row">
+                <div class="col-8 offset-2 login-col">
+                    <h3 class="text-center">Create an account!</h3>
+
+                    <!-- Select User Type Buttons
+                    ======================================================= -->
+                    <div class="clearfix row userTypeBtns">
+                        <div class="col">
+                            <button id="customerButton" class="btn btn-primary float-left">Customer (Looking for a
+                                Caterer)</button>
                         </div>
-                        <div class="row form-row">
-                            <div class="col">
-                                <label for="pwInput">Password</label>
-                                <input type="text" id="pwInput" class="form-control"
-                                    aria-describedby="pwInput" placeholder="More than 8 characters">
-                            </div>
-                            <div class="col">
-                                <label for="userTypeSelect">User Type</label>
-                                <select class="form-control" id="userTypeSelect">
-                                    <option>User</option>
-                                    <option>Vendor</option>
-                                </select>
-                            </div>
+                        <div class="col">
+                            <button id="vendorButton" class="btn btn-primary float-right">Vendor (Looking to
+                                Cater)</button>
                         </div>
-                        <!-- This should only appear if the user has selected Vendor above. -->
-                        <div class="row form-row">
-                            <div class="col">
-                                <label for="foodTypeSelect">Categeory of Food</label>
-                                <select class="form-control" id="foodTypeSelect">
-                                    <option>American</option>
-                                    <option>Chinese</option>
-                                    <option>Cajun/Creole</option>
-                                    <option>Italian</option>
-                                    <option>Japanese</option>
-                                    <option>Mediterranean</option>
-                                    <option>Mexican</option>
-                                    <option>Southern</option>
-                                    <option>Thai</option>
-                                    <option>Tex-Mex</option>
-                                </select>
-                            </div>
+                    </div>
+                    
+                    <!-- We are going to have 2 form classes
+                    one will involve a user (create-user) and the 
+                    other will involve a vendor (create-vendor) based on 
+                    what button a user will press, we will show these classes.
+                    Look at  public/js/create.js to see the js that goes with this page.
+                    the submit button will have the route  -->
+
+                      <!-- Customer Form
+                    ======================================================= -->
+                    <form class="clearfix mb-4 create-user" action="">
+                        <div class="form-group">
+                            <label for="nameUser">Name</label>
+                            <input type="text" id="nameUser" class="form-control" aria-describedby="example-text"
+                                placeholder="John Doe">
                         </div>
+                        <div class="form-group">
+                            <label for="emailUser">Email</label>
+                            <input type="text" id="emailUser" class="form-control" aria-describedby="example-text"
+                                placeholder="johndoe@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="passwordUser">Password</label>
+                            <input type="text" id="passwordUser" class="form-control" aria-describedby="example-text"
+                                placeholder="Enter at least 8 characters">
+                        </div>
+                        <button id="submit" class="btn btn-primary float-right">Submit</button>
+                    </form>
+
+
+                    <!-- Vendor Form
+                    ======================================================= -->
+                    <form class="clearfix mb-4 create-vendor" action="">
+                        <div class="form-group">
+                            <label for="nameVendor">Name</label>
+                            <input type="text" id="nameVendor" class="form-control" aria-describedby="example-text"
+                                placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="emailVendor">Email</label>
+                            <input type="text" id="emailVendor" class="form-control" aria-describedby="example-text"
+                                placeholder="johndoe@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="passwordVendor">Password</label>
+                            <input type="text" id="passwordVendor" class="form-control" aria-describedby="example-text"
+                                placeholder="Enter at least 8 characters">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="text" id="phone" class="form-control" aria-describedby="example-text"
+                                placeholder="999-999-9999">
+                        </div>
+
                         <button id="submit" class="btn btn-primary float-right">Submit</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-=======
-<div id="createAcct">
-    <div class="container createAcct-body-container">
-        <div class="row login-row">
-            <div class="col-8 offset-1 login-col">
-                <h3>Create an account!</h3>
-                <div class="clearfix">
-   
-                    <button id="customerButton" class="btn btn-primary float-right">Customer (Looking for a Cater)</button>
-                    
-                    <button id="vendorButton" class="btn btn-primary float-right">Vendor (Looking to Cater)</button>
-    
-                </div>
-                {{!-- We are going to have 2 form classes
-                one will involve a user (create-user) and the 
-                other will involve a vendor (create-vendor) based on 
-                what button a user will press, we will show these classes.
-                Look at  public/js/create.js to see the js that goes with this page.
-                the submit button will have the route --}}
-                <form class="clearfix mb-4 create-user" action="">
-                    <div class="form-group">
-                        <label for="example-text">Name</label>
-                        <input type="text" id="name" class="form-control" aria-describedby="example-text"
-                            placeholder="Enter Example Text">
-                        <label for="example-text">Email</label>
-                        <input type="text" id="email" class="form-control" aria-describedby="example-text"
-                            placeholder="Enter Example Text">
-                    </div>
-                    <div class="form-group">
-                        <label for="example-description">Password</label>
-                        <textarea class="form-control" id="password" aria-describedby="example-description"
-                            placeholder="Enter Example Description"></textarea>
-                    </div>
-                    <button id="submit" class="btn btn-primary float-right">Submit</button>
-                </form>
-
-                <form class="clearfix mb-4 create-vendor" action="">
-                    <div class="form-group">
-                        <label for="example-text">Name</label>
-                        <input type="text" id="nameVendor" class="form-control" aria-describedby="example-text"
-                            placeholder="Enter Example Text">
-                        <label for="example-text">Email</label>
-                        <input type="text" id="emailVendor" class="form-control" aria-describedby="example-text"
-                            placeholder="Enter Example Text">
-                    </div>
-                    <div class="form-group">
-                        <label for="example-description">Password</label>
-                        <textarea class="form-control" id="passwordVendor" aria-describedby="example-description"
-                            placeholder="Enter Example Description"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="example-description">phone</label>
-                        <textarea class="form-control" id="phone" aria-describedby="example-description"
-                            placeholder="Enter Example Description"></textarea>
-                    </div>
-
-                    <button id="submit" class="btn btn-primary float-right">Submit</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="/js/create.js"></script>
->>>>>>> master

@@ -2,6 +2,8 @@
 // =============================================================
 var path = require("path");
 
+//Whenever a vendor clicks on an event...
+
 // Routes
 // =============================================================
 module.exports = function(app) {
