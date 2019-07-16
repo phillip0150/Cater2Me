@@ -9,11 +9,11 @@ VALUES
 
 INSERT INTO events
  (
-  phone, city, state,  occasion, courses, consideration, size, alcohol, decor, comments
+    vendorid, phone, city, state,  occasion, courses, consideration, size, alcohol, decor, comments, createdAt, updatedAt
  )
  VALUES 
  (
-  '402-350-2259', 'austin', 'tx', 'party', '2', 'none', '50', true , false, 'I want wine, whiskey, and vodka only'
+  12,'402-350-2259', 'austin', 'tx', 'party', '2', 'none', '50', true , false, 'I want wine, whiskey, and vodka only',now(),now()
  );
 
 
@@ -29,11 +29,11 @@ VALUES
 
  INSERT INTO events
  (
- phone, city, state,  occasion, courses, consideration, size, alcohol, decor, comments
+   vendorid, phone, city, state,  occasion, courses, consideration, size, alcohol, decor, comments, createdAt, updatedAt
  )
  VALUES 
  (
-  '949-555-2284', 'seattle', 'wa', 'wedding', '4', 'kosher', '100', true , false, 'I would prefer a higher end champagne selection and wines.'
+  11,'949-555-2284', 'seattle', 'wa', 'wedding', '4', 'kosher', '100', true , false, 'I would prefer a higher end champagne selection and wines.',now(),now()
  );
 
 
@@ -48,11 +48,11 @@ VALUES
 
  INSERT INTO events
  (
- phone, city, state,  occasion, courses, consideration, size, alcohol, decor, comments
+   vendorid, phone, city, state,  occasion, courses, consideration, size, alcohol, decor, comments, createdAt, updatedAt
  )
  VALUES 
  (
-  '949-555-2857', 'omaha', 'ne', 'birthday', '2', 'halal', '1000', true , true, 'I would prefer flower  table settings. its my 50th birthday so yeah jkngeintinginirtningitngtintrniungrtiunrtiungtriungrtiungtingtringt'
+ 01, '949-555-2857', 'omaha', 'ne', 'birthday', '2', 'halal', '1000', true , true, 'I would prefer flower  table settings. its my 50th birthday so yeah jkngeintinginirtningitngtintrniungrtiunrtiungtriungrtiungtingtringt',now(),now()
  );
 
 

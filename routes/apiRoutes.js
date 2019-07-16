@@ -1,8 +1,10 @@
 var db = require("../models");
+// var Sequelize = require("sequelize");
+
+// var Op = Sequelize.Op;
 
 module.exports = function(app) {
   
-
   //Create user
   app.post("/api/createUser", function(req, res) {
     db.User.create({
@@ -26,9 +28,9 @@ module.exports = function(app) {
     });
   });
   
-  //Geting all events
+  //Getting all events
   app.get("/api/events", function(req, res){
-    db.Event.findAll({}).then(function(caterdb){
+    db.Events.findAll({}).then(function(caterdb){
       //we are creating this object, because we want to send it to our handlebars
       var hbsObject = {
         event: caterdb
@@ -39,7 +41,7 @@ module.exports = function(app) {
   
   //Getting an event based on a user
   app.get("/api/events/:id", function(req,res){
-    db.Event.findAll({
+    db.Events.findAll({
       where: {
         userid: req.params.id
       }
@@ -54,8 +56,9 @@ module.exports = function(app) {
   
   //Create Event
   app.post("/api/createEvent/:id", function(req, res) {
-    db.Event.create({
+    db.Events.create({
       userid: req.params.id,
+      vendorid: null,
       phone: req.body.phone,
       city: req.body.city,
       state: req.body.state,
@@ -73,7 +76,7 @@ module.exports = function(app) {
   
   //Look at event
   app.get("/api/event/:id", function(req, res) {
-    db.Event.findOne({
+    db.Events.findOne({
       where: {
         eventid: req.params.id
       }
@@ -86,5 +89,63 @@ module.exports = function(app) {
     });
   });
   
+  // Lukes queries start------------------------------------------
+  // get event by size---works------------------------------------
+  app.get("/api/events/size/:size", function(req, res){
+    db.Events.findAll({
+      where: {
+        size: {
+          //size less than or = to params
+          "$lte":req.params.size
+        }
+      }
+    }).then(function(caterdb){
+      //we are creating this object, because we want to send it to our handlebars
+      var hbsObject = {
+        event: caterdb
+      };
+      res.render("vendor", hbsObject);
+      res.json(caterdb);
+
+    });
+  });
   
+  // get event by state-----------------------works--------------------------
+  app.get("/api/events/state/:state", function(req, res){
+    db.Events.findAll({
+      where: {
+        state:req.params.state
+        
+      }
+    }).then(function(caterdb){
+      //we are creating this object, because we want to send it to our handlebars
+      var hbsObject = {
+        event: caterdb
+      };
+      res.render("vendor", hbsObject);
+      res.json(caterdb);
+
+    });
+  });
+
+  // get event by decor needed ------------------does work, 0 = false 1 = true-------------------------
+  app.get("/api/events/decor/:decor", function(req, res){
+    db.Events.findAll({
+      where: {
+        decor:req.params.decor
+      }      
+    }).then(function(caterdb){
+      //we are creating this object, because we want to send it to our handlebars
+      var hbsObject = {
+        event: caterdb
+      };
+      res.render("vendor", hbsObject);
+      res.json(caterdb);
+    });
+  });
+  // get event by booze needed
+  //multiple queries at once
+
 };
+
+
