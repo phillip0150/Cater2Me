@@ -12,11 +12,6 @@ module.exports = function(app) {
   });
 
 
-  // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
-    res.render("404");
-  });
-
   //login user
   app.get("/login/user", function(req,res){
     db.User.findOne({
@@ -46,5 +41,20 @@ module.exports = function(app) {
       res.render("user", hbsObject);
     });
   });
+
+  // Render 404 page for any unmatched routes
+  app.get("/customer/:id", function(req, res) {
+    db.Events.findAll({
+      where: {
+        userid: req.params.id
+      }
+    }).then(function(caterdb){
+      var hbsObject = {
+        customer: caterdb
+      };
+      res.render("customer-home", hbsObject);
+    });
+  });
+
 
 };

@@ -30,10 +30,11 @@ module.exports = function(app) {
   app.get("/api/events", function(req, res){
     db.Event.findAll({}).then(function(caterdb){
       //we are creating this object, because we want to send it to our handlebars
-      var hbsObject = {
-        event: caterdb
-      };
-      res.render("vendor", hbsObject);
+      // var hbsObject = {
+      //   event: caterdb
+      // };
+      // res.render("vendor", hbsObject);
+      res.json(caterdb);
     });
   });
   
