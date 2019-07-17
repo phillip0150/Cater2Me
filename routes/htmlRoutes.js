@@ -1,6 +1,7 @@
 var db = require("../models");
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 module.exports = function(app) {
+
   // Load index page
   app.get("/", function(req, res) {
     res.render("index");
@@ -98,6 +99,7 @@ module.exports = function(app) {
       res.render("vendorhome", {accepted: vendorEvents, available: allEvents});
       
     });
+  });
 
   //  create event page
   app.get("/event/create/:id", function(req,res){

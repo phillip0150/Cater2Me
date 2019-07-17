@@ -1,11 +1,7 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
     "password": "@Torpedoes1",
-=======
-    "password": "",
->>>>>>> master
     "database": "caterdb",
     "host": "localhost",
     "dialect": "mysql"
