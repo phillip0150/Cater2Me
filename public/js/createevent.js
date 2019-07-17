@@ -6,9 +6,9 @@ $(function() {
   //send those values to /api/createVendor
   $(".create-event").on("submit", function(event) {
     event.preventDefault();
-  
+    var theUserId = $("#userid").val();
     var newEvent = {
-      userid: $("#userid").val().trim(),
+      userid: $("#userid").val(),
       phone: $("#phone").val().trim(),
       city: $("#city").val().trim(),
       state: $("#state").val().trim(),
@@ -24,13 +24,13 @@ $(function() {
     };
     console.log(newEvent);
   
-    $.ajax("/api/createEvent", {
+    $.ajax("/api/createEvent/"+theUserId, {
       type: "POST",
       data: newEvent
     }).then(
       function() {
         console.log("created a new event!");
-        location.reload();
+        window.location.href = "/customer";
       }
     );
   });
