@@ -14,17 +14,32 @@ module.exports = function(app) {
 
   // customer homepage
   app.get("/customer", isAuthenticated, function(req, res) {
-    db.Events.findAll({
-      where: {
-        userid: req.user.userid
-      }
-    }).then(function(caterdb){
-      var hbsObject = {
-        customer: caterdb
-      };
-      console.log("incustomer page");
-      res.render("customer-home", hbsObject);
-    });
+    if(req.user.userid !== undefined){
+      db.Events.findAll({
+        where: {
+          userid: req.user.userid
+        }
+      }).then(function(caterdb){
+        var hbsObject = {
+          customer: caterdb
+        };
+        console.log("incustomer page");
+        res.render("customer-home", hbsObject);
+      });
+    }
+    else {
+      db.Events.findAll({
+        where: {
+          vendorid: req.user.vendorid
+        }
+      }).then(function(caterdb){
+        var hbsObject = {
+          customer: caterdb
+        };
+        console.log("incustomer page");
+        res.render("customer-home", hbsObject);
+      });
+    }
   });
 
   // vendor homepage

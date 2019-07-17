@@ -16,10 +16,10 @@ $(function() {
       data: userLogin
     }).then(
       function() {
+
         //TODO: When we create a user, should we take them to the homepage to login with their new info?
-        // location.reload();
-      }
-    );
+        window.location.href = "/customer";      
+      });
   });
  
   
