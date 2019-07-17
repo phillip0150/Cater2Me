@@ -52,5 +52,20 @@ module.exports = function(app) {
     res.render("create-event");
   });
 
+  // this is just for testing and needs to be deleted
+  app.get("/customer/:id", function(req, res) {
+    db.Events.findAll({
+      where: {
+        userid: req.params.id
+      }
+    }).then(function(caterdb){
+      var hbsObject = {
+        customer: caterdb
+      };
+      res.render("customer-home", hbsObject);
+      console.log(hbsObject);
+    });
+  });
+
 
 };

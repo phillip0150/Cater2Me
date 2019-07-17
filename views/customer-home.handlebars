@@ -1,0 +1,60 @@
+    <div class="jumbotron jumbotron-fluid jumbotron-custom">
+        <div class="container text-center">
+            <h1 class="display-4">Cater to Me</h1>
+            <p class="lead">The Solution for Planning your Next Catering Event.</p>
+        </div>
+    </div>
+
+    <div class="container customer-home-body-container">
+        <!-- CUSTOMER NAME ROW -->
+        <div class="row customer-name-row">
+            <div class="col-12-lg add-event-col">
+                <h1 class="cust-name" id="name-of-customer">Frank Douglas</h1>
+            </div>
+        </div>
+
+        <!-- CUSTOMER EVEN WRAPPER -->
+        <div class="row event-wrapper">
+            <div class="col-12-lg event-wrapper-col">
+
+            <!-- CUSTOMER ADD NEW EVENT BUTTON ROW  -->
+            <div class="row add-event-row">
+                <div class="col-12-lg add-event-col">
+                    <button id="submit" class="btn-lg btn-primary create-new-event">Create New Event</button>
+                </div>
+            </div>
+
+            <!-- CUSTOMER VIEW JOBS ROW -->
+            <div class="row view-job-row">
+                <div class="col-12-lg view-job-col">
+                    <ul>
+                    {{#each customer}}
+                        <li> <p>Event Id: {{eventid}}</p></li>
+                        <li> <p>User Id: {{userid}}</p></li>
+                        <li> <p>Vendor Id: {{vendorid}}</p></li>
+                        <li> <p>phone: {{phone}}</p></li>
+                        <li> <p>city: {{city}}</p></li>
+                        <li> <p>state: {{state}}</p></li>
+                        <li> <p>occasion: {{occasion}}</p></li>
+                        <li> <p>courses: {{courses}}</p></li>
+                        <li> <p>consideration: {{consideration}}</p></li>
+                        <li> <p>size: {{size}}</p></li>
+                        <li> <p>alcohol: {{alcohol}}</p></li>
+                        <li> <p>decor: {{decor}}</p></li>
+                        <li> <p>comments: {{comments}}</p></li>
+                    {{/each}}
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        </div>
+
+    </div>
+
+
+
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    {{!-- <script src="/js/create.js"></script> --}}
