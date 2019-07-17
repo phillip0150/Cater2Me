@@ -1,20 +1,12 @@
 /* Global Styling */
 /* =================================================================== */
 html {
-<<<<<<< HEAD
-  height: 100%;
-}
-body {
-  background-image: url("https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80");
-  height: 100%
-=======
   height:100%;
 }
 
 body {
   background-image: url("https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80");
   height: 100%;
->>>>>>> master
 }
 
 .jumbotron-custom {
@@ -89,4 +81,56 @@ body {
 
 #eventSearchSubmit {
   margin-left: 4rem;
+}
+
+/* Customer Homepage Page Styling */
+/* =================================================================== */
+.customer-home-body-container{
+  background-color:rgb(255, 201, 77);
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 1px;
+}
+
+.event-wrapper {
+  border-style: solid;
+  border-width: 1px;
+  display: flex; 
+  justify-content: center;
+}
+
+.event-wrapper-col {
+  border-style: solid;
+  border-width: 1px;
+  width: 90%;
+  /* display: flex; 
+  justify-content: center; */
+}
+
+#name-of-customer {
+  text-align: center;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.add-event-col {
+  width: 100%;
+  display: flex; 
+  justify-content: center;
+  margin: 30px;
+}
+
+.view-job-row {
+  margin-top: 40px;
+  display: flex; 
+  justify-content: center;
+}
+
+.view-job-col {
+  width: 60%;
+  border-style: solid;
+  border-width: 1px;
+  margin-bottom: 40px;
 }
