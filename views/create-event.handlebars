@@ -3,8 +3,9 @@
         {{!-- <div class="row login-row"> --}}
             <div class="col-8 offset-1 login-col">
                 <h3>Create an Event!</h3>                
-                <form class="clearfix mb-4 create-user" action="">
+                <form class="clearfix mb-4 create-event" action="">
                     <div class="form-group">
+                        <input type="text" id="userid" value={{id}} hidden='true'>
                         <label for="example-text">Phone</label>
                         <input type="text" id="phone" class="form-control" aria-describedby="example-text"
                             placeholder="Phone Number">
@@ -42,7 +43,7 @@
                             placeholder="yes or no">
 
                         <label for="example-text">comments</label>
-                        <input type="text" id="email" class="form-control" aria-describedby="example-text"
+                        <input type="text" id="comments" class="form-control" aria-describedby="example-text"
                             placeholder="Enter Example Text">
                     </div>
                    
