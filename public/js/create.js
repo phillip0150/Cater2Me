@@ -10,7 +10,7 @@ $(function() {
     //show user, hide vendor
     $(".create-user").show();
     $(".create-vendor").hide();
-    $(".userTypeBtns").hide();
+    
   });
 
   //if someone clicks on teh vendor button, we know they want to create a vendor
@@ -19,7 +19,7 @@ $(function() {
     //show vendor, hide user
     $(".create-vendor").show();
     $(".create-user").hide();
-    $(".userTypeBtns").hide();
+   
   });
 
   //if they click on the button in the create user form, 
@@ -43,7 +43,7 @@ $(function() {
       function() {
         console.log("created a new user!");
         //TODO: When we create a user, should we take them to the homepage to login with their new info?
-        location.reload();
+        window.location.href = "/";
       }
     );
   });
