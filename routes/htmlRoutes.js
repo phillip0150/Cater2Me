@@ -81,8 +81,8 @@ module.exports = function(app) {
 
       var vendorArr = [];
       caterdb.forEach(function(elem) {
-        if (elem.vendorid == req.params.id) {
-          console.log(elem.occasion)
+        if (elem.vendorid === req.params.id) {
+          console.log(elem.occasion);
           vendorArr.push(elem);
         }
       });
