@@ -1,0 +1,40 @@
+<div class="container vendorHome-container">
+    <h3 id="vendorTitle">Vendor's Homepage</h3>
+    <div class="eventList" id="currentJobs">
+        <h4>Accepted Jobs:</h4>
+        {{!-- {{This is where the vendor's accepted jobs go?}} --}}
+        {{#each accepted.vendor}}
+            <li>
+                 occasion: {{ this.occasion }}
+                 courses: {{ this.courses }}
+                 <button href="/api/events/{{this.eventid}}" data-id="{{this.eventid}}">More Info</button>
+
+            </li>
+        {{/each}}
+
+    </div>
+    <div class="eventList" id="availableJobs">
+        <!-- Search form -->
+        <form class="form-inline">
+            <div class="form-group w-50">
+                <i class="fas fa-search" aria-hidden="true"></i>
+                <input class="form-control form-control-md ml-3 w-100" type="text" placeholder="Search"
+                    aria-label="Search">
+            </div>
+            <button id="eventSearchSubmit" class="btn btn-primary">Submit</button>
+        </form>
+        <hr>
+        <div id="eventListHB">
+            <ul>
+            {{#each available.event}}
+                <li>
+                    occasion: {{ thid.occasion }}
+                    courses: {{ this.courses }}
+                    <button href="/api/events/{{this.eventid}}" data-id="{{this.eventid}}">More Info</button>
+                    <button data-id="" >Accept</button>
+                </li>
+            {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
