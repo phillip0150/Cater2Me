@@ -15,8 +15,8 @@ $(function() {
       type: "POST",
       data: userLogin
     }).then(
-      function() {
-
+      function(userdata) {
+        console.log("hey user data" + userdata);
         //TODO: When we create a user, should we take them to the homepage to login with their new info?
         window.location.href = "/customer";      
       });
