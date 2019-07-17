@@ -64,7 +64,7 @@ module.exports = function(app) {
 
   // populate relevent data to event page
   app.get("/event/:id", function(req,res){
-    res.render("create-event");
+    res.render("event");
   });
 
   app.get("/*", function(req,res){
