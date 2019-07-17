@@ -22,7 +22,9 @@ module.exports = function(app) {
         }
       }).then(function(caterdb){
         var hbsObject = {
-          customer: caterdb
+          customer: caterdb,
+          name: req.body.name,
+          vendorid: req.body.vendorid
         };
         console.log("incustomer page");
         res.render("vendor-home", hbsObject);
@@ -76,6 +78,7 @@ module.exports = function(app) {
 
   //Vendor homepage handlebars
   app.get("/vendor/:id", function(req,res){
+    console.log(req);
     //Ask DB to find all events available
     db.Events.findAll({}).then(function(caterdb) {
       var allEvents = {
@@ -99,7 +102,7 @@ module.exports = function(app) {
       console.log(vendorEvents);
       console.log(allEvents);
       
-      res.render("vendorhome", {accepted: vendorEvents, available: allEvents});
+      res.render("vendor-home", {accepted: vendorEvents, available: allEvents});
   
     });
   });
