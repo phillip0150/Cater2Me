@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS posted_events;
+DROP DATABASE IF EXISTS caterdb;
 
-CREATE DATABASE posted_events;
+CREATE DATABASE caterdb;
 
-USE posted_events;
+USE caterdb;
 
 CREATE TABLE user
 (
