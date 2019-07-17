@@ -35,7 +35,8 @@ module.exports = function(app) {
       }).then(function(caterdb){
         var hbsObject = {
           customer: caterdb,
-          name: req.user.name
+          name: req.user.name,
+          userid: req.user.userid
         };
         console.log("incustomer page");
         res.render("customer-home", hbsObject);
@@ -98,6 +99,12 @@ module.exports = function(app) {
       
     });
 
+  //  create event page
+  app.get("/event/create/:id", function(req,res){
+    var hbsObject = {
+      id: req.params.id
+    };
+    res.render("create-event", hbsObject);
   });
 
   app.get("*", function(req,res){
