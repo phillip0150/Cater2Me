@@ -14,27 +14,29 @@ module.exports = function(app) {
 
   // customer homepage
   app.get("/customer", isAuthenticated, function(req, res) {
-    if(req.user.userid !== undefined){
+    if(req.user.userid === undefined){
       db.Events.findAll({
         where: {
-          userid: req.user.userid
+          vendorid: null
         }
       }).then(function(caterdb){
         var hbsObject = {
           customer: caterdb
         };
         console.log("incustomer page");
-        res.render("customer-home", hbsObject);
+        res.render("vendor-home", hbsObject);
       });
     }
     else {
       db.Events.findAll({
         where: {
-          vendorid: req.user.vendorid
+          userid: req.user.userid
         }
       }).then(function(caterdb){
         var hbsObject = {
-          customer: caterdb
+          customer: caterdb,
+          name: req.user.name,
+          userid: req.user.userid
         };
         console.log("incustomer page");
         res.render("customer-home", hbsObject);
@@ -57,11 +59,14 @@ module.exports = function(app) {
   });
 
   //  create event page
-  app.get("/event/create", function(req,res){
-    res.render("create-event");
+  app.get("/event/create/:id", function(req,res){
+    var hbsObject = {
+      id: req.params.id
+    };
+    res.render("create-event", hbsObject);
   });
 
-  app.get("/*", function(req,res){
+  app.get("*", function(req,res){
     res.render("404");
   });
 };
