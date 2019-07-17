@@ -60,8 +60,8 @@ module.exports = function(app) {
       var hbsObject = {
         event: caterdb
       };
-      res.render("vendor", hbsObject);
-      // res.json(caterdb);
+      res.render("vendorhome", hbsObject);
+
     });
   });
   
