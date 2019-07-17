@@ -70,7 +70,11 @@ $(function() {
       function() {
         console.log("created a new user!");
         //TODO: When we create a vendor, should we take them to the homepage to login with their new info?
+<<<<<<< HEAD
+        window.location.href = "/customer";
+=======
         window.location.href = "/customer";      
+>>>>>>> bf1f92549139b3ded3acf3f9dfc5c50fdc4deef5
       }
     );
   });
