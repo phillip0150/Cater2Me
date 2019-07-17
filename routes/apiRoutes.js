@@ -115,7 +115,7 @@ module.exports = function(app) {
   });
   
   // Lukes queries start------------------------------------------
-  // get event by size---works------------------------------------
+  // get event by size----works------------------------------------
   app.get("/api/events/size/:size", function(req, res){
     db.Events.findAll({
       where: {

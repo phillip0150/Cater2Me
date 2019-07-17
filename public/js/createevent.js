@@ -6,7 +6,8 @@ $(function() {
   //send those values to /api/createVendor
   $(".create-event").on("submit", function(event) {
     event.preventDefault();
-  
+    console.log("shit happens");
+
     var newEvent = {
       userid: $("#userid").val().trim(),
       phone: $("#phone").val().trim(),
