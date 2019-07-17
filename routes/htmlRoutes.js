@@ -1,5 +1,5 @@
 var db = require("../models");
-
+var isAuthenticated = require("../config/middleware/isAuthenticated");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
@@ -12,38 +12,47 @@ module.exports = function(app) {
   });
 
 
-  // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
-    res.render("404");
+  // customer homepage
+  app.get("/customer", isAuthenticated, function(req, res) {
+    if(req.user.userid !== undefined){
+      db.Events.findAll({
+        where: {
+          userid: req.user.userid
+        }
+      }).then(function(caterdb){
+        var hbsObject = {
+          customer: caterdb
+        };
+        console.log("incustomer page");
+        res.render("customer-home", hbsObject);
+      });
+    }
+    else {
+      db.Events.findAll({
+        where: {
+          vendorid: req.user.vendorid
+        }
+      }).then(function(caterdb){
+        var hbsObject = {
+          customer: caterdb
+        };
+        console.log("incustomer page");
+        res.render("customer-home", hbsObject);
+      });
+    }
   });
 
-  //login user
-  app.get("/login/user", function(req,res){
-    db.User.findOne({
+  // vendor homepage
+  app.get("/vendor/:id", isAuthenticated, function(req, res) {
+    db.Events.findAll({
       where: {
-        email: req.boyd.email,
-        password: req.body.password
+        userid: null
       }
-    }).then(function(caterdb) {
-      var hbsObject = {
-        user: caterdb
-      };
-      res.render("user", hbsObject);
-    });
-  });
-
-  //login vendor
-  app.get("/login/vendor", function(req,res){
-    db.Vendor.findOne({
-      where: {
-        email: req.boyd.email,
-        password: req.body.password
-      }
-    }).then(function(caterdb) {
+    }).then(function(caterdb){
       var hbsObject = {
         vendor: caterdb
       };
-      res.render("user", hbsObject);
+      res.render("vendorhome", hbsObject);
     });
   });
 
@@ -52,5 +61,7 @@ module.exports = function(app) {
     res.render("create-event");
   });
 
-
+  app.get("/*", function(req,res){
+    res.render("404");
+  });
 };
