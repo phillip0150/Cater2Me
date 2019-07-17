@@ -55,7 +55,7 @@ module.exports = function (sequelize, DataTypes) {
       len: [1]
     },
     alcohol: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.STRING,
       allowNull: false,
       len: [1]
     },
