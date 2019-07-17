@@ -10,13 +10,7 @@ module.exports = function(app) {
   app.get("/create", function(req, res) {
     res.render("create-acct");
   });
-
-
-  // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
-    res.render("404");
-  });
-
+ 
   //login user
   app.get("/login/user", function(req,res){
     db.User.findOne({
@@ -48,9 +42,13 @@ module.exports = function(app) {
   });
 
   //  create event page
-  app.get("/event/create", function(req,res){
+  app.get("/api/createEvent/:id", function(req,res){
     res.render("create-event");
   });
 
+  // Render 404 page for any unmatched routes
+  app.get("*", function(req, res) {
+    res.render("404");
+  });
 
 };

@@ -24,7 +24,7 @@ $(function() {
     };
     console.log(newEvent);
   
-    $.ajax("/api/createEvent", {
+    $.ajax("/api/createEvent/:id", {
       type: "POST",
       data: newEvent
     }).then(

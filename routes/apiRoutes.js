@@ -1,6 +1,5 @@
 var db = require("../models");
 // var Sequelize = require("sequelize");
-
 // var Op = Sequelize.Op;
 
 module.exports = function(app) {
