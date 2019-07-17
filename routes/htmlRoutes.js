@@ -72,6 +72,7 @@ module.exports = function(app) {
     });
   });
 
+  //Vendor homepage handlebars
   app.get("/vendor/:id", function(req,res){
     db.Events.findAll({}).then(function(caterdb) {
       var allEvents = {
@@ -90,8 +91,8 @@ module.exports = function(app) {
         vendor: vendorArr
       };
 
-      console.log(vendorEvents)
-      console.log(allEvents)
+      console.log(vendorEvents);
+      console.log(allEvents);
       
       res.render("vendorhome", {accepted: vendorEvents, available: allEvents});
       
