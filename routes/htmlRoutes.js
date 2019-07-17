@@ -3,25 +3,54 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
+    res.render("index");
   });
 
   // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
-      });
-    });
+  app.get("/create", function(req, res) {
+    res.render("create-acct");
   });
+
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
   });
+
+  //login user
+  app.get("/login/user", function(req,res){
+    db.User.findOne({
+      where: {
+        email: req.boyd.email,
+        password: req.body.password
+      }
+    }).then(function(caterdb) {
+      var hbsObject = {
+        user: caterdb
+      };
+      res.render("user", hbsObject);
+    });
+  });
+
+  //login vendor
+  app.get("/login/vendor", function(req,res){
+    db.Vendor.findOne({
+      where: {
+        email: req.boyd.email,
+        password: req.body.password
+      }
+    }).then(function(caterdb) {
+      var hbsObject = {
+        vendor: caterdb
+      };
+      res.render("user", hbsObject);
+    });
+  });
+
+  //  create event page
+  app.get("/event/create", function(req,res){
+    res.render("create-event");
+  });
+
+
 };
