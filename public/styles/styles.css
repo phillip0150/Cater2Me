@@ -134,3 +134,7 @@ body {
   border-width: 1px;
   margin-bottom: 40px;
 }
+
+#myModal {
+  display: none
+}
