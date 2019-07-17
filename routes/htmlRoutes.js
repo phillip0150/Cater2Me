@@ -62,12 +62,7 @@ module.exports = function(app) {
     res.render("create-event");
   });
 
-<<<<<<< HEAD
-  // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
-=======
   app.get("*", function(req,res){
->>>>>>> 806fe13f180ec02c5e38654a3d2c61a335e2ec93
     res.render("404");
   });
 
