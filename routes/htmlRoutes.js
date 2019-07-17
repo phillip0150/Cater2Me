@@ -1,6 +1,7 @@
 var db = require("../models");
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 module.exports = function(app) {
+
   // Load index page
   app.get("/", function(req, res) {
     res.render("index");
@@ -45,16 +46,58 @@ module.exports = function(app) {
   });
 
   // vendor homepage
-  app.get("/vendor/:id", isAuthenticated, function(req, res) {
-    db.Events.findAll({
+  // app.get("/vendor/:id", isAuthenticated, function(req, res) {
+  //   db.Events.findAll({
+  //     where: {
+  //       userid: null
+  //     }
+  //   }).then(function(caterdb){
+  //     var hbsObject = {
+  //       vendor: caterdb
+  //     };
+  //     res.render("vendorhome", hbsObject);
+  //   });
+  // });
+
+  //login vendor
+  app.get("/login/vendor", function(req,res){
+    db.Vendor.findOne({
       where: {
-        userid: null
+        email: req.body.email,
+        password: req.body.password
       }
-    }).then(function(caterdb){
+    }).then(function(caterdb) {
       var hbsObject = {
         vendor: caterdb
       };
-      res.render("vendorhome", hbsObject);
+      res.render("user", hbsObject); 
+    });
+  });
+
+  //Vendor homepage handlebars
+  app.get("/vendor/:id", function(req,res){
+    db.Events.findAll({}).then(function(caterdb) {
+      var allEvents = {
+        event: caterdb
+      };
+
+      var vendorArr = [];
+      caterdb.forEach(function(elem) {
+        if (elem.vendorid === req.params.id) {
+          console.log(elem.occasion);
+          vendorArr.push(elem);
+        }
+      });
+  
+      var vendorEvents = {
+        vendor: vendorArr
+      };
+
+      console.log(vendorEvents);
+      console.log(allEvents);
+      
+      res.render("vendorhome", {accepted: vendorEvents, available: allEvents});
+      
     });
   });
 
@@ -69,4 +112,5 @@ module.exports = function(app) {
   app.get("*", function(req,res){
     res.render("404");
   });
+
 };
