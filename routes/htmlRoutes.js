@@ -1,5 +1,5 @@
 var db = require("../models");
-
+var isAuthenticated = require("../config/middleware/isAuthenticated");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
@@ -10,34 +10,49 @@ module.exports = function(app) {
   app.get("/create", function(req, res) {
     res.render("create-acct");
   });
- 
-  //login user
-  app.get("/login/user", function(req,res){
-    db.User.findOne({
-      where: {
-        email: req.boyd.email,
-        password: req.body.password
-      }
-    }).then(function(caterdb) {
-      var hbsObject = {
-        user: caterdb
-      };
-      res.render("user", hbsObject);
-    });
+
+
+  // customer homepage
+  app.get("/customer", isAuthenticated, function(req, res) {
+    if(req.user.userid !== undefined){
+      db.Events.findAll({
+        where: {
+          userid: req.user.userid
+        }
+      }).then(function(caterdb){
+        var hbsObject = {
+          customer: caterdb
+        };
+        console.log("incustomer page");
+        res.render("customer-home", hbsObject);
+      });
+    }
+    else {
+      db.Events.findAll({
+        where: {
+          vendorid: req.user.vendorid
+        }
+      }).then(function(caterdb){
+        var hbsObject = {
+          customer: caterdb
+        };
+        console.log("incustomer page");
+        res.render("customer-home", hbsObject);
+      });
+    }
   });
 
-  //login vendor
-  app.get("/login/vendor", function(req,res){
-    db.Vendor.findOne({
+  // vendor homepage
+  app.get("/vendor/:id", isAuthenticated, function(req, res) {
+    db.Events.findAll({
       where: {
-        email: req.boyd.email,
-        password: req.body.password
+        userid: null
       }
-    }).then(function(caterdb) {
+    }).then(function(caterdb){
       var hbsObject = {
         vendor: caterdb
       };
-      res.render("user", hbsObject);
+      res.render("vendorhome", hbsObject);
     });
   });
 

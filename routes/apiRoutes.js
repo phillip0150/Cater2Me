@@ -1,4 +1,6 @@
 var db = require("../models");
+var passport = require("../config/passport");
+// var passportVendor = require("../config/passportVendor");
 // var Sequelize = require("sequelize");
 // var Op = Sequelize.Op;
 
@@ -13,6 +15,29 @@ module.exports = function(app) {
     }).then(function(caterdb) {
       res.json(caterdb);
     });
+  });
+
+
+  //Look up user
+  app.post("/api/login", passport.authenticate("local"), function(req,res){
+    // console.log(req);
+    // db.User.findOne({
+    //   where: {
+    //     email: req.body.email
+
+    //   }
+    // }).then(function(caterdb){
+    //   if(caterdb){
+    //     if(db.User.validPassword(req.body.password)){
+    //       res.json(dbUser);
+    //     }
+    //     else {
+    //       res.render("index");
+    //     }
+    //   }
+    //   res.render("userhome", hbsObject);
+    // });
+    res.json(req.user);
   });
   
   //Create vendor
@@ -35,6 +60,7 @@ module.exports = function(app) {
         event: caterdb
       };
       res.render("vendor", hbsObject);
+      // res.json(caterdb);
     });
   });
   
