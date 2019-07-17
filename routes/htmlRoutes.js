@@ -76,11 +76,14 @@ module.exports = function(app) {
 
   //Vendor homepage handlebars
   app.get("/vendor/:id", function(req,res){
+    //Ask DB to find all events available
     db.Events.findAll({}).then(function(caterdb) {
       var allEvents = {
         event: caterdb
       };
 
+      //For each element, if the vendor id = the event table's vendor id 
+      //then push that event to the vendorArr
       var vendorArr = [];
       caterdb.forEach(function(elem) {
         if (elem.vendorid === req.params.id) {
@@ -97,7 +100,7 @@ module.exports = function(app) {
       console.log(allEvents);
       
       res.render("vendorhome", {accepted: vendorEvents, available: allEvents});
-      
+  
     });
   });
 
