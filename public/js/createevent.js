@@ -1,5 +1,12 @@
 $(function() {
-
+  function validateForm() {
+    var x = document.getElementsByClassName(".create-event").value;
+    if (x === "") {
+      console.log("all fields must be filled out");
+      return false;
+    }
+    console.log("validating");
+  }
   
   function validateForm() {
     var x = document.getElementsByClassName(".create-event").value;
@@ -32,8 +39,8 @@ $(function() {
     };
     console.log(newEvent);
     validateForm();
-
-    $.ajax("/api/createEvent/"+theUserId, {
+  
+    $.ajax("/api/createEvent/" + theUserId, {
       type: "POST",
       data: newEvent
     }).then(

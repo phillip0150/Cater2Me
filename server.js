@@ -4,6 +4,8 @@ var session = require("express-session");
 var exphbs = require("express-handlebars");
 var passport = require("./config/passport");
 
+// const bodyParser = require('body-parser');
+
 var db = require("./models");
 
 var app = express();
@@ -31,6 +33,8 @@ app.set("view engine", "handlebars");
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
+require("./routes/vendorApiRoutes")(app);
+
 
 //in test enviorment - true
 //not in test - false
