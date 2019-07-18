@@ -65,6 +65,7 @@ module.exports = function (app) {
 
 
   //
+  // eslint-disable-next-line no-unused-vars
   app.put("/api/event/:eventid", function (req, res) {
     newEventVendor = 88;
     selectedEvent = req.params.eventid;
@@ -77,7 +78,7 @@ module.exports = function (app) {
       { vendorid : newEventVendor },
       { where: 
         { eventid: selectedEvent } 
-        }
+      }
     );
   });
 };
