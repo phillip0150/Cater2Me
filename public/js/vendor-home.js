@@ -16,8 +16,8 @@ $(".vendorAcceptBtn").on("click", function () {
     eventid: eventId
   };
 
-//   console.log("VENDOR ID: " + vendorId);
-//   console.log("EVENT ID: " + eventId);
+  //   console.log("VENDOR ID: " + vendorId);
+  //   console.log("EVENT ID: " + eventId);
 
   $.ajax("/api/event/", {
     type: "PUT",

@@ -51,6 +51,7 @@ module.exports = function(app) {
       });
 
       caterdb.forEach(function(obj) {
+        // eslint-disable-next-line eqeqeq
         if (obj.vendorid == req.params.id) {
           vendorArr.push(obj);
         } 
