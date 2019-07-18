@@ -21,23 +21,6 @@ module.exports = function(app) {
 
   //Look up user
   app.post("/api/login", passport.authenticate("local"), function(req,res){
-    // console.log(req);
-    // db.User.findOne({
-    //   where: {
-    //     email: req.body.email
-
-    //   }
-    // }).then(function(caterdb){
-    //   if(caterdb){
-    //     if(db.User.validPassword(req.body.password)){
-    //       res.json(dbUser);
-    //     }
-    //     else {
-    //       res.render("index");
-    //     }
-    //   }
-    //   res.render("userhome", hbsObject);
-    // });
     res.json(req.user);
   });
   
@@ -85,6 +68,7 @@ module.exports = function(app) {
     db.Events.create({
       userid: req.params.id,
       vendorid: null,
+      name: req.params.name,
       phone: req.body.phone,
       city: req.body.city,
       state: req.body.state,
@@ -171,7 +155,6 @@ module.exports = function(app) {
   });
   // get event by booze needed
   //multiple queries at once
-
 
   
 };

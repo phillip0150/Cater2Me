@@ -17,12 +17,12 @@ module.exports = function (sequelize, DataTypes) {
       key: "vendorid",
       allowNull:true
     },
-    // name: {
-    //   type: DataTypes.STRING,
-    //   validate: {
-    //     len: [1]
-    //   }
-    // },
+    name: {
+      type: DataTypes.STRING,
+      validate: {
+        len: [1]
+      }
+    },
     phone: {
       type: DataTypes.STRING,
       allowNull: false,
