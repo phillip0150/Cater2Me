@@ -20,23 +20,7 @@ module.exports = function(app) {
 
   //Look up user
   app.post("/api/login", passport.authenticate("local"), function(req,res){
-    // console.log(req);
-    // db.User.findOne({
-    //   where: {
-    //     email: req.body.email
 
-    //   }
-    // }).then(function(caterdb){
-    //   if(caterdb){
-    //     if(db.User.validPassword(req.body.password)){
-    //       res.json(dbUser);
-    //     }
-    //     else {
-    //       res.render("index");
-    //     }
-    //   }
-    //   res.render("userhome", hbsObject);
-    // });
     res.json(req.user);
   });
   
@@ -100,20 +84,6 @@ module.exports = function(app) {
     });
   });
   
-  //Look at event
-  app.get("/api/event/:id", function(req, res) {
-    db.Events.findOne({
-      where: {
-        eventid: req.params.id
-      }
-    }).then(function(caterdb) {
-      //we are creating this object, because we want to send it to our handlebars
-      var hbsObject = {
-        event: caterdb
-      };
-      res.render("event", hbsObject);
-    });
-  });
   
   // Lukes queries start------------------------------------------
   // get event by size----works------------------------------------
