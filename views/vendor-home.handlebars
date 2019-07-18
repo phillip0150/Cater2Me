@@ -1,8 +1,12 @@
+{{!-- <div class="">
+    <h1 style= "color:white"> {{ available.event }} </h1>
+</div> --}}
+
 <div class="container vendorHome-container">
     <h3 id="vendorTitle">Vendor's Homepage</h3>
     <div class="eventList" id="currentJobs">
         <h4>Accepted Jobs:</h4>
-        {{#each accepted.vendor}}
+        {{#each accepted.events}}
             <li>
                  occasion: {{ this.occasion }}
                  courses: {{ this.courses }}
@@ -25,7 +29,7 @@
         <hr>
         <div id="eventListHB">
             <ul>
-            {{#each available.event}}
+            {{#each available.events}}
                 <li>
                     occasion: {{ this.occasion }}
                     courses: {{ this.courses }}

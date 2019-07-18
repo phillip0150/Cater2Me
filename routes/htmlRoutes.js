@@ -28,7 +28,7 @@ module.exports = function(app) {
           name: req.user.name,
           userid: req.user.userid
         };
-        console.log("incustomer page");
+        console.log("in customer page");
         res.render("customer-home", hbsObject);
       });
     // }
@@ -52,13 +52,13 @@ module.exports = function(app) {
       });
   
       var vendorEvents = {
-        vendor: vendorArr
+        events: vendorArr
       };
 
       console.log("VENDOR EVENTS: " + JSON.stringify(vendorEvents));
       console.log("AVAILABLE EVENTS: " + JSON.stringify(allEvents));
       
-      res.render("vendor-home", {available: allEvents});
+      res.render("vendor-home", {accepted: vendorEvents, available: allEvents});
     });
   });
 
