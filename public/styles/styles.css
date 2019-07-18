@@ -83,26 +83,36 @@ body {
   margin-left: 4rem;
 }
 
+/* Event Page Styling */
+/* =================================================================== */
+
+.eventName {
+  text-align: center;
+}
 /* Customer Homepage Page Styling */
 /* =================================================================== */
 .customer-home-body-container{
   background-color:rgb(255, 201, 77);
-  border-style: solid;
   border-radius: 10px;
-  border-width: 1px;
+  width: 75%;
+  /* border-style: solid;
+  border-width: 1px; */
 }
 
 .event-wrapper {
-  border-style: solid;
-  border-width: 1px;
+  /* border-style: solid;
+  border-width: 1px; */
   display: flex; 
   justify-content: center;
 }
 
 .event-wrapper-col {
-  border-style: solid;
-  border-width: 1px;
-  width: 90%;
+  /* border-style: solid;
+  border-width: 1px; */
+  width: 70%;
+  background-color: #132149;
+  border-radius: 10px;
+  margin: 10px;
   /* display: flex; 
   justify-content: center; */
 }
@@ -111,8 +121,11 @@ body {
   text-align: center;
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  margin-top: 20px;
-  margin-bottom: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.add-event-row {
 }
 
 .add-event-col {
@@ -123,14 +136,16 @@ body {
 }
 
 .view-job-row {
-  margin-top: 40px;
   display: flex; 
   justify-content: center;
 }
 
 .view-job-col {
-  width: 60%;
-  border-style: solid;
-  border-width: 1px;
+  width: 70%;
   margin-bottom: 40px;
+  background-color: white;
+  height: 300px;
+  border-radius: 10px;
+  /* border-style: solid;
+  border-width: 1px; */
 }

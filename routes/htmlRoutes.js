@@ -1,6 +1,9 @@
 var db = require("../models");
 var isAuthenticated = require("../config/middleware/isAuthenticated");
+
+
 module.exports = function(app) {
+
   // Load index page
   app.get("/", function(req, res) {
     res.render("index");
@@ -14,56 +17,65 @@ module.exports = function(app) {
 
   // customer homepage
   app.get("/customer", isAuthenticated, function(req, res) {
-    if(req.user.userid === undefined){
-      db.Events.findAll({
-        where: {
-          vendorid: null
-        }
-      }).then(function(caterdb){
-        var hbsObject = {
-          customer: caterdb
-        };
-        console.log("incustomer page");
-        res.render("vendor-home", hbsObject);
-      });
-    }
-    else {
-      db.Events.findAll({
-        where: {
-          userid: req.user.userid
-        }
-      }).then(function(caterdb){
-        var hbsObject = {
-          customer: caterdb,
-          name: req.user.name
-        };
-        console.log("incustomer page");
-        res.render("customer-home", hbsObject);
-      });
-    }
-  });
-
-  // vendor homepage
-  app.get("/vendor/:id", isAuthenticated, function(req, res) {
     db.Events.findAll({
       where: {
-        userid: null
+        userid: req.user.userid
       }
     }).then(function(caterdb){
       var hbsObject = {
-        vendor: caterdb
+        customer: caterdb,
+        name: req.user.name,
+        userid: req.user.userid
       };
-      res.render("vendorhome", hbsObject);
+      console.log("in customer page");
+      res.render("customer-home", hbsObject);
+    });
+    // }
+  });
+
+  //Vendor homepage handlebars
+  //TODO add isAuthenticated when finished testing
+  app.get("/vendor/:id", function(req,res){
+    //Ask DB to find all events available
+    db.Events.findAll({}).then(function(caterdb) {
+      var allEvents = {
+        events: caterdb
+      };
+      
+      //For each element, if the vendor id = the event table's vendor id 
+      //then push that event to the vendorArr
+      var vendorArr = [];
+      caterdb.forEach(function(obj) {
+        if (obj.vendorid === req.params.id) {
+          vendorArr.push(obj);
+        }
+      });
+  
+      var vendorEvents = {
+        events: vendorArr
+      };
+
+      console.log("VENDOR EVENTS: " + JSON.stringify(vendorEvents));
+      console.log("AVAILABLE EVENTS: " + JSON.stringify(allEvents));
+      
+      res.render("vendor-home", {accepted: vendorEvents, available: allEvents});
     });
   });
 
   //  create event page
-  app.get("/api/createEvent/:id", function(req,res){
-    res.render("create-event");
+  app.get("/event/create/:id", function(req,res){
+    var hbsObject = {
+      id: req.params.id
+    };
+    res.render("create-event", hbsObject);
   });
 
   app.get("*", function(req,res){
     res.render("404");
   });
 
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> c4726f96baa67228a7617c89b5c4aa54e8e9c535
