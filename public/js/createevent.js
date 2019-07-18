@@ -14,7 +14,7 @@ $(function() {
       console.log("all fields must be filled out");
       return false;
     }
-    console.log("validating")
+    console.log("validating");
   }
 
   //if they click on the button in the create vendor form, 
