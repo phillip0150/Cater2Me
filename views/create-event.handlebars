@@ -1,6 +1,26 @@
 <div id="createEvent">
     <div class="container createAcct-body-container">
-        {{!-- <div class="row login-row"> --}}
+    {{!-- modal start --}}
+        <div id="myModal"class="modal fade-out" role="dialog" >
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">From Incomplete</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Modal body text goes here.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{!-- end modal --}}
             <div class="col-8 offset-1 login-col">
                 <h3>Create an Event!</h3>                
                 <form class="clearfix mb-4 create-event" action="">
@@ -8,43 +28,43 @@
                         <input type="text" id="userid" value={{id}} hidden='true'>
                         <label for="example-text">Phone</label>
                         <input type="text" id="phone" class="form-control" aria-describedby="example-text"
-                            placeholder="Phone Number">
+                            placeholder="Phone Number" required>
 
                         <label for="example-text">City</label>
                         <input type="text" id="city" class="form-control" aria-describedby="example-text"
-                            placeholder="City">
+                            placeholder="City" required>
 
                             <label for="example-text">State</label>
                         <input type="text" id="state" class="form-control" aria-describedby="example-text"
-                            placeholder="State">
+                            placeholder="State" required>
 
                         <label for="example-text">Occasion</label>
                         <input type="text" id="occasion" class="form-control" aria-describedby="example-text"
-                            placeholder="Occasion">
+                            placeholder="Occasion" required>
 
                             <label for="example-text">Courses</label>
                         <input type="text" id="courses" class="form-control" aria-describedby="example-text"
-                            placeholder="Number of Courses">
+                            placeholder="Number of Courses" required>
 
                         <label for="example-text">Consideration</label>
                         <input type="text" id="consideration" class="form-control" aria-describedby="example-text"
-                            placeholder="Kosher, Vegan, Halal, etc..">
+                            placeholder="Kosher, Vegan, Halal, etc.." required>
 
                             <label for="example-text">Size</label>
                         <input type="text" id="size" class="form-control" aria-describedby="example-text"
-                            placeholder="Number of guests">
+                            placeholder="Number of guests" required>
 
                         <label for="example-text">Alcohol</label>
                         <input type="text" id="alcohol" class="form-control" aria-describedby="example-text"
-                            placeholder="yes or no">
+                            placeholder="yes or no" required>
 
                             <label for="example-text">Decor</label>
                         <input type="text" id="decor" class="form-control" aria-describedby="example-text"
-                            placeholder="yes or no">
+                            placeholder="yes or no" required>
 
                         <label for="example-text">comments</label>
                         <input type="text" id="comments" class="form-control" aria-describedby="example-text"
-                            placeholder="Enter Example Text">
+                            placeholder="Enter Example Text" required>
                     </div>
                    
                     <button id="submit" class="btn btn-primary float-right">Create Event</button>
@@ -55,4 +75,4 @@
 </div>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="../public/js/createevent.js"></script>
+<script src="/js/createevent.js"></script>

@@ -1,9 +1,12 @@
+{{!-- <div class="">
+    <h1 style= "color:white"> {{ available.event }} </h1>
+</div> --}}
+
 <div class="container vendorHome-container">
     <h3 id="vendorTitle">Vendor's Homepage</h3>
     <div class="eventList" id="currentJobs">
         <h4>Accepted Jobs:</h4>
-        {{!-- {{This is where the vendor's accepted jobs go?}} --}}
-        {{#each accepted.vendor}}
+        {{#each accepted.events}}
             <li>
                  occasion: {{ this.occasion }}
                  courses: {{ this.courses }}
@@ -26,15 +29,19 @@
         <hr>
         <div id="eventListHB">
             <ul>
-            {{#each available.event}}
+            {{#each available.events}}
                 <li>
-                    occasion: {{ thid.occasion }}
+                    occasion: {{ this.occasion }}
                     courses: {{ this.courses }}
-                    <button href="/api/events/{{this.eventid}}" data-id="{{this.eventid}}">More Info</button>
-                    <button data-id="" >Accept</button>
+                    <button class="moreInfoBtn" href="/api/events/{{this.eventid}}" data-id="{{this.eventid}}">More Info</button>
+                    <button class="vendorAcceptBtn" event-id="{{ this.eventid }}">Accept</button>
                 </li>
             {{/each}}
             </ul>
         </div>
     </div>
 </div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<script type="text/javascript" src="/js/vendor-home.js"></script>

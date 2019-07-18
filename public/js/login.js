@@ -1,3 +1,4 @@
+
 $(function() {
 
   //if they click on the button in the create user form, 
@@ -16,9 +17,12 @@ $(function() {
       data: userLogin
     }).then(
       function(userdata) {
-        console.log("hey user data" + userdata);
+        if(userdata.vendorid) {
+          window.location.href = "/vendor/" + userdata.vendorid;      
+        } else {
+          window.location.href = "/customer";      
+        }
         //TODO: When we create a user, should we take them to the homepage to login with their new info?
-        window.location.href = "/customer";      
       });
   });
  
