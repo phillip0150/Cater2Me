@@ -45,7 +45,7 @@ body {
 .index-body-container {
   max-width: 800px;
   margin-top: 200px;
-  background-color: rgba(255, 255, 255, 0.931);
+  background-color:rgba(255, 255, 255, 0.931);
   border-radius: 25px;
 }
 
@@ -137,6 +137,7 @@ body {
 .view-job-row {
   display: flex;
   justify-content: center;
+  /* color: black; */
 }
 
 .view-job-col {
@@ -144,4 +145,11 @@ body {
   margin-bottom: 40px;
   background-color: white;
   border-radius: 10px;
+}
+
+#madeEventTable{
+  font-family: 'Kalam', cursive;
+  color:black;
+  text-align: center;
+  width: 100%;
 }
