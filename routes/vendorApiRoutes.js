@@ -66,8 +66,8 @@ module.exports = function (app) {
 
   //
   // eslint-disable-next-line no-unused-vars
-  app.put("/api/event/:eventid", function (req, res) {
-    newEventVendor = 88;
+  app.put("/api/event/:eventid/:vendorid", function (req, res) {
+    newEventVendor = req.params.vendoid;
     selectedEvent = req.params.eventid;
     console.log("NEW EVENT VENDOR IN POST: " + newEventVendor);
     console.log("SELECTED EVENT IN POST: " + selectedEvent);

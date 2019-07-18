@@ -1,9 +1,9 @@
 var db = require("../models");
 var passport = require("../config/passport");
 // var passportVendor = require("../config/passportVendor");
-// var Sequelize = require("sequelize");
+var Sequelize = require("sequelize");
 
-// var Op = Sequelize.Op;
+var Op = Sequelize.Op;
 
 module.exports = function(app) {
   
@@ -54,16 +54,16 @@ module.exports = function(app) {
   });
   
   //Getting all events
-  app.get("/api/events", function(req, res){
-    db.Events.findAll({}).then(function(caterdb){
-      //we are creating this object, because we want to send it to our handlebars
-      var hbsObject = {
-        event: caterdb
-      };
-      res.render("vendorhome", hbsObject);
+  // app.get("/api/events", function(req, res){
+  //   db.Events.findAll({}).then(function(caterdb){
+  //     //we are creating this object, because we want to send it to our handlebars
+  //     var hbsObject = {
+  //       event: caterdb
+  //     };
+  //     res.render("vendorhome", hbsObject);
 
-    });
-  });
+  //   });
+  // });
   
   //Getting an event based on a user
   app.get("/api/events/:id", function(req,res){
@@ -116,43 +116,8 @@ module.exports = function(app) {
   });
   
   // Lukes queries start------------------------------------------
-  // get event by size---works------------------------------------
-  app.get("/api/events/size/:size", function(req, res){
-    db.Events.findAll({
-      where: {
-        size: {
-          //size less than or = to params
-          "$lte":req.params.size
-        }
-      }
-    }).then(function(caterdb){
-      //we are creating this object, because we want to send it to our handlebars
-      var hbsObject = {
-        event: caterdb
-      };
-      res.render("vendor", hbsObject);
-      res.json(caterdb);
-
-    });
-  });
   
-  // get event by state-----------------------works--------------------------
-  app.get("/api/events/state/:state", function(req, res){
-    db.Events.findAll({
-      where: {
-        state:req.params.state
-        
-      }
-    }).then(function(caterdb){
-      //we are creating this object, because we want to send it to our handlebars
-      var hbsObject = {
-        event: caterdb
-      };
-      res.render("vendor", hbsObject);
-      res.json(caterdb);
 
-    });
-  });
 
   // get event by decor needed ------------------does work, 0 = false 1 = true-------------------------
   app.get("/api/events/decor/:decor", function(req, res){
