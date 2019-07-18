@@ -1,25 +1,4 @@
 $(function () {
-  function validateForm() {
-    var x = document.getElementsByClassName(".create-event").value;
-    if (x === "") {
-      console.log("all fields must be filled out");
-      return false;
-    }
-    console.log("validating");
-  }
-<<<<<<< HEAD
-
-=======
-  
-  function validateForm() {
-    var x = document.getElementsByClassName(".create-event").value;
-    if (x === "") {
-      console.log("all fields must be filled out");
-      return false;
-    }
-    console.log("validating");
-  }
->>>>>>> master
 
   //if they click on the button in the create vendor form, 
   //create var to store values
@@ -44,7 +23,6 @@ $(function () {
       comments: $("#comments").val().trim()
     };
     console.log(newEvent);
-    validateForm();
 
     $.ajax("/api/createEvent/" + theUserId, {
       type: "POST",
