@@ -7,10 +7,11 @@
     <!-- CUSTOMER VIEW JOBS ROW -->
     <div class="row view-job-row">
         <div class="col-12-lg view-job-col">
-            <table id="madeEventTable">
-                        <thead>
+            <table class="table" id="madeEventTable">
+                        <thead class="thead-light">
                             <tr>
                                 <th>USER ID</th>
+                                <th>EVENT</th>
                                 <th>PHONE</th> 
                                 <th>CITY</th>
                                 <th>STATE</th>
@@ -22,6 +23,7 @@
                          {{#each customer}}
                             <tr>
                                 <td>{{userid}}</td>
+                                <td>{{name}}</td>
                                 <td>{{phone}}</td> 
                                 <td>{{city}}</td>
                                 <td>{{state}}</td>
@@ -42,26 +44,6 @@
         </div>
     </div>
 
-<style>
-    #madeEventTable{
-  font-family: 'Kalam', cursive;
-  color:black;
-  text-align: center;
-  width: 100%;
-}
-
-.custuser{
-    background-color: #132149;
-    width: 235px;
-    margin: 10px;
-    border-radius: 10px;
-}
-.custuser:hover{
-    background-color: black;
-        width: 245px;
-        color: white;
-}
-</style>
 <script>
     function deleteCookie() {
     var cookies = document.cookie.split("; ");

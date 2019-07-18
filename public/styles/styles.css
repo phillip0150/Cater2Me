@@ -14,12 +14,21 @@ body {
   background-attachment: fixed;
 }
 
+p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 .navbar-header {
   position: absolute;
   top: 0;
   width: 100%;
-  background-color: #132149;
+  /* background-color: #132149; */
+  background-image: linear-gradient(to right,#132149, #132149, #344d8b);
   color: white;
+}
+
+#navbar-logo {
+  width: 20rem;
 }
 
 .list-group-item {
@@ -47,7 +56,6 @@ body {
   margin-top: 200px;
   background-color:rgba(255, 255, 255, 0.931);
   border-radius: 25px;
-  
 }
 
 .login-row {
@@ -115,17 +123,16 @@ body {
 /* =================================================================== */
 .customer-home-body-container{
   background-color: #132149;
+  padding: 10px;
   border-radius: 10px;
   width: 75%;
-  color: white;
 }
 
 #name-of-customer {
   text-align: center;
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
 
 .add-event-col {
@@ -136,22 +143,17 @@ body {
 }
 
 .view-job-row {
-  display: flex; 
+  display: flex;
   justify-content: center;
+
 }
 
 .view-job-col {
-  width: 70%;
+  width: 95%;
   margin-bottom: 40px;
   background-color: white;
   border-radius: 10px;
-}
-
-#madeEventTable{
-  font-family: 'Kalam', cursive;
-  color:white;
-  text-align: center;
-  width: 100%;
+  padding: 7px;
 }
 
 .custuser{
