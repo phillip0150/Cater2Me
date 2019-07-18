@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
   function validateForm() {
     var x = document.getElementsByClassName(".create-event").value;
     if (x === "") {
@@ -7,11 +7,11 @@ $(function() {
     }
     console.log("validating");
   }
-  
+
   //if they click on the button in the create vendor form, 
   //create var to store values
   //send those values to /api/createVendor
-  $(".create-event").on("submit", function(event) {
+  $(".create-event").on("submit", function (event) {
     event.preventDefault();
     var theUserId = $("#userid").val();
     var newEvent = {
@@ -32,16 +32,16 @@ $(function() {
     };
     console.log(newEvent);
     validateForm();
-  
+
     $.ajax("/api/createEvent/" + theUserId, {
       type: "POST",
       data: newEvent
     }).then(
-      function() {
+      function () {
         console.log("created a new event!");
         window.location.href = "/customer";
       }
     );
   });
-  
+
 });
