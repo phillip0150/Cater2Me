@@ -81,19 +81,11 @@ module.exports = function(app) {
     res.render("create-event", hbsObject);
   });
 
-<<<<<<< HEAD
   app.get("/logout", function(req, res){
     req.logout();
     res.redirect("/");
   });
   
-=======
-  app.get("/event/:id", function(req,res){
-    res.render("event");
-  });
-
-
->>>>>>> 0089e5f21cd3ef5d8484f132228fbe699a893220
   app.get("*", function(req,res){
     res.render("404");
   });
