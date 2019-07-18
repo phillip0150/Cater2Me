@@ -25,8 +25,10 @@ CREATE TABLE vendor
 
 CREATE TABLE events
 (
-  eventid int NOT NULL AUTO_INCREMENT,
-  FOREIGN KEY (userid) REFERENCES user (userid)
+  eventid int NOT NULL AUTO_INCREMENT, 
+  userid int, 
+  FOREIGN KEY (userid) REFERENCES user (userid), 
+  vendorid int NULL, 
   phone varchar (20) NOT NULL,
   city VARCHAR (100) NOT NULL,
   state varchar (10) NOT NULL,
@@ -39,4 +41,3 @@ CREATE TABLE events
   comments text (2000) NOT NULL, 
   PRIMARY KEY (eventid)
 );
-

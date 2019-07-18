@@ -2,7 +2,6 @@
     <h3 id="vendorTitle">Vendor's Homepage</h3>
     <div class="eventList" id="currentJobs">
         <h4>Accepted Jobs:</h4>
-        {{!-- {{This is where the vendor's accepted jobs go?}} --}}
         {{#each accepted.vendor}}
             <li>
                  occasion: {{ this.occasion }}
@@ -39,19 +38,18 @@
     </div>
 </div>
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+{{!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script> --}}
 
-<script>
+{{!-- <script>
 
-    {{!-- console.log("WINDOW LOCATION PATHNAME" + window.location.pathname); --}}
-    {{!-- var location = window.location.pathname; --}}
-    {{!-- var id; --}}
+    console.log("WINDOW LOCATION PATHNAME" + window.location.pathname);
+    var location = window.location.pathname; 
+    var id; 
     var splitPath = location.split('/');
 
     $(".vendorAccept").attr("id", window.location.pathname);
 
     $(".vendorAccept").on("click", function(){
-
         console.log("I've been clicked");
     });
-</script>
+</script> --}}
