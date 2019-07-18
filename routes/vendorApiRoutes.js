@@ -62,4 +62,15 @@ module.exports = function (app) {
       res.json("vendor was created");
     });
   });
+
+
+  //
+  app.put("/api/event/:eventid", function (req, res, next){ 
+    db.Event.update(
+      {vendorid: req.body.vendorId},
+      {where: req.params.eventid}
+    )
+  }).then(function(caterdb) {
+    res.json("RESPONSE FROM PUT REQUEST: " + caterdb);
+  });
 };

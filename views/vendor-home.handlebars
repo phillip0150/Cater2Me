@@ -33,8 +33,8 @@
                 <li>
                     occasion: {{ this.occasion }}
                     courses: {{ this.courses }}
-                    <button href="/api/events/{{this.eventid}}" data-id="{{this.eventid}}">More Info</button>
-                    <button data-id="" class="vendorAccept" >Accept</button>
+                    <button class="moreInfoBtn" href="/api/events/{{this.eventid}}" data-id="{{this.eventid}}">More Info</button>
+                    <button class="vendorAcceptBtn" event-id="{{ this.eventid }}">Accept</button>
                 </li>
             {{/each}}
             </ul>
@@ -42,18 +42,6 @@
     </div>
 </div>
 
-{{!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script> --}}
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
-{{!-- <script>
-
-    console.log("WINDOW LOCATION PATHNAME" + window.location.pathname);
-    var location = window.location.pathname; 
-    var id; 
-    var splitPath = location.split('/');
-
-    $(".vendorAccept").attr("id", window.location.pathname);
-
-    $(".vendorAccept").on("click", function(){
-        console.log("I've been clicked");
-    });
-</script> --}}
+<script type="text/javascript" src="/js/vendor-home.js"></script>

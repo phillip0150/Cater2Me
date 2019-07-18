@@ -35,7 +35,8 @@ module.exports = function(app) {
   });
 
   //Vendor homepage handlebars
-  app.get("/vendor/:id", isAuthenticated, function(req,res){
+  //TODO add isAuthenticated when finished testing
+  app.get("/vendor/:id", function(req,res){
     //Ask DB to find all events available
     db.Events.findAll({}).then(function(caterdb) {
       var allEvents = {
