@@ -15,7 +15,12 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       model: "Vendor",
       key: "vendorid",
-      allowNull:true
+      allowNull: true
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      len: [1]
     },
     name: {
       type: DataTypes.STRING,

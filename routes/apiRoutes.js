@@ -83,20 +83,6 @@ module.exports = function(app) {
     });
   });
   
-  //Look at event
-  app.get("/api/event/:id", function(req, res) {
-    db.Events.findOne({
-      where: {
-        eventid: req.params.id
-      }
-    }).then(function(caterdb) {
-      //we are creating this object, because we want to send it to our handlebars
-      var hbsObject = {
-        event: caterdb
-      };
-      res.render("event", hbsObject);
-    });
-  });
   
   // Lukes queries start------------------------------------------
   // get event by size----works------------------------------------
@@ -157,6 +143,3 @@ module.exports = function(app) {
 
   
 };
-
-
-

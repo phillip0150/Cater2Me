@@ -1,7 +1,7 @@
 /* Global Styling */
 /* =================================================================== */
 html {
-  height:100%;
+  height: 100%;
 }
 
 body {
@@ -74,7 +74,7 @@ p {
 
 .createAcct-body-container {
   /* max-width: 1100px; */
-  background-color:rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
   border-radius: 25px;
 }
 
@@ -98,8 +98,8 @@ p {
   border-radius: 20px;
 }
 
-#vendorTitle{
-  color:white;
+#vendorTitle {
+  color: white;
 }
 
 .eventList {
@@ -121,7 +121,7 @@ p {
 }
 /* Customer Homepage Page Styling */
 /* =================================================================== */
-.customer-home-body-container{
+.customer-home-body-container {
   background-color: #132149;
   padding: 10px;
   border-radius: 10px;
@@ -137,7 +137,7 @@ p {
 
 .add-event-col {
   width: 100%;
-  display: flex; 
+  display: flex;
   justify-content: center;
   margin: 10px;
 }
@@ -145,7 +145,11 @@ p {
 .view-job-row {
   display: flex;
   justify-content: center;
+<<<<<<< HEAD
 
+=======
+  /* color: black; */
+>>>>>>> master
 }
 
 .view-job-col {
@@ -153,10 +157,20 @@ p {
   margin-bottom: 40px;
   background-color: white;
   border-radius: 10px;
+<<<<<<< HEAD
   padding: 7px;
+=======
 }
 
-.custuser{
+#madeEventTable{
+  font-family: 'Kalam', cursive;
+  color:black;
+  text-align: center;
+  width: 100%;
+>>>>>>> master
+}
+
+/* .custuser{
     background-color: #132149;
     width: 235px;
     margin: 10px;
@@ -166,4 +180,4 @@ p {
     background-color: black;
         width: 245px;
         color: white;
-}
+} */
