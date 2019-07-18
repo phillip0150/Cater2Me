@@ -16,6 +16,7 @@ $(function() {
     var theUserId = $("#userid").val();
     var newEvent = {
       userid: $("#userid").val(),
+      name: $("#name").val().trim(),
       phone: $("#phone").val().trim(),
       city: $("#city").val().trim(),
       state: $("#state").val().trim(),
