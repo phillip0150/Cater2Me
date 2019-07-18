@@ -8,6 +8,14 @@ $(function() {
     console.log("validating");
   }
   
+  function validateForm() {
+    var x = document.getElementsByClassName(".create-event").value;
+    if (x === "") {
+      console.log("all fields must be filled out");
+      return false;
+    }
+    console.log("validating")
+  }
   //if they click on the button in the create vendor form, 
   //create var to store values
   //send those values to /api/createVendor
