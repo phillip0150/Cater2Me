@@ -81,6 +81,11 @@ module.exports = function(app) {
     res.render("create-event", hbsObject);
   });
 
+  app.get("/event/:id", function(req,res){
+    res.render("event");
+  });
+
+
   app.get("*", function(req,res){
     res.render("404");
   });
