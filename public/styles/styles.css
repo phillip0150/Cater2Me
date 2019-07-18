@@ -7,22 +7,44 @@ html {
 body {
   background-image: url("https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80");
   height: 100%;
+  background-color: #cccccc;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-.jumbotron-custom {
-  max-height: 200px;
-  background-color:rgb(255, 201, 77);
+.navbar-header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: #132149;
+  color: white;
 }
 
 .list-group-item {
   line-height: 2.5;
 }
 
+.container {
+  margin-top: 120px;
+}
+
+.log-in {
+  background-color: #132149;
+  color: white;
+}
+
+.log-out {
+  background-color: #132149;
+  color: white;
+}
+
 /* Index Page Styling */
 /* =================================================================== */
 .index-body-container {
   max-width: 800px;
-  margin-top: 50px;
+  margin-top: 200px;
   background-color:rgba(255, 255, 255, 0.931);
   border-radius: 25px;
   
@@ -92,29 +114,10 @@ body {
 /* Customer Homepage Page Styling */
 /* =================================================================== */
 .customer-home-body-container{
-  background-color:rgb(255, 201, 77);
-  border-radius: 10px;
-  width: 75%;
-  /* border-style: solid;
-  border-width: 1px; */
-}
-
-.event-wrapper {
-  /* border-style: solid;
-  border-width: 1px; */
-  display: flex; 
-  justify-content: center;
-}
-
-.event-wrapper-col {
-  /* border-style: solid;
-  border-width: 1px; */
-  width: 70%;
   background-color: #132149;
   border-radius: 10px;
-  margin: 10px;
-  /* display: flex; 
-  justify-content: center; */
+  width: 75%;
+  color: white;
 }
 
 #name-of-customer {
@@ -125,14 +128,11 @@ body {
   margin-bottom: 10px;
 }
 
-.add-event-row {
-}
-
 .add-event-col {
   width: 100%;
   display: flex; 
   justify-content: center;
-  margin: 30px;
+  margin: 10px;
 }
 
 .view-job-row {
@@ -144,8 +144,24 @@ body {
   width: 70%;
   margin-bottom: 40px;
   background-color: white;
-  height: 300px;
   border-radius: 10px;
-  /* border-style: solid;
-  border-width: 1px; */
+}
+
+#madeEventTable{
+  font-family: 'Kalam', cursive;
+  color:white;
+  text-align: center;
+  width: 100%;
+}
+
+.custuser{
+    background-color: #132149;
+    width: 235px;
+    margin: 10px;
+    border-radius: 10px;
+}
+.custuser:hover{
+    background-color: black;
+        width: 245px;
+        color: white;
 }
