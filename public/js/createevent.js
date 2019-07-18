@@ -16,6 +16,8 @@ $(function() {
     }
     console.log("validating")
   }
+
+  $("#home").on("click", function)
   //if they click on the button in the create vendor form, 
   //create var to store values
   //send those values to /api/createVendor

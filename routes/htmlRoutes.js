@@ -70,12 +70,13 @@ module.exports = function(app) {
     res.render("create-event", hbsObject);
   });
 
+  app.get("/logout", function(req, res){
+    req.logout();
+    res.redirect("/");
+  });
+  
   app.get("*", function(req,res){
     res.render("404");
   });
 
-<<<<<<< HEAD
 };
-=======
-};
->>>>>>> c4726f96baa67228a7617c89b5c4aa54e8e9c535
