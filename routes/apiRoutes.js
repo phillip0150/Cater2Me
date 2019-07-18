@@ -21,23 +21,7 @@ module.exports = function(app) {
 
   //Look up user
   app.post("/api/login", passport.authenticate("local"), function(req,res){
-    // console.log(req);
-    // db.User.findOne({
-    //   where: {
-    //     email: req.body.email
 
-    //   }
-    // }).then(function(caterdb){
-    //   if(caterdb){
-    //     if(db.User.validPassword(req.body.password)){
-    //       res.json(dbUser);
-    //     }
-    //     else {
-    //       res.render("index");
-    //     }
-    //   }
-    //   res.render("userhome", hbsObject);
-    // });
     res.json(req.user);
   });
   
@@ -85,6 +69,7 @@ module.exports = function(app) {
     db.Events.create({
       userid: req.params.id,
       vendorid: null,
+      name: req.body.name,
       phone: req.body.phone,
       city: req.body.city,
       state: req.body.state,
@@ -100,20 +85,6 @@ module.exports = function(app) {
     });
   });
   
-  //Look at event
-  app.get("/api/event/:id", function(req, res) {
-    db.Events.findOne({
-      where: {
-        eventid: req.params.id
-      }
-    }).then(function(caterdb) {
-      //we are creating this object, because we want to send it to our handlebars
-      var hbsObject = {
-        event: caterdb
-      };
-      res.render("event", hbsObject);
-    });
-  });
   
   // Lukes queries start------------------------------------------
   
@@ -140,6 +111,3 @@ module.exports = function(app) {
 
   
 };
-
-
-

@@ -1,55 +1,45 @@
+<div class="container customer-home-body-container">
 
+    <h1 class="cust-name" id="name-of-customer">Welcome {{name}}</h1>
 
-    <div class="container customer-home-body-container">
-        <!-- CUSTOMER NAME ROW -->
-        <div class="row customer-name-row">
-            <div class="col-12-lg add-event-col">
-                <h1 class="cust-name" id="name-of-customer">Welcome {{name}}</h1>
-            </div>
-        </div>
-
-        <!-- CUSTOMER EVEN WRAPPER -->
-        <div class="row event-wrapper">
-            <div class="col-12-lg event-wrapper-col">
-
-            <!-- CUSTOMER ADD NEW EVENT BUTTON ROW  -->
-            <div class="row add-event-row">
-                <div class="col-12-lg add-event-col">
-                    <a href="/event/create/{{userid}}"><button id="submit" class="btn-lg btn-primary create-new-event">Create New Event</button></a>
-                </div>
-            </div>
-
-            <!-- CUSTOMER VIEW JOBS ROW -->
-            <div class="row view-job-row">
-                <div class="col-12-lg view-job-col">
-                    <ul>
+    <!-- CUSTOMER VIEW JOBS ROW -->
+    <div class="row view-job-row">
+        <div class="col-12-lg view-job-col">
+            <table id="madeEventTable">
+                <thead>
+                    <tr>
+                        <th>USER ID</th>
+                        <th>NAME</th>
+                        <th>PHONE</th>
+                        <th>CITY</th>
+                        <th>STATE</th>
+                        <th>OCCASION</th>
+                        <th>SIZE</th>
+                    </tr>
+                </thead>
+                <tbody>
                     {{#each customer}}
-                        <li> <p>Event Id: {{eventid}}</p></li>
-                        <li> <p>User Id: {{userid}}</p></li>
-                        <li> <p>Vendor Id: {{vendorid}}</p></li>
-                        <li> <p>phone: {{phone}}</p></li>
-                        <li> <p>city: {{city}}</p></li>
-                        <li> <p>state: {{state}}</p></li>
-                        <li> <p>occasion: {{occasion}}</p></li>
-                        <li> <p>courses: {{courses}}</p></li>
-                        <li> <p>consideration: {{consideration}}</p></li>
-                        <li> <p>size: {{size}}</p></li>
-                        <li> <p>alcohol: {{alcohol}}</p></li>
-                        <li> <p>decor: {{decor}}</p></li>
-                        <li> <p>comments: {{comments}}</p></li>
+                    <tr>
+                        <td>{{userid}}</td>
+                        <td>{{name}}</td>
+                        <td>{{phone}}</td>
+                        <td>{{city}}</td>
+                        <td>{{state}}</td>
+                        <td>{{occasion}}</td>
+                        <td>{{size}}</td>
+                    </tr>
                     {{/each}}
-                    </ul>
-                </div>
-            </div>
-
+                </tbody>
+            </table>
         </div>
-        </div>
-
     </div>
 
-
-
-
-
+    <!-- CUSTOMER ADD NEW EVENT BUTTON-ROW  -->
+    <div class="row add-event-row">
+        <div class="col-12-lg add-event-col">
+            <a href="/event/create/{{userid}}"><button id="submit" class="btn btn-outline-light my-2 my-sm-0 custuser create-new-event">Create New Event</button></a>
+            <a href="/logout"><button id="cookie" class="btn btn-outline-light my-2 my-sm-0 custuser" onclick="" >Log Out</button></a>
+        </div>
+    </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    {{!-- <script src="/js/create.js"></script> --}}
+    <script src="/js/create.js"></script>

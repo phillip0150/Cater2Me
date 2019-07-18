@@ -81,24 +81,43 @@ module.exports = function(app) {
     });
   });
 
-    // get event by state-----------------------works--------------------------
-    app.get("/events/state/:state/:vendorid", function(req, res){
-      db.Events.findAll({
-        where: {
-          state:req.params.state
+  // get event by state-----------------------works--------------------------
+  app.get("/events/state/:state/:vendorid", function(req, res){
+    db.Events.findAll({
+      where: {
+        state:req.params.state
           
-        }
-      }).then(function(caterdb){
-        //we are creating this object, because we want to send it to our handlebars
-        var hbsObject = {
-          event: caterdb
-        };
-        res.render("vendor-home", hbsObject);
+      }
+    }).then(function(caterdb){
+      //we are creating this object, because we want to send it to our handlebars
+      var hbsObject = {
+        event: caterdb
+      };
+      res.render("vendor-home", hbsObject);
   
-      });
     });
+  });
 
 
+  app.get("/logout", function(req, res){
+    req.logout();
+    res.redirect("/");
+  });
+
+  app.get("/event/:id", function(req, res) {
+    db.Events.findOne({
+      where: {
+        eventid: req.params.id
+      }
+    }).then(function(caterdb) {
+      //we are creating this object, because we want to send it to our handlebars
+      var hbsObject = {
+        event: caterdb
+      };
+      res.render("event", hbsObject);
+    });
+  });
+  
   app.get("*", function(req,res){
     res.render("404");
   });
