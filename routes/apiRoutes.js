@@ -2,7 +2,6 @@ var db = require("../models");
 var passport = require("../config/passport");
 // var passportVendor = require("../config/passportVendor");
 // var Sequelize = require("sequelize");
-
 // var Op = Sequelize.Op;
 
 module.exports = function(app) {
@@ -100,7 +99,7 @@ module.exports = function(app) {
   });
   
   // Lukes queries start------------------------------------------
-  // get event by size---works------------------------------------
+  // get event by size----works------------------------------------
   app.get("/api/events/size/:size", function(req, res){
     db.Events.findAll({
       where: {
