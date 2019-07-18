@@ -69,10 +69,8 @@ module.exports = function (app) {
   app.put("/api/event/", function (req, res) {
     var newEventVendor = req.body.vendorid;
     var selectedEvent = req.body.eventid;
-    console.log("NEW EVENT VENDOR IN PUT: " + newEventVendor);
-    console.log("SELECTED EVENT IN PUT: " + selectedEvent);
-    
-    // console.log(res.json());
+    // console.log("NEW EVENT VENDOR IN PUT: " + newEventVendor);
+    // console.log("SELECTED EVENT IN PUT: " + selectedEvent);
 
     db.Events.update(
       { vendorid : newEventVendor },

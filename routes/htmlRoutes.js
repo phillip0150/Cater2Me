@@ -36,28 +36,38 @@ module.exports = function(app) {
   //Vendor homepage handlebars
   //TODO add isAuthenticated when finished testing
   app.get("/vendor/:id", function(req,res){
-    //Ask DB to find all events available
+    //Ask DB to find all events available where there are no vendors assigned
     db.Events.findAll({}).then(function(caterdb) {
-      var allEvents = {
-        events: caterdb
-      };
-      
+     
+      var availableArr = [];
+      var vendorArr = [];
+
       //For each element, if the vendor id = the event table's vendor id 
       //then push that event to the vendorArr
-      var vendorArr = [];
       caterdb.forEach(function(obj) {
-        if (obj.vendorid === req.params.id) {
-          vendorArr.push(obj);
-        }
+        if (obj.vendorid === null) {
+          availableArr.push(obj);
+        } 
       });
+
+      caterdb.forEach(function(obj) {
+        if (obj.vendorid == req.params.id) {
+          vendorArr.push(obj);
+        } 
+      });
+      
+      var allEvents = {
+        events: availableArr
+      };
   
       var vendorEvents = {
         events: vendorArr
       };
 
-      // console.log("VENDOR EVENTS: " + JSON.stringify(vendorEvents));
-      // console.log("AVAILABLE EVENTS: " + JSON.stringify(allEvents));
-      
+      console.log("VENDOR ARRAY: " + JSON.stringify(vendorArr));
+      console.log("VENDOR EVENTS: " + JSON.stringify(vendorEvents));
+      console.log("AVAILABLE EVENTS: " + JSON.stringify(allEvents));
+
       res.render("vendor-home", {accepted: vendorEvents, available: allEvents});
     });
   });

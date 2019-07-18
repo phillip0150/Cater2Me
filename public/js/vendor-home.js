@@ -8,7 +8,6 @@ $(".vendorAcceptBtn").attr("vendor-id", vendorId);
 
 //When any "Accept" button is clicked...
 $(".vendorAcceptBtn").on("click", function () {
-  console.log("I've been clicked");
 
   var vendorId = $(this).attr("vendor-id");
   var eventId = $(this).attr("event-id");
@@ -17,16 +16,14 @@ $(".vendorAcceptBtn").on("click", function () {
     eventid: eventId
   };
 
-  console.log("VENDOR ID: " + vendorId);
-  console.log("EVENT ID: " + eventId);
-
+//   console.log("VENDOR ID: " + vendorId);
+//   console.log("EVENT ID: " + eventId);
 
   $.ajax("/api/event/", {
     type: "PUT",
     data: eventUpdate
-  }).then(function (res) {
-    // console.log("AJAX CALL CAME BACK");
-    // console.log(res);
+  }).then(function () {
+    // location.reload();
   });
 });
 
