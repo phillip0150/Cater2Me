@@ -1,26 +1,30 @@
 <div class="card">
           <div class="card-header eventName">
-            <h2>Event Name</h2>
+            <h2>Event: </h2>
           </div>
           <div class="card-body">
             
-            <p class="card-text eventDesc">With supporting text below as a natural lead-in to additional content.</p>
+            <p class="card-text eventDesc">.</p>
             <div class="card" style="width: 18rem;">
                 
-                <div class="card-body">
+                <div class="card-body" id="people">
                   <p class="card-text"><h2>People</h2></p>
+                  <p></p>
+                  
                 </div>
               </div>
               <div class="card" style="width: 18rem;">
                   
-                  <div class="card-body">
-                    <p class="card-text"><h2>Category</h2></p>
+                  <div class="card-body"id="occassions">
+                    <p class="card-text"><h2>Occassions</h2></p>
+                    <p></p>
                   </div>
                 </div>
                 <div class="card" style="width: 18rem;">
                     
-                    <div class="card-body">
-                      <p class="card-text"><h2>Date</h2></p>
+                    <div class="card-body"id="date">
+                      <p class="card-text"><h2>Date</h2>
+                      </p>
                     </div>
                   </div>
             <a href="#" class="btn btn-primary" id="acceptEvent">Accept</a>
@@ -32,12 +36,9 @@
 
   $("#acceptEvent").on("click",function(){
     console.log('Button works!!');
+});
 
-    
-    
-    
 
-  })
 
 </script>
 
