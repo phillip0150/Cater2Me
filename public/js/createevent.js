@@ -32,7 +32,7 @@ $(function() {
     console.log(newEvent);
     validateForm();
   
-    $.ajax("/api/createEvent/"+theUserId, {
+    $.ajax("/api/createEvent/" + theUserId, {
       type: "POST",
       data: newEvent
     }).then(
