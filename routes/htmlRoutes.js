@@ -1,6 +1,5 @@
 var db = require("../models");
 var isAuthenticated = require("../config/middleware/isAuthenticated");
-var chalk = require("chalk");
 
 
 module.exports = function(app) {

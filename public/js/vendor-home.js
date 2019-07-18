@@ -1,12 +1,14 @@
-$(document).ready(function () {
+// $(document).ready(function () {
     var placeArray = (window.location.pathname).split('/');
     var vendorId = placeArray.slice(-1)[0];
+    console.log("VENDOR ID OUTSIDE CLICK FUNCTION: " + vendorId);
 
     //All "Accept" buttons have a data-id that matches the vendorId
     $(".vendorAcceptBtn").attr("data-id", vendorId);
 
     //When any "Accept" button is clicked...
-    $(".vendorAcceptBtn").on("click", function (vendorId) {
+    $(".vendorAcceptBtn").on("click", function () {
+        console.log("VENDOR ID INSIDE THE CLICK FUNCTION: " + vendorId);
         console.log("I've been clicked");
 
         var eventId = $(this).attr('event-id');
@@ -31,4 +33,4 @@ $(document).ready(function () {
         window.location.href = "/event/" + btnID;
     });
 
-});
+// });
