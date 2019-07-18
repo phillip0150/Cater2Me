@@ -55,8 +55,8 @@ module.exports = function(app) {
         events: vendorArr
       };
 
-      console.log("VENDOR EVENTS: " + JSON.stringify(vendorEvents));
-      console.log("AVAILABLE EVENTS: " + JSON.stringify(allEvents));
+      // console.log("VENDOR EVENTS: " + JSON.stringify(vendorEvents));
+      // console.log("AVAILABLE EVENTS: " + JSON.stringify(allEvents));
       
       res.render("vendor-home", {accepted: vendorEvents, available: allEvents});
     });
