@@ -84,6 +84,7 @@ module.exports = function(app) {
     db.Events.create({
       userid: req.params.id,
       vendorid: null,
+      name: req.body.name,
       phone: req.body.phone,
       city: req.body.city,
       state: req.body.state,
@@ -174,6 +175,3 @@ module.exports = function(app) {
 
   
 };
-
-
-

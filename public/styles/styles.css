@@ -1,7 +1,7 @@
 /* Global Styling */
 /* =================================================================== */
 html {
-  height:100%;
+  height: 100%;
 }
 
 body {
@@ -47,7 +47,6 @@ body {
   margin-top: 200px;
   background-color:rgba(255, 255, 255, 0.931);
   border-radius: 25px;
-  
 }
 
 .login-row {
@@ -66,7 +65,7 @@ body {
 
 .createAcct-body-container {
   /* max-width: 1100px; */
-  background-color:rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
   border-radius: 25px;
 }
 
@@ -90,8 +89,8 @@ body {
   border-radius: 20px;
 }
 
-#vendorTitle{
-  color:white;
+#vendorTitle {
+  color: white;
 }
 
 .eventList {
@@ -113,7 +112,7 @@ body {
 }
 /* Customer Homepage Page Styling */
 /* =================================================================== */
-.customer-home-body-container{
+.customer-home-body-container {
   background-color: #132149;
   border-radius: 10px;
   width: 75%;
@@ -130,14 +129,15 @@ body {
 
 .add-event-col {
   width: 100%;
-  display: flex; 
+  display: flex;
   justify-content: center;
   margin: 10px;
 }
 
 .view-job-row {
-  display: flex; 
+  display: flex;
   justify-content: center;
+  /* color: black; */
 }
 
 .view-job-col {
@@ -149,12 +149,12 @@ body {
 
 #madeEventTable{
   font-family: 'Kalam', cursive;
-  color:white;
+  color:black;
   text-align: center;
   width: 100%;
 }
 
-.custuser{
+/* .custuser{
     background-color: #132149;
     width: 235px;
     margin: 10px;
@@ -164,4 +164,4 @@ body {
     background-color: black;
         width: 245px;
         color: white;
-}
+} */
