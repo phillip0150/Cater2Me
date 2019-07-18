@@ -17,19 +17,19 @@ module.exports = function(app) {
 
   // customer homepage
   app.get("/customer", isAuthenticated, function(req, res) {
-      db.Events.findAll({
-        where: {
-          userid: req.user.userid
-        }
-      }).then(function(caterdb){
-        var hbsObject = {
-          customer: caterdb,
-          name: req.user.name,
-          userid: req.user.userid
-        };
-        console.log("in customer page");
-        res.render("customer-home", hbsObject);
-      });
+    db.Events.findAll({
+      where: {
+        userid: req.user.userid
+      }
+    }).then(function(caterdb){
+      var hbsObject = {
+        customer: caterdb,
+        name: req.user.name,
+        userid: req.user.userid
+      };
+      console.log("in customer page");
+      res.render("customer-home", hbsObject);
+    });
     // }
   });
 
