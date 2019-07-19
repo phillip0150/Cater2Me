@@ -148,7 +148,8 @@ a:hover {
  */
 #menu {
   position: absolute;
-  width: 20%;
+  text-align: center;
+  width: 140px;
   height: 150px;
   margin: 19px 0 0 230px;
   padding: 8px;
@@ -337,11 +338,14 @@ a:hover {
   color: white;
 }
 
+.txt-white {
+  color: white;
+}
+
 .view-job-row {
   display: flex;
   justify-content: center;
   margin-bottom: 12px;
-  color: white;
 }
 
 .view-job-col {
