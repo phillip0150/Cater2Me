@@ -140,20 +140,24 @@ module.exports = function(app) {
   });
 
   // get event by decor needed ------------------does work, 0 = false 1 = true-------------------------
-  app.get("/api/events/decor/:decor", function(req, res){
-    db.Events.findAll({
-      where: {
-        decor:req.params.decor
-      }      
-    }).then(function(caterdb){
-      //we are creating this object, because we want to send it to our handlebars
-      var hbsObject = {
-        event: caterdb
-      };
-      res.render("vendor", hbsObject);
-      res.json(caterdb);
+  app.post("/api/event/edit/:id", function(req, res){
+    db.Events.update({name: req.body.name,
+      phone: req.body.phone,
+      city: req.body.city,
+      state: req.body.state,
+      occasion: req.body.occasion,
+      courses: req.body.courses,
+      consideration: req.body.consideration,
+      size: req.body.size,
+      alcohol: req.body.size,
+      decor: req.body.decor,
+      comments: req.body.comments},{ where : { eventid : req.params.id }}).then(function(){
+      res.redirect("/customer");
     });
+   
   });
+    
+  
   // get event by booze needed
   //multiple queries at once
 };
