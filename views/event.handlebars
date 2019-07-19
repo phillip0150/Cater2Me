@@ -4,25 +4,39 @@
 
     <!-- CUSTOMER VIEW JOBS ROW -->
     <div class="row view-job-row">
-        <div class="col-12-lg view-job-col txt-white">
-            <h3>Event Name: {{event.name}}</h3>
-            <h4><p>Customer Comments: {{event.comments}}</p></h4>
-               <table id="madeEventTable">
+        <div class="col-12-lg view-job-col">
+            <table id="madeEventTable">
                 <thead>
-                  <tr>
-                        <td>People</td>
-                        <td>Category</td>
-                        <td>Date</td>
+                    <tr>
+                        <th>NAME</th>
+                        <th>PHONE</th>
+                        <th>CITY</th>
+                        <th>STATE</th>
+                        <th>OCCASION</th>
+                        <th>SIZE</th>
+                        <th>COURSES</th>
+                        <th>CONSIDERATION</th>
+                        <th>ALCOHOL</th>
+                        <th>DECOR</th>
+                        <th>COMMENTS</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>{{event.size}}</td>
+                        <td>{{event.name}}</td>
                         <td>{{event.phone}}</td>
                         <td>{{event.city}}</td>
+                        <td>{{event.state}}</td>
+                        <td>{{event.occasion}}</td>
+                        <td>{{event.size}}</td>
+                        <td>{{event.courses}}</td>
+                        <td>{{event.consideration}}</td>
+                        <td>{{event.alcohol}}</td>
+                        <td>{{event.decor}}</td>
+                        <td>{{event.comments}}</td>
                     </tr>
                 </tbody>
-                </table>
+            </table>
         </div>
     </div>
 
