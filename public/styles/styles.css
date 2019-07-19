@@ -137,34 +137,19 @@ p {
   color: white;
 }
 
-.add-event-col {
-  left:100px;
-  width: 30%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 10px;
-}
-
-.logout-col {
-  width: 30%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 10px;
-}
-
 .view-job-row {
   display: flex;
   justify-content: center;
+  margin-bottom: 12px;
 }
 
 .view-job-col {
   width: 95%;
-  margin-bottom: 15px;
-  background-color: white;
+}
+
+.view-job-col table {
+  background: white;
   border-radius: 10px;
-  padding: 7px 7px 0px 7px;
 
 }
 
@@ -174,19 +159,3 @@ p {
   margin-bottom: 0;
   background-color: transparent;
 }
-
-.add-event-col a {
-
-}
-
-/* .custuser{
-    background-color: #132149;
-    width: 235px;
-    margin: 10px;
-    border-radius: 10px;
-}
-.custuser:hover{
-    background-color: black;
-        width: 245px;
-        color: white;
-} */
