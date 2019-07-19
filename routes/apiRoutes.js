@@ -1,8 +1,8 @@
 var db = require("../models");
 var passport = require("../config/passport");
 // var passportVendor = require("../config/passportVendor");
-// var Sequelize = require("sequelize");
-// var Op = Sequelize.Op;
+var Sequelize = require("sequelize");
+var Op = Sequelize.Op;
 
 module.exports = function(app) {
   
@@ -86,39 +86,55 @@ module.exports = function(app) {
   
   // Lukes queries start------------------------------------------
   // get event by size----works------------------------------------
-  app.get("/api/events/size/:size", function(req, res){
+  app.get("/events/size/:size/:vendorid", function(req, res){
     db.Events.findAll({
       where: {
+        vendorid: null,
         size: {
-          //size less than or = to params
-          "$lte":req.params.size
+          [Op.lte]:[req.params.size]
         }
       }
-    }).then(function(caterdb){
-      //we are creating this object, because we want to send it to our handlebars
-      var hbsObject = {
-        event: caterdb
+    }).then(function(caterdb) {
+      var nullVendorEvents = {
+        events: caterdb
       };
-      res.render("vendor", hbsObject);
-      res.json(caterdb);
+      db.Events.findAll({
+        where: {
+          vendorid: req.params.vendorid
+        }
+      }).then(function(morecaterdb){
+        var acceptedEvents = {
+          events: morecaterdb
+        };
+        res.render("vendor-home", {accepted: acceptedEvents, available: nullVendorEvents});
+
+      });
 
     });
   });
   
   // get event by state-----------------------works--------------------------
-  app.get("/api/events/state/:state", function(req, res){
+  app.get("/events/state/:state/:vendorid", function(req, res){
     db.Events.findAll({
       where: {
-        state:req.params.state
-        
+        vendorid: null,
+        state: req.params.state
       }
-    }).then(function(caterdb){
-      //we are creating this object, because we want to send it to our handlebars
-      var hbsObject = {
-        event: caterdb
+    }).then(function(caterdb) {
+      var nullVendorEvents = {
+        events: caterdb
       };
-      res.render("vendor", hbsObject);
-      res.json(caterdb);
+      db.Events.findAll({
+        where: {
+          vendorid: req.params.vendorid
+        }
+      }).then(function(morecaterdb){
+        var acceptedEvents = {
+          events: morecaterdb
+        };
+        res.render("vendor-home", {accepted: acceptedEvents, available: nullVendorEvents});
+
+      });
 
     });
   });
