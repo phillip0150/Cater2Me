@@ -115,6 +115,7 @@ module.exports = function(app) {
   
   // get event by state-----------------------works--------------------------
   app.get("/events/state/:state/:vendorid", function(req, res){
+    //Ask DB to find all events available where there are no vendors assigned
     db.Events.findAll({
       where: {
         vendorid: null,
@@ -124,6 +125,7 @@ module.exports = function(app) {
       var nullVendorEvents = {
         events: caterdb
       };
+      //Find all events that have the same vendor id as the params.id
       db.Events.findAll({
         where: {
           vendorid: req.params.vendorid
@@ -132,10 +134,23 @@ module.exports = function(app) {
         var acceptedEvents = {
           events: morecaterdb
         };
-        res.render("vendor-home", {accepted: acceptedEvents, available: nullVendorEvents});
+        //Find vendor where vendor id = params.id
+        db.Vendor.findOne({
+          where: {
+            vendorid: req.params.vendorid
+          }
+        }).then(function(userData) {
+          //Getting vendor name from DB
+          var vendorName = userData.name;
+
+          res.render("vendor-home", {
+            accepted: acceptedEvents, 
+            available: nullVendorEvents,
+            vendorName: vendorName
+          });
+        });
 
       });
-
     });
   });
 

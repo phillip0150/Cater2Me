@@ -39,10 +39,6 @@ p {
   line-height: 2.5;
 }
 
-.container {
-  margin-top: 120px;
-}
-
 .log-in {
   background-color: #132149;
   color: white;
@@ -191,7 +187,7 @@ a:hover {
 
 /* Index Page Styling */
 /* =================================================================== */
-.index-body-container {
+#index-body-container {
   max-width: 60%;
   margin-top: 120px;
   background-color:rgba(255, 255, 255, 0.931);
@@ -206,19 +202,16 @@ a:hover {
   min-width: 650px;
 }
 
-.card-info-container {
-  max-width: 90%;
-  margin-top: 40px;
+#card-info-container {
+  margin-top: 20px;
 }
 
-.about-us-card {
-  background-color:rgba(255, 255, 255, 0.931);
-  max-width: 100%;
-  border-radius: 10px;
+.info-col {
+  width: 200px;
 }
 
-.how-does-it-card {
-  background-color:rgba(255, 255, 255, 0.931);
+.info-card {
+  background-color:rgba(255, 255, 255, 0.924);
   max-width: 100%;
   border-radius: 10px;
 }

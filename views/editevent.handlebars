@@ -137,9 +137,8 @@
                         </select>
 
                         <label for="comments">Comments</label>
-                        <input type="text" id="comments" class="form-control" aria-describedby="comments"
-                            placeholder="Any Kid's Meals? Dislikes?" value={{event.comments}}>
-
+                        <textarea  rows = "5" cols = "50" id="comments" class="form-control" aria-describedby="comments"
+                            placeholder="Any Kid's Meals? Dislikes?">{{event.comments}}</textarea>
                     </div>
 
                     <button id="submit" class="btn btn-primary edit-event-btn">Update Event</button>
@@ -172,6 +171,8 @@
     };
     
     console.log(newEvent.name);
+    console.log("NEW EVENT COMMENT: " + newEvent.comments);
+
 
     $.ajax("/api/event/edit/{{event.eventid}}", {
       type: "POST",

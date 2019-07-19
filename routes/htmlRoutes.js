@@ -35,37 +35,39 @@ module.exports = function(app) {
 
   //Vendor homepage handlebars
   //TODO add isAuthenticated when finished testing
-  app.get("/vendor/:id", isAuthenticated, function(req,res){
+  app.get("/vendor/:vendorid", isAuthenticated, function(req,res){
     //Ask DB to find all events available where there are no vendors assigned
     db.Events.findAll({
       where: {
         vendorid: null
       }
     }).then(function(caterdb) {
-     
-      // var availableArr = [];
-      // var vendorArr = [];
+      //Making object with all events with no vendor
       var nullVendorEvents = {
         events: caterdb
       };
 
+      //Find all events that have the same vendor id as the params.id
       db.Events.findAll({
         where: {
-          vendorid: req.params.id
+          vendorid: req.params.vendorid
         }
       }).then(function(morecaterdb){
+        //Making object with vendor's events
         var acceptedEvents = {
           events: morecaterdb
         };
-      
+
+        //Find vendor where vendor id = params.id      
         db.Vendor.findOne({
           where: {
-            vendorid: req.params.id
+            vendorid: req.params.vendorid
           }
         }).then(function(userData) {
-          console.log(userData.name);
+          // console.log(userData.name);
+          //Getting vendor name from DB
           var vendorName = userData.name;
-
+          //Send available and accepted events, and the vendor name to the page
           res.render("vendor-home", {
             accepted: acceptedEvents, 
             available: nullVendorEvents, 
