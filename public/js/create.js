@@ -64,8 +64,8 @@ $(function () {
           //TODO: When we create a user, should we take them to the homepage to login with their new info?
           window.location.href = "/";
         });
-     }
-    });
+    }
+  });
 
 
   //if they click on the button in the create vendor form, 
