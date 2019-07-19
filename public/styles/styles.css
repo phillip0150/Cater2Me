@@ -106,6 +106,11 @@ body {
 
 /* Event Page Styling */
 /* =================================================================== */
+#eventAccept{
+  background-color: #132149;
+  color: white;
+
+}
 
 .eventName {
   text-align: center;
