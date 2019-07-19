@@ -1,10 +1,11 @@
 
-$(function() {
+$(document).ready(function() {
   $("#wrongmodal").hide();
 
   function error(){
     $("#wrongmodal").show();
   }
+
   $(".close").on("click", function(event){
     event.preventDefault();
     $("#wrongmodal").hide();
@@ -25,8 +26,8 @@ $(function() {
     $.ajax("/api/login", {
       type: "POST",
       data: userLogin,
-      error: error()
-    }).then(
+      
+    }).done(
       function(userdata) {
         if(userdata.vendorid) {
           window.location.href = "/vendor/" + userdata.vendorid;      
@@ -34,7 +35,9 @@ $(function() {
           window.location.href = "/customer";      
         }
         //TODO: When we create a user, should we take them to the homepage to login with their new info?
-      });
+      }).fail(function(){
+      error();
+    });
   });
  
   
