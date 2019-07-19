@@ -1,7 +1,8 @@
-// $(document).ready(function () {
+$("#size").hide();
+$("#state").hide();
+
 var placeArray = (window.location.pathname).split("/");
 var vendorId = placeArray.slice(-1)[0];
-console.log("VENDOR ID OUTSIDE CLICK FUNCTION: " + vendorId);
 
 // All "Accept" buttons have a vendor-id that matches the vendorId
 $(".vendorAcceptBtn").attr("vendor-id", vendorId);
@@ -16,22 +17,43 @@ $(".vendorAcceptBtn").on("click", function () {
     eventid: eventId
   };
 
-  //   console.log("VENDOR ID: " + vendorId);
-  //   console.log("EVENT ID: " + eventId);
+  console.log("VENDOR ID: " + vendorId);
+  console.log("EVENT ID: " + eventId);
 
-  $.ajax("/api/event/", {
+  $.ajax("/api/event/" + eventId + "/" + vendorId, {
     type: "PUT",
     data: eventUpdate
+  // eslint-disable-next-line no-empty-function
   }).then(function () {
     // location.reload();
   });
 });
 
+// IF THE MORE INFO BUTTON IS CLICKED
 $(".moreInfoBtn").on("click", function () {
   console.log("I've been clicked");
   var btnID = ($(this).attr("data-id"));
   console.log(btnID);
-  window.location.href = "/event/:id" + btnID;
+  window.location.href = "/event/" + btnID;
 });
 
-// });
+// SEARCH INPUTS 
+$("#category").on("change", function () {
+  console.log($("#category").val());
+  if ($("#category").val() === "size") {
+    $("#size").show();
+    $("#state").hide();
+  }
+  else if ($("#category").val() === "state") {
+    $("#state").show();
+    $("#size").hide();
+  }
+});
+
+$("#categorysize").on("change", function () {
+  window.location.href = "/events/size/" + $("#categorysize").val() + "/" + vendorId + "";
+});
+
+$("#categorystate").on("change", function () {
+  window.location.href = "/events/state/" + $("#categorystate").val() + "/" + vendorId + "";
+});

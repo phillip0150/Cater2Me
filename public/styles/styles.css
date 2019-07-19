@@ -1,7 +1,7 @@
 /* Global Styling */
 /* =================================================================== */
 html {
-  height:100%;
+  height: 100%;
 }
 
 body {
@@ -12,14 +12,23 @@ body {
   background-repeat: repeat;
   background-size: cover;
   background-attachment: fixed;
+  font-family: 'Quicksand', sans-serif;
 }
 
+p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 .navbar-header {
   position: absolute;
   top: 0;
   width: 100%;
-  background-color: #132149;
+  background-image: linear-gradient(to right,#132149, #132149, #344d8b);
   color: white;
+}
+
+#navbar-logo {
+  width: 20rem;
 }
 
 .list-group-item {
@@ -40,14 +49,149 @@ body {
   color: white;
 }
 
+/* Hamburger Menu Styling */
+/* =================================================================== */
+a {
+  text-decoration: none;
+  color: #232323;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: blue;
+}
+
+#menuToggle {
+  display: block;
+  position: relative;
+  top: 30px;
+  left: 92%;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+
+  cursor: pointer;
+
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: white;
+  border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: white;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu {
+  position: absolute;
+  width: 10%;
+  height: 150px;
+  margin: 25px 0 0 18%;
+  padding: 8px;
+  /* border-radius: 20px; */
+
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+
+  /* -moz-column-count: 2;
+  -moz-column-gap: 10px;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 10px; */
+}
+
+#menu li {
+  padding: 10px;
+  font-size: 22px;
+  /* display: flex;
+  justify-content: center; */
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul {
+  transform: translateX(-200%);
+  /* transform: none; */
+}
+
+
 /* Index Page Styling */
 /* =================================================================== */
 .index-body-container {
-  max-width: 800px;
-  margin-top: 200px;
+  max-width: 60%;
+  margin-top: 120px;
   background-color:rgba(255, 255, 255, 0.931);
   border-radius: 25px;
-  
 }
 
 .login-row {
@@ -58,6 +202,29 @@ body {
   min-width: 650px;
 }
 
+.card-info-container {
+  max-width: 90%;
+  margin-top: 40px;
+}
+
+.about-us-card {
+  background-color:rgba(255, 255, 255, 0.931);
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.how-does-it-card {
+  background-color:rgba(255, 255, 255, 0.931);
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.card-image {
+  border-radius: 10px;
+}
+
+
+
 /* Create Account Page Styling */
 /* =================================================================== */
 .clearfix.row {
@@ -66,7 +233,7 @@ body {
 
 .createAcct-body-container {
   /* max-width: 1100px; */
-  background-color:rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
   border-radius: 25px;
 }
 
@@ -85,83 +252,138 @@ body {
 /* Vendor Homepage Page Styling */
 /* =================================================================== */
 .vendorHome-container {
-  background-color: #132149;
-  padding: 1rem;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 18px;
+  background-image: linear-gradient(to bottom right,#132149, #132149, #344d8b);
+  padding: 10px;
+  width: 80%;
   border-radius: 20px;
 }
 
-#vendorTitle{
-  color:white;
+#row1 {
+  margin-bottom: 30px;
 }
 
-.eventList {
-  margin-top: 1rem;
-  padding: 1rem 2rem;
-  background-color: white;
-  border-radius: 15px;
+#vendorTitle {
+  color: white;
+  margin-left: 20px;
 }
 
-#eventSearchSubmit {
-  margin-left: 4rem;
+.card {
+  border: 0px solid rgba(0,0,0,.125);
+}
+
+.view-events-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.view-events-col {
+  width: 95%;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  min-width: 860px;
+}
+
+.view-events-col table {
+  background: white;
+  border-radius: 10px;
+}
+
+.vendor-home-table{
+  padding: 10px;
+  width: 100%;
+  min-width: 100%;
+  margin-bottom: 0;
+  background-color: transparent;
+}
+
+#accept-h4, #avail-h4 {
+  margin-left: 5px;
+}
+
+#avail-h4 {
+  margin-bottom: 15px;
 }
 
 /* Event Page Styling */
 /* =================================================================== */
+#eventAccept{
+  background-color: #132149;
+  color: white;
+
+}
 
 .eventName {
   text-align: center;
 }
+
 /* Customer Homepage Page Styling */
 /* =================================================================== */
-.customer-home-body-container{
-  background-color: #132149;
+.customer-home-body-container {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 18px;
+  background-image: linear-gradient(to bottom right,#132149, #132149, #344d8b);
+  padding: 10px;
   border-radius: 10px;
   width: 75%;
-  color: white;
 }
 
 #name-of-customer {
   text-align: center;
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.add-event-col {
-  width: 100%;
-  display: flex; 
-  justify-content: center;
-  margin: 10px;
+  margin-bottom: 14px;
+  color: white;
 }
 
 .view-job-row {
-  display: flex; 
+  display: flex;
   justify-content: center;
+  margin-bottom: 12px;
 }
 
 .view-job-col {
-  width: 70%;
-  margin-bottom: 40px;
-  background-color: white;
+  padding: 10px;
   border-radius: 10px;
+  width: 95%;
 }
 
-#madeEventTable{
-  font-family: 'Kalam', cursive;
-  color:white;
-  text-align: center;
+.view-job-col table {
+  background: white;
+  border-radius: 10px;
+
+}
+
+#madeEventTable {
   width: 100%;
+  max-width: 100%;
+  margin-bottom: 0;
+  background-color: transparent;
 }
 
-.custuser{
-    background-color: #132149;
-    width: 235px;
-    margin: 10px;
-    border-radius: 10px;
+/* Customer Homepage Page Styling */
+/* =================================================================== */
+
+.createEvent-body-container {
+  background-color: rgb(255, 255, 255);
+  border-radius: 25px;
+  max-width: 950px;
+  padding: 30px 0px 20px 0px;
+  margin-bottom: 100px;
 }
-.custuser:hover{
-    background-color: black;
-        width: 245px;
-        color: white;
+
+
+.form-group label {
+  margin-top: 8px;
+}
+
+.form-group input, .form-group select {
+  margin-top: -5px;
+}
+
+.create-event-btn {
+  margin-right: 20px;
 }
