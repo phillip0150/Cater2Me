@@ -106,20 +106,21 @@ p {
   color: white;
 }
 
-.view-event-row {
+.view-events-row {
   display: flex;
   justify-content: center;
   margin-bottom: 12px;
 }
 
-.view-event-col {
+.view-events-col {
   width: 95%;
   min-width: 860px;
 }
 
-.view-event-col table {
+.view-events-col table {
   background: white;
   border-radius: 10px;
+  margin-left: 20px;
 }
 
 .vendor-home-table{
