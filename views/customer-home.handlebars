@@ -3,43 +3,60 @@
     <h1 class="cust-name" id="name-of-customer">Welcome {{name}}</h1>
 
     <!-- CUSTOMER VIEW JOBS ROW -->
-    <div class="row view-job-row">
+    <div class="row view-job-row" id="">
         <div class="col-12-lg view-job-col">
-            <table id="madeEventTable">
-                <thead>
-                    <tr>
-                        <th>USER ID</th>
-                        <th>NAME</th>
-                        <th>PHONE</th>
-                        <th>CITY</th>
-                        <th>STATE</th>
-                        <th>OCCASION</th>
-                        <th>SIZE</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{#each customer}}
-                    <tr>
-                        <td>{{userid}}</td>
-                        <td>{{name}}</td>
-                        <td>{{phone}}</td>
-                        <td>{{city}}</td>
-                        <td>{{state}}</td>
-                        <td>{{occasion}}</td>
-                        <td>{{size}}</td>
-                    </tr>
-                    {{/each}}
-                </tbody>
-            </table>
+            <div class="card">
+                <div class="table-responsive">
+                    <table class="table" id="madeEventTable">
+                        <h4 id="events-h4"> Your Upcoming Events: </h4>
+                        <thead class="thead-light">
+                            <tr>
+                                <th>EVENT</th>
+                                <th>PHONE</th>
+                                <th>LOCATION</th>
+                                <th>OCCASION</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each customer}}
+                            <tr>
+                                <td>{{name}}</td>
+                                <td>{{phone}}</td>
+                                <td>{{city}}, {{state}} </td>
+                                <td>{{occasion}}</td>
+                                <td><button class="moreInfoBtn btn btn-primary" data-id="{{ this.eventid }}" >More Info</button></td>
+                                <td><button class="btn btn-primary">Edit</button></td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- CUSTOMER ADD NEW EVENT BUTTON-ROW  -->
-    <div class="row add-event-row">
-        <div class="col-12-lg add-event-col">
-            <a href="/event/create/{{userid}}"><button id="submit" class="btn btn-outline-light my-2 my-sm-0 custuser create-new-event">Create New Event</button></a>
-            <a href="/logout"><button id="cookie" class="btn btn-outline-light my-2 my-sm-0 custuser" onclick="" >Log Out</button></a>
+    <div class="row justify-content-md-center add-event-row" id="btn-row">
+        <div class="col col-lg-2 add-event-col">
+            <a href="/event/create/{{userid}}">
+                <button href="/event/create/{{userid}}" id="submit"
+                    class="btn btn-outline-light custuser create-new-event">Create New Event</button>
+            </a>
+        </div>
+
+        <div class="col-md-auto">
+        </div>
+
+        <div class="col col-lg-2">
+            <a href="/logout">
+                <button id="cookie" href="/logout" class="btn btn-outline-light custuser">Log Out</button>
+            </a>
         </div>
     </div>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="/js/create.js"></script>
+
+
+</div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="/js/customer-home.js"></script>
