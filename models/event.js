@@ -27,7 +27,7 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
       validate: {
         len: {
-          args: [13],
+          args: [12],
           msg: "Needs to be 10 digits with dashes"
         }
       }
@@ -78,6 +78,8 @@ module.exports = function (sequelize, DataTypes) {
       len: [1]
     }
   });
-
+  Events.addHook("beforeCreate", function(event){
+    event.city = event.city.charAt(0).toUpperCase() + event.city.slice(1);
+  });
   return Events;
 };
