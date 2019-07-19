@@ -63,9 +63,9 @@ a:hover {
 
 #menuToggle {
   display: block;
-  position: relative;
+  position: absolute;
   top: 30px;
-  left: 92%;
+  right: 4%;
   z-index: 1;
   -webkit-user-select: none;
   user-select: none;
@@ -147,7 +147,7 @@ a:hover {
  */
 #menu {
   position: absolute;
-  width: 10%;
+  width: 20%;
   height: 150px;
   margin: 25px 0 0 18%;
   padding: 8px;
@@ -310,13 +310,7 @@ a:hover {
 
 /* Event Page Styling */
 /* =================================================================== */
-#eventAccept{
-  background-color: #132149;
-  color: white;
-
-}
-
-#home {
+#eventAccept {
   background-color: #132149;
   color: white;
 }
