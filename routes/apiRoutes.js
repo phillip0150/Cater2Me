@@ -20,7 +20,6 @@ module.exports = function(app) {
 
   //Look up user
   app.post("/api/login", passport.authenticate("local"), function(req,res){
-
     res.json(req.user);
   });
   
@@ -157,7 +156,4 @@ module.exports = function(app) {
   });
   // get event by booze needed
   //multiple queries at once
-
-
-  
 };
