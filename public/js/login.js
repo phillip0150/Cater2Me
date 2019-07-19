@@ -1,6 +1,16 @@
 
 $(function() {
+  $("#wrongmodal").hide();
 
+  function error(){
+    $("#wrongmodal").show();
+  }
+  $(".close").on("click", function(event){
+    event.preventDefault();
+    $("#wrongmodal").hide();
+
+
+  });
   //if they click on the button in the create user form, 
   //create var to store values
   //send those values to /api/createUser
@@ -14,7 +24,8 @@ $(function() {
 
     $.ajax("/api/login", {
       type: "POST",
-      data: userLogin
+      data: userLogin,
+      error: error()
     }).then(
       function(userdata) {
         if(userdata.vendorid) {
