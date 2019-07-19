@@ -26,7 +26,10 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [1]
+        len: {
+          args: [13],
+          msg: "Needs to be 10 digits with dashes"
+        }
       }
     },
     city: {
