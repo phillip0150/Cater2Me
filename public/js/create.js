@@ -55,16 +55,16 @@ $(function () {
     }
     else {
 
-    $.ajax("/api/createUser", {
-      type: "POST",
-      data: newUser
-    }).done(
-      function () {
-        console.log("created a new user!");
-        //TODO: When we create a user, should we take them to the homepage to login with their new info?
-        window.location.href = "/";
-      });
-    }
+      $.ajax("/api/createUser", {
+        type: "POST",
+        data: newUser
+      }).done(
+        function () {
+          console.log("created a new user!");
+          //TODO: When we create a user, should we take them to the homepage to login with their new info?
+          window.location.href = "/";
+        });
+      }
     });
 
 
@@ -87,10 +87,10 @@ $(function () {
     
     }
     else {
-    $.ajax("/api/createVendor", {
-      type: "POST",
-      data: newVendor
-    }).done(function(){
+      $.ajax("/api/createVendor", {
+        type: "POST",
+        data: newVendor
+      }).done(function(){
         window.location.href = "/";
       });
 
@@ -98,7 +98,7 @@ $(function () {
 
 
 
-    });
+  });
 });
 
 
