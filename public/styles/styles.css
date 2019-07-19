@@ -267,6 +267,7 @@ a:hover {
 #vendorTitle {
   color: white;
   margin-left: 20px;
+  text-transform: capitalize;
 }
 
 .card {
@@ -287,12 +288,10 @@ a:hover {
   min-width: 860px;
 }
 
-.view-events-col table {
+.vendor-home-table{
   background: white;
   border-radius: 10px;
-}
-
-.vendor-home-table{
+  text-transform: capitalize;
   padding: 10px;
   width: 100%;
   min-width: 100%;
@@ -302,6 +301,7 @@ a:hover {
 
 #accept-h4, #avail-h4 {
   margin-left: 5px;
+  text-transform: capitalize;
 }
 
 #avail-h4 {
