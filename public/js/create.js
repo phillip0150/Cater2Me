@@ -1,5 +1,18 @@
 $(function () {
 
+  $("#wrongmodal").hide();
+
+  function error(){
+    $("#wrongmodal").show();
+  }
+
+  $(".close").on("click", function(event){
+    event.preventDefault();
+    $("#wrongmodal").hide();
+
+
+  });
+
   //first we are hiding both forms for the user and vendor
   $(".create-user").hide();
   $(".create-vendor").hide();
@@ -35,18 +48,25 @@ $(function () {
     };
 
     console.log(newUser);
+    console.log(newVendor.password.length);
+    if(newVendor.password.length < 7|| newVendor.email.includes("@") || newVendor.phone.length <11){
+      error();
+    
+    }
+    else {
 
-    $.ajax("/api/createUser", {
-      type: "POST",
-      data: newUser
-    }).then(
-      function () {
-        console.log("created a new user!");
-        //TODO: When we create a user, should we take them to the homepage to login with their new info?
-        window.location.href = "/";
-      }
-    );
+      $.ajax("/api/createUser", {
+        type: "POST",
+        data: newUser
+      }).done(
+        function () {
+          console.log("created a new user!");
+          //TODO: When we create a user, should we take them to the homepage to login with their new info?
+          window.location.href = "/";
+        });
+    }
   });
+
 
   //if they click on the button in the create vendor form, 
   //create var to store values
@@ -61,18 +81,24 @@ $(function () {
       phone: $("#phone").val().trim()
     };
 
-    console.log(newVendor);
-
-    $.ajax("/api/createVendor", {
-      type: "POST",
-      data: newVendor
-    }).then(
-      function () {
-        console.log("created a new user!");
-        //TODO: When we create a vendor, should we take them to the homepage to login with their new info?
+    console.log(newVendor.password.length);
+    if(newVendor.password.length < 7|| newVendor.email.includes("@") || newVendor.phone.length <11){
+      error();
+    
+    }
+    else {
+      $.ajax("/api/createVendor", {
+        type: "POST",
+        data: newVendor
+      }).done(function(){
         window.location.href = "/";
-      }
-    );
-  });
+      });
 
+    }
+
+
+
+  });
 });
+
+

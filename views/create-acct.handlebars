@@ -30,17 +30,17 @@
                         <div class="form-group">
                             <label for="nameUser">Name</label>
                             <input type="text" id="nameUser" class="form-control" aria-describedby="example-text"
-                                placeholder="John Doe">
+                                placeholder="John Doe" required>
                         </div>
                         <div class="form-group">
                             <label for="emailUser">Email</label>
                             <input type="text" id="emailUser" class="form-control" aria-describedby="example-text"
-                                placeholder="johndoe@gmail.com">
+                                placeholder="johndoe@gmail.com" required>
                         </div>
                         <div class="form-group">
                             <label for="passwordUser">Password</label>
                             <input type="password" id="passwordUser" class="form-control" aria-describedby="example-text"
-                                placeholder="Enter at least 8 characters">
+                                placeholder="Enter at least 8 characters" required>
                         </div>
                         <button id="submit" class="btn btn-primary float-right">Submit</button>
                     </form>
@@ -52,30 +52,59 @@
                         <div class="form-group">
                             <label for="nameVendor">Name</label>
                             <input type="text" id="nameVendor" class="form-control" aria-describedby="example-text"
-                                placeholder="John Doe">
+                                placeholder="John Doe" required>
                         </div>
                         <div class="form-group">
                             <label for="emailVendor">Email</label>
                             <input type="text" id="emailVendor" class="form-control" aria-describedby="example-text"
-                                placeholder="johndoe@gmail.com">
+                                placeholder="johndoe@gmail.com" required>
                         </div>
                         <div class="form-group">
                             <label for="passwordVendor">Password</label>
                             <input type="password" id="passwordVendor" class="form-control" aria-describedby="example-text"
-                                placeholder="Enter at least 8 characters">
+                                placeholder="Enter at least 8 characters" required>
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone</label>
                             <input type="text" id="phone" class="form-control" aria-describedby="example-text"
-                                placeholder="999-999-9999">
+                                placeholder="999-999-9999" required>
                         </div>
 
                         <button id="submit" class="btn btn-primary float-right">Submit</button>
                     </form>
+
+                    {{!-- MODAL  --}}
+        <div class="modal" tabindex="-1" role="dialog" id="wrongmodal">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Uhhh this is awkward...</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>Sorry, input fields incorrect</p> 
+                 <p>Make sure your phone # is 10 digits, plus dashes (210-210-2121)</p>
+                <p>Make sure your password is 8 characters long</p>
+                 <p>Make sure your email is in a email format (cater2me@gmail.com)</p>
+                <br>
+              </div>
+            </div>
+          </div>
+
+        </div>
                 </div>
             </div>
         </div>
     </div>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 <script src="/js/create.js"></script>
+
