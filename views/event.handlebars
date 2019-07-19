@@ -46,15 +46,26 @@
             
             <div class="col-lg-3"></div>
             <div class="col-lg-2"></div>
+            
             <div class="col-lg-4">
-                <button type="button" class="btn btn-primary btn-lg btn-outline-light" id="eventAccept">Accept Event</button>
+                {{#if event.vendorid}}
+                <button type="button" class="btn btn-primary btn-lg btn-outline-light" id="home">Back Home </button>
+
+                 
+             {{else}}   <button type="button" class="btn btn-primary btn-lg btn-outline-light" id="eventAccept">Accept Event</button>
+                {{/if}}
             </div>
+            
             <div class="col-lg-3"></div>
         </div>
     </div>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script>
+        
+        
+
+
         $("#eventAccept").on("click" ,function (){
            
            
