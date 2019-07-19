@@ -12,19 +12,24 @@ body {
   background-repeat: repeat;
   background-size: cover;
   background-attachment: fixed;
+  font-family: 'Quicksand', sans-serif;
 }
 
+p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 .navbar-header {
   position: absolute;
   top: 0;
   width: 100%;
-  background-color: #132149;
+  background-image: linear-gradient(to right,#132149, #132149, #344d8b);
   color: white;
 }
 
-/* .btn {
-  background-color: #132149;
-} */
+#navbar-logo {
+  width: 20rem;
+}
 
 .list-group-item {
   line-height: 2.5;
@@ -247,24 +252,60 @@ a:hover {
 /* Vendor Homepage Page Styling */
 /* =================================================================== */
 .vendorHome-container {
-  background-color: #132149;
-  padding: 1rem;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 18px;
+  background-image: linear-gradient(to bottom right,#132149, #132149, #344d8b);
+  padding: 10px;
+  width: 80%;
   border-radius: 20px;
+}
+
+#row1 {
+  margin-bottom: 30px;
 }
 
 #vendorTitle {
   color: white;
+  margin-left: 20px;
 }
 
-.eventList {
-  margin-top: 1rem;
-  padding: 1rem 2rem;
-  background-color: white;
-  border-radius: 15px;
+.card {
+  border: 0px solid rgba(0,0,0,.125);
 }
 
-#eventSearchSubmit {
-  margin-left: 4rem;
+.view-events-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.view-events-col {
+  width: 95%;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  min-width: 860px;
+}
+
+.view-events-col table {
+  background: white;
+  border-radius: 10px;
+}
+
+.vendor-home-table{
+  padding: 10px;
+  width: 100%;
+  min-width: 100%;
+  margin-bottom: 0;
+  background-color: transparent;
+}
+
+#accept-h4, #avail-h4 {
+  margin-left: 5px;
+}
+
+#avail-h4 {
+  margin-bottom: 15px;
 }
 
 /* Event Page Styling */
@@ -278,47 +319,71 @@ a:hover {
 .eventName {
   text-align: center;
 }
+
 /* Customer Homepage Page Styling */
 /* =================================================================== */
 .customer-home-body-container {
-  background-color: #132149;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 18px;
+  background-image: linear-gradient(to bottom right,#132149, #132149, #344d8b);
+  padding: 10px;
   border-radius: 10px;
   width: 75%;
-  color: white;
 }
 
 #name-of-customer {
   text-align: center;
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.add-event-col {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin: 10px;
+  margin-bottom: 14px;
+  color: white;
 }
 
 .view-job-row {
   display: flex;
   justify-content: center;
-  /* color: black; */
+  margin-bottom: 12px;
 }
 
 .view-job-col {
-  width: 70%;
-  margin-bottom: 40px;
-  background-color: white;
+  padding: 10px;
   border-radius: 10px;
+  width: 95%;
 }
 
-#madeEventTable{
-  font-family: 'Kalam', cursive;
-  color:black;
-  text-align: center;
+.view-job-col table {
+  background: white;
+  border-radius: 10px;
+
+}
+
+#madeEventTable {
   width: 100%;
-  table-layout: fixed;
+  max-width: 100%;
+  margin-bottom: 0;
+  background-color: transparent;
+}
+
+/* Customer Homepage Page Styling */
+/* =================================================================== */
+
+.createEvent-body-container {
+  background-color: rgb(255, 255, 255);
+  border-radius: 25px;
+  max-width: 950px;
+  padding: 30px 0px 20px 0px;
+  margin-bottom: 100px;
+}
+
+
+.form-group label {
+  margin-top: 8px;
+}
+
+.form-group input, .form-group select {
+  margin-top: -5px;
+}
+
+.create-event-btn {
+  margin-right: 20px;
 }

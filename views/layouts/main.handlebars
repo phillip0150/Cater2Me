@@ -3,25 +3,26 @@
 
 <head>
   <meta charset="utf-8">
+  {{!-- Bootstrap --}}
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+  {{!-- Font Awesome --}}
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Kalam&display=swap" rel="stylesheet">
+  {{!-- Custom CSS Style --}}
   <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
-  <title>Cater2Me</title>
+  {{!-- Google Fonts --}}
+  <link href="https://fonts.googleapis.com/css?family=Quicksand|Raleway&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+  {{!-- Page Title --}}
+  <title>Cater 2 Me</title>
 </head>
 
 <body>
-
-  <div class="header-for-navbar">
-    <nav class="navbar navbar-light navbar-header">
-      <a class="navbar-brand">
-        <h1>Cater to Me</h1>
-      </a>
+    <nav class="navbar navbar-light navbar-header header-for-navbar">
+      <div id="navbar-logo-div">
+        <img src="/images/LogoNavbar.png" alt="Cater to Me Logo" id="navbar-logo">
+      </div>
       <p class="lead" style="margin-right: 110px;">The Solution for Planning your Next Catering Event.</p>
-      {{!-- <a href="/logout"><button id="cookie" class="btn btn-outline-light my-2 my-sm-0 custuser" onclick="" >Log Out</button></a> --}}
     </nav>
-  </div>
-
   {{!-- HAMBURGER NAV BAR --}}
   <nav role="navigation">
     <div id="menuToggle">

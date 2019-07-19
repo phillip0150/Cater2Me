@@ -16,12 +16,11 @@ $(function () {
       courses: $("#courses").val().trim(),
       consideration: $("#consideration").val().trim(),
       size: $("#size").val(),
-      // BOOLEAN 0=false 1=true
       alcohol: $("#alcohol").val(),
-      // BOOLEAN 0=false 1=true
       decor: $("#decor").val().trim(),
       comments: $("#comments").val().trim()
     };
+    
     console.log(newEvent);
 
     $.ajax("/api/createEvent/" + theUserId, {
