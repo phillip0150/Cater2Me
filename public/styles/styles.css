@@ -180,7 +180,7 @@ a:hover {
  * And let's slide it in from the left
  */
 #menuToggle input:checked ~ ul {
-  transform: translateX(-200%);
+  transform: translateX(-200%), ;
   /* transform: none; */
 }
 
