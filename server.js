@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
 //need to change to secret to where they cannot see it
-app.use(session({secret: "keyboard kat", resave: true, saveUninitialized: true}));
+app.use(session({secret: process.env.SESSION_SECRET || "keyboard kat", resave: true, saveUninitialized: true}));
 app.use(passport.initialize());
 app.use(passport.session());
 
