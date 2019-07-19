@@ -20,7 +20,9 @@ module.exports = function (app) {
       { where: 
         { eventid: selectedEvent } 
       }
-    );
+    ).then(function(){
+      res.json(true);
+    });
   });
 };
 
