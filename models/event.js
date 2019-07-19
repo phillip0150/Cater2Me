@@ -78,6 +78,8 @@ module.exports = function (sequelize, DataTypes) {
       len: [1]
     }
   });
-
+  Events.addHook("beforeCreate", function(event){
+    event.city = event.city.charAt(0).toUpperCase() + event.city.slice(1);
+  });
   return Events;
 };
