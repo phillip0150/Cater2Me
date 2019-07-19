@@ -37,39 +37,42 @@ module.exports = function(app) {
   //TODO add isAuthenticated when finished testing
   app.get("/vendor/:id", function(req,res){
     //Ask DB to find all events available where there are no vendors assigned
-    db.Events.findAll({}).then(function(caterdb) {
+    db.Events.findAll({
+      where: {
+        vendorid: null
+      }
+    }).then(function(caterdb) {
      
-      var availableArr = [];
-      var vendorArr = [];
+      // var availableArr = [];
+      // var vendorArr = [];
+      var nullVendorEvents = {
+        events: caterdb
+      };
 
-      //For each element, if the vendor id = the event table's vendor id 
-      //then push that event to the vendorArr
-      caterdb.forEach(function(obj) {
-        if (obj.vendorid === null) {
-          availableArr.push(obj);
-        } 
-      });
-
-      caterdb.forEach(function(obj) {
-        // eslint-disable-next-line eqeqeq
-        if (obj.vendorid == req.params.id) {
-          vendorArr.push(obj);
-        } 
-      });
+      db.Events.findAll({
+        where: {
+          vendorid: req.params.id
+        }
+      }).then(function(morecaterdb){
+        var acceptedEvents = {
+          events: morecaterdb
+        };
       
-      var allEvents = {
-        events: availableArr
-      };
-  
-      var vendorEvents = {
-        events: vendorArr
-      };
+        db.Vendor.findOne({
+          where: {
+            vendorid: req.params.id
+          }
+        }).then(function(userData) {
+          console.log(userData.name);
+          var vendorName = userData.name;
 
-      console.log("VENDOR ARRAY: " + JSON.stringify(vendorArr));
-      console.log("VENDOR EVENTS: " + JSON.stringify(vendorEvents));
-      console.log("AVAILABLE EVENTS: " + JSON.stringify(allEvents));
-
-      res.render("vendor-home", {accepted: vendorEvents, available: allEvents});
+          res.render("vendor-home", {
+            accepted: acceptedEvents, 
+            available: nullVendorEvents, 
+            vendorName: vendorName
+          });
+        });
+      });
     });
   });
 
@@ -84,6 +87,20 @@ module.exports = function(app) {
   app.get("/logout", function(req, res){
     req.logout();
     res.redirect("/");
+  });
+
+  app.get("/event/:id", function(req, res) {
+    db.Events.findOne({
+      where: {
+        eventid: req.params.id
+      }
+    }).then(function(caterdb) {
+      //we are creating this object, because we want to send it to our handlebars
+      var hbsObject = {
+        event: caterdb
+      };
+      res.render("event", hbsObject);
+    });
   });
   
   app.get("*", function(req,res){

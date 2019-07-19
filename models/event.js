@@ -15,19 +15,21 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       model: "Vendor",
       key: "vendorid",
-      allowNull:true
+      allowNull: true
     },
-    // name: {
-    //   type: DataTypes.STRING,
-    //   validate: {
-    //     len: [1]
-    //   }
-    // },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      len: [1]
+    },
     phone: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [1]
+        len: {
+          args: [13],
+          msg: "Needs to be 10 digits with dashes"
+        }
       }
     },
     city: {

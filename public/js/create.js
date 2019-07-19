@@ -1,31 +1,31 @@
-$(function() {
+$(function () {
 
   //first we are hiding both forms for the user and vendor
   $(".create-user").hide();
   $(".create-vendor").hide();
 
   //if someone clicks on the customer button, we know they want to create a customer
-  $("#customerButton").on("click", function(event) {
+  $("#customerButton").on("click", function (event) {
     event.preventDefault();
     //show user, hide vendor
     $(".create-user").show();
     $(".create-vendor").hide();
-    
+
   });
 
   //if someone clicks on teh vendor button, we know they want to create a vendor
-  $("#vendorButton").on("click", function(event) {
+  $("#vendorButton").on("click", function (event) {
     event.preventDefault();
     //show vendor, hide user
     $(".create-vendor").show();
     $(".create-user").hide();
-   
+
   });
 
   //if they click on the button in the create user form, 
   //create var to store values
   //send those values to /api/createUser
-  $(".create-user").on("submit", function(event) {
+  $(".create-user").on("submit", function (event) {
     event.preventDefault();
 
     var newUser = {
@@ -40,7 +40,7 @@ $(function() {
       type: "POST",
       data: newUser
     }).then(
-      function() {
+      function () {
         console.log("created a new user!");
         //TODO: When we create a user, should we take them to the homepage to login with their new info?
         window.location.href = "/";
@@ -51,7 +51,7 @@ $(function() {
   //if they click on the button in the create vendor form, 
   //create var to store values
   //send those values to /api/createVendor
-  $(".create-vendor").on("submit", function(event) {
+  $(".create-vendor").on("submit", function (event) {
     event.preventDefault();
 
     var newVendor = {
@@ -67,7 +67,7 @@ $(function() {
       type: "POST",
       data: newVendor
     }).then(
-      function() {
+      function () {
         console.log("created a new user!");
         //TODO: When we create a vendor, should we take them to the homepage to login with their new info?
         window.location.href = "/";
