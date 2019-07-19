@@ -102,6 +102,20 @@ module.exports = function(app) {
       res.render("event", hbsObject);
     });
   });
+
+  app.get("/event/edit/:id", function(req, res) {
+    db.Events.findOne({
+      where: {
+        eventid: req.params.id
+      }
+    }).then(function(caterdb) {
+      //we are creating this object, because we want to send it to our handlebars
+      var hbsObject = {
+        event: caterdb
+      };
+      res.render("editevent", hbsObject);
+    });
+  });
   
   app.get("*", function(req,res){
     res.render("404");

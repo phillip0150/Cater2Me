@@ -23,9 +23,8 @@ $(".vendorAcceptBtn").on("click", function () {
   $.ajax("/api/event/" + eventId + "/" + vendorId, {
     type: "PUT",
     data: eventUpdate
-  // eslint-disable-next-line no-empty-function
-  }).then(function () {
-    // location.reload();
+  }).always(function () {
+    window.location.reload();
   });
 });
 
