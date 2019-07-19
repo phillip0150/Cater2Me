@@ -49,14 +49,10 @@
             
             <div class="col-lg-4">
                 {{#if event.vendorid}}
-                    <a href="/vendor/{{vendorid.vendorid}}" <button type="button" href="/vendor/{{event.vendorid}}" class="btn btn-primary btn-lg" id="home">Back home</button></a>
+                    <a href="/vendor/{{event.vendorid}}" <button type="button" href="/vendor/{{event.vendorid}}" class="btn btn-primary btn-lg" id="home">Back home</button></a>
+                {{else}}
+                    <button type="button" vendor-id="{{event.vendorid}}" event-id="{{event.eventid}}" class="vendorAcceptBtn" id="eventAccept">Accept Event</button>
                  {{/if}}
-                 
-                 {{#if vendorid.vendorid}}
-                    <button type="button" vendor-id="{{vendorid.vendorid}}" event-id="{{event.eventid}}" class="vendorAcceptBtn" id="eventAccept">Accept Event</button>
-                {{/if}}
-
-
             </div>
             
             <div class="col-lg-3"></div>
@@ -66,28 +62,34 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
     <script>
-     $(".vendorAcceptBtn").on("click", function () {
+        
+        
 
-  var vendorId = $(".vendorAcceptBtn").attr("vendor-id");
-  var eventId = $(".vendorAcceptBtn").attr("event-id");
+
+        $("#eventAccept").on("click" ,function (){
+           
+           
+
+  var vendorId = $(this).attr("vendor-id");
+  var eventId = $(this).attr("event-id");
   var eventUpdate = {
     vendorid: vendorId,
     eventid: eventId
   };
-
-  console.log("VENDOR ID: " + vendorId);
-  console.log("EVENT ID: " + eventId);
-
-  $.ajax("/api/event/" + eventId + "/" + vendorId, {
+  
+  //   console.log("VENDOR ID: " + vendorId);
+  //   console.log("EVENT ID: " + eventId);
+  
+  $.ajax("/api/event/", {
     type: "PUT",
     data: eventUpdate
-  }).always(function () {
-    window.location.href = "/vendor/{{vendorid.vendorid}}"
+  }).then(function () {
+    // location.reload();
   });
 });
         
 
     </script>
 
-    {{!-- <script type="text/javascript" src="/js/event.js"></script> --}}
+    <script type="text/javascript" src="/js/event.js"></script>
 

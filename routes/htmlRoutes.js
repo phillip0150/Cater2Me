@@ -64,10 +64,7 @@ module.exports = function(app) {
           }
         }).then(function(userData) {
           console.log(userData.name);
-          var vendorName = {
-            name: userData.name,
-            id: userData.vendorid
-          };
+          var vendorName = userData.name;
 
           res.render("vendor-home", {
             accepted: acceptedEvents, 
@@ -92,8 +89,7 @@ module.exports = function(app) {
     res.redirect("/");
   });
 
-  //veiw event
-  app.get("/event/:id/:vendorid", function(req, res) {
+  app.get("/event/:id", function(req, res) {
     db.Events.findOne({
       where: {
         eventid: req.params.id
@@ -101,16 +97,11 @@ module.exports = function(app) {
     }).then(function(caterdb) {
       //we are creating this object, because we want to send it to our handlebars
       var hbsObject = {
-        event: caterdb,
+        event: caterdb
       };
-      var otherObject = {
-        vendorid: req.params.vendorid
-      };
-      res.render("event", {hbsObject, otherObject});
+      res.render("event", hbsObject);
     });
-      
   });
-
 
   app.get("/event/edit/:id", function(req, res) {
     db.Events.findOne({

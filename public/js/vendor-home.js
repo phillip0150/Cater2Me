@@ -32,10 +32,8 @@ $(".vendorAcceptBtn").on("click", function () {
 $(".moreInfoBtn").on("click", function () {
   console.log("I've been clicked");
   var btnID = ($(this).attr("data-id"));
-  var vendorID = ($(".vendorStuff").attr("data-vendor"));
-  console.log(vendorID);
   console.log(btnID);
-  window.location.href = "/event/" + btnID + "/" + vendorID;
+  window.location.href = "/event/" + btnID;
 });
 
 // SEARCH INPUTS 
