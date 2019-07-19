@@ -48,6 +48,7 @@ module.exports = function(app) {
       var nullVendorEvents = {
         events: caterdb
       };
+
       db.Events.findAll({
         where: {
           vendorid: req.params.id
@@ -56,10 +57,22 @@ module.exports = function(app) {
         var acceptedEvents = {
           events: morecaterdb
         };
-        res.render("vendor-home", {accepted: acceptedEvents, available: nullVendorEvents});
+      
+        db.Vendor.findOne({
+          where: {
+            vendorid: req.params.id
+          }
+        }).then(function(userData) {
+          console.log(userData.name);
+          var vendorName = userData.name;
 
+          res.render("vendor-home", {
+            accepted: acceptedEvents, 
+            available: nullVendorEvents, 
+            vendorName: vendorName
+          });
+        });
       });
-
     });
   });
 

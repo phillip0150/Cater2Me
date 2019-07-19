@@ -33,7 +33,7 @@ app.set("view engine", "handlebars");
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
-require("./routes/vendorApiRoutes")(app);
+// require("./routes/vendorApiRoutes")(app);
 
 
 //in test enviorment - true
