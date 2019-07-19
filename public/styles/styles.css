@@ -45,7 +45,7 @@ body {
 .index-body-container {
   max-width: 800px;
   margin-top: 200px;
-  background-color:rgba(255, 255, 255, 0.931);
+  background-color: rgba(255, 255, 255, 0.931);
   border-radius: 25px;
 }
 
@@ -106,10 +106,9 @@ body {
 
 /* Event Page Styling */
 /* =================================================================== */
-#eventAccept{
+#eventAccept {
   background-color: #132149;
   color: white;
-
 }
 
 .eventName {
@@ -152,9 +151,9 @@ body {
   border-radius: 10px;
 }
 
-#madeEventTable{
-  font-family: 'Kalam', cursive;
-  color:black;
+#madeEventTable {
+  font-family: "Kalam", cursive;
+  color: black;
   text-align: center;
   width: 100%;
 }
