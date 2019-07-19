@@ -20,7 +20,7 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
       validate: {
         len: {
-          args: [13],
+          args: [12],
           msg: "Phone number needs to be 10 digits"
         }
       }

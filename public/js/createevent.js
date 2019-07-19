@@ -2,6 +2,11 @@ $(function () {
 
   //if they click on the button in the create vendor form, 
   //create var to store values
+
+
+
+
+
   //send those values to /api/createVendor
   $(".create-event").on("submit", function (event) {
     event.preventDefault();
@@ -33,5 +38,7 @@ $(function () {
       }
     );
   });
+
+
 
 });
