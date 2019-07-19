@@ -99,11 +99,19 @@ p {
   padding: 10px;
   width: 80%;
   border-radius: 20px;
+}
 
+#row1 {
+  margin-bottom: 30px;
 }
 
 #vendorTitle {
   color: white;
+  margin-left: 20px;
+}
+
+.card {
+  border: 0px solid rgba(0,0,0,.125);
 }
 
 .view-events-row {
@@ -114,20 +122,31 @@ p {
 
 .view-events-col {
   width: 95%;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
   min-width: 860px;
 }
 
 .view-events-col table {
   background: white;
   border-radius: 10px;
-  margin-left: 20px;
 }
 
 .vendor-home-table{
+  padding: 10px;
   width: 100%;
   min-width: 100%;
   margin-bottom: 0;
   background-color: transparent;
+}
+
+#accept-h4, #avail-h4 {
+  margin-left: 5px;
+}
+
+#avail-h4 {
+  margin-bottom: 15px;
 }
 
 /* Event Page Styling */
@@ -163,6 +182,8 @@ p {
 }
 
 .view-job-col {
+  padding: 10px;
+  border-radius: 10px;
   width: 95%;
 }
 

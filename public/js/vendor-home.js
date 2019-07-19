@@ -25,6 +25,7 @@ $(".vendorAcceptBtn").on("click", function () {
     data: eventUpdate
   // eslint-disable-next-line no-empty-function
   }).then(function () {
+    location.reload();
   });
 });
 

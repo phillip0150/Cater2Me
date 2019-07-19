@@ -2,12 +2,12 @@
   <h3 id="vendorTitle">{{ vendorName }}'s Homepage</h3>
 
   {{!-- Accepted Events Row Starts --}}
-  <div class="row view-events-row">
+  <div class="row view-events-row" id="row1">
     <div class="col-12-lg view-events-col">
       <div class="card">
         <div class="table-responsive">
           <table class="table vendor-home-table text-align" id="">
-            <h4>Accepted Jobs:</h4>
+            <h4 id="accept-h4">Accepted Jobs:</h4>
             <thead class="thead-light">
               <tr>
                 <th>EVENT</th>
@@ -38,11 +38,11 @@
 
   {{!-- Available Events Row Starts --}}
   <div class="row view-events-row">
-    <div class="col-12-lg view-events-col">
+    <div class="col-12-lg view-events-col" id="row2">
       <div class="card">
         <div class="table-responsive">
           <table class="table vendor-home-table" id="">
-            <h4>Available Jobs:</h4>
+            <h4 id="avail-h4">Available Jobs:</h4>
 
             <!-- Search form -->
             <form class="form-inline">
@@ -128,6 +128,8 @@
                 <th>OCCASION</th>
                 <th>SIZE</th>
                 <th></th>
+                <th></th>
+
               </tr>
             </thead>
             <tbody>
