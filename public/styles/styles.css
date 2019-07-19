@@ -22,7 +22,6 @@ p {
   position: absolute;
   top: 0;
   width: 100%;
-  /* background-color: #132149; */
   background-image: linear-gradient(to right,#132149, #132149, #344d8b);
   color: white;
 }
@@ -122,7 +121,9 @@ p {
 /* Customer Homepage Page Styling */
 /* =================================================================== */
 .customer-home-body-container {
-  background-color: #132149;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 18px;
+  background-image: linear-gradient(to bottom right,#132149, #132149, #344d8b);
   padding: 10px;
   border-radius: 10px;
   width: 75%;
@@ -133,11 +134,22 @@ p {
   border-bottom-style: solid;
   border-bottom-width: 1px;
   margin-bottom: 14px;
+  color: white;
 }
 
 .add-event-col {
-  width: 100%;
+  left:100px;
+  width: 30%;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px;
+}
+
+.logout-col {
+  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin: 10px;
 }
@@ -145,29 +157,26 @@ p {
 .view-job-row {
   display: flex;
   justify-content: center;
-<<<<<<< HEAD
-
-=======
-  /* color: black; */
->>>>>>> master
 }
 
 .view-job-col {
   width: 95%;
-  margin-bottom: 40px;
+  margin-bottom: 15px;
   background-color: white;
   border-radius: 10px;
-<<<<<<< HEAD
-  padding: 7px;
-=======
+  padding: 7px 7px 0px 7px;
+
 }
 
-#madeEventTable{
-  font-family: 'Kalam', cursive;
-  color:black;
-  text-align: center;
+#madeEventTable {
   width: 100%;
->>>>>>> master
+  max-width: 100%;
+  margin-bottom: 0;
+  background-color: transparent;
+}
+
+.add-event-col a {
+
 }
 
 /* .custuser{

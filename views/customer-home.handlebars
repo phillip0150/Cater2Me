@@ -5,92 +5,46 @@
     <!-- CUSTOMER VIEW JOBS ROW -->
     <div class="row view-job-row">
         <div class="col-12-lg view-job-col">
-<<<<<<< HEAD
             <table class="table" id="madeEventTable">
                         <thead class="thead-light">
                             <tr>
-                                <th>USER ID</th>
                                 <th>EVENT</th>
                                 <th>PHONE</th> 
-                                <th>CITY</th>
-                                <th>STATE</th>
+                                <th>LOCATION</th>
                                 <th>OCCASION</th>
-                                <th>SIZE</th>
+                                <th></th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
                          {{#each customer}}
                             <tr>
-                                <td>{{userid}}</td>
                                 <td>{{name}}</td>
                                 <td>{{phone}}</td> 
-                                <td>{{city}}</td>
-                                <td>{{state}}</td>
+                                <td>{{city}}, {{state}} </td>
                                 <td>{{occasion}}</td>
-                                <td>{{size}}</td>                            
+                                <td><button class="btn btn-primary">More Info</button></td>  
+                                <td><button class="btn btn-primary">Edit</button></td>                           
                             </tr>
                         {{/each}}
                         </tbody>                        
                     </table>
-=======
-            <table id="madeEventTable">
-                <thead>
-                    <tr>
-                        <th>USER ID</th>
-                        <th>NAME</th>
-                        <th>PHONE</th>
-                        <th>CITY</th>
-                        <th>STATE</th>
-                        <th>OCCASION</th>
-                        <th>SIZE</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{#each customer}}
-                    <tr>
-                        <td>{{userid}}</td>
-                        <td>{{name}}</td>
-                        <td>{{phone}}</td>
-                        <td>{{city}}</td>
-                        <td>{{state}}</td>
-                        <td>{{occasion}}</td>
-                        <td>{{size}}</td>
-                    </tr>
-                    {{/each}}
-                </tbody>
-            </table>
->>>>>>> master
         </div>
     </div>
 
     <!-- CUSTOMER ADD NEW EVENT BUTTON-ROW  -->
     <div class="row add-event-row">
-        <div class="col-12-lg add-event-col">
-            <a href="/event/create/{{userid}}"><button id="submit" class="btn btn-outline-light my-2 my-sm-0 custuser create-new-event">Create New Event</button></a>
-            <a href="/logout"><button id="cookie" class="btn btn-outline-light my-2 my-sm-0 custuser" onclick="" >Log Out</button></a>
+        <div class="col-sm-offset-2 col-4-sm add-event-col">
+            <a href="/event/create/{{userid}}">
+                <button href="/event/create/{{userid}}" id="submit" class="btn btn-outline-light custuser create-new-event">Create New Event</button>
+            </a>
+        </div>
+        <div class="col-sm-offset-2 col-4-sm logout-col">
+            <a href="/logout">
+                <button id="cookie" href="/logout" class="btn btn-outline-light custuser">Log Out</button>
+            </a>
         </div>
     </div>
-<<<<<<< HEAD
-
-<script>
-    function deleteCookie() {
-    var cookies = document.cookie.split("; ");
-    for (var c = 0; c < cookies.length; c++) {
-        var d = window.location.hostname.split(".");
-        while (d.length > 0) {
-            var cookieBase = encodeURIComponent(cookies[c].split(";")[0].split("=")[0]) + '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; domain=' + d.join('.') + ' ;path=';
-            var p = location.pathname.split('/');
-            document.cookie = cookieBase + '/';
-            while (p.length > 0) {
-                document.cookie = cookieBase + p.join('/');
-                p.pop();
-            };
-            d.shift();
-        }
-    }
-};
-</script>
-=======
->>>>>>> master
+    </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="/js/create.js"></script>
