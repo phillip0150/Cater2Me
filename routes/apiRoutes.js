@@ -29,7 +29,12 @@ module.exports = function(app) {
       name: req.body.name,
       phone: req.body.phone,
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      food: req.body.food,
+      aboutme: req.body.aboutme,
+      photo1: req.body.photo1,
+      photo2: req.body.photo2,
+      photo3: req.body.photo3,
     }).then(function(caterdb) {
       res.json(caterdb);
     });
@@ -63,15 +68,17 @@ module.exports = function(app) {
       size: req.body.size,
       alcohol: req.body.size,
       decor: req.body.decor,
-      comments: req.body.comments
+      date: req.body.date,
+      time: req.body.time,
+      comments: req.body.comments,
+
     }).then(function(caterdb) {
       res.json(caterdb);
     });
   });
   
   
-  // Lukes queries start------------------------------------------
-  // get event by size----works------------------------------------
+  // get event by size-
   app.get("/events/size/:size/:vendorid", function(req, res){
     db.Events.findAll({
       where: {
@@ -99,7 +106,7 @@ module.exports = function(app) {
     });
   });
   
-  // get event by state-----------------------works--------------------------
+  // get event by state----
   app.get("/events/state/:state/:vendorid", function(req, res){
     db.Events.findAll({
       where: {
@@ -137,6 +144,8 @@ module.exports = function(app) {
       size: req.body.size,
       alcohol: req.body.size,
       decor: req.body.decor,
+      date: req.body.date,
+      time: req.body.time,
       comments: req.body.comments},{ where : { eventid : req.params.id }}).then(function(){
       res.redirect("/customer");
     });

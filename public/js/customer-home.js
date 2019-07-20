@@ -15,6 +15,13 @@ $(document).ready(function() {
     window.location.href = "/customer/event/edit/" + eventID;
   });
 
+  $(".vendorInfo").on("click", function () {
+    console.log("I've been clicked");
+    var theVendor = ($(this).attr("data-id"));
+    console.log(theVendor);
+    window.location.href = "/customer/"+ theUserID + "/vendorview/" + theVendor;
+  });
+
   $(".declineBtn").on("click", function() {
     var eventID = ($(this).attr("data-id"));
 
