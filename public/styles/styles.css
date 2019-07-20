@@ -53,9 +53,8 @@ p {
 
 td {
   border-bottom-style: none;
-  text-align: center;
+  text-align: left;
   padding: 20px;
-  /* margin: 60px; */
 }
 
 /* Hamburger Menu Styling */
@@ -384,8 +383,6 @@ a:hover {
   background-color: transparent;
 } */
 
-
-
 #madeEventTable {
   width: 100%;
   max-width: 100%;
@@ -415,4 +412,32 @@ a:hover {
 
 .create-event-btn {
   margin-right: 20px;
+}
+
+/* Event Page Styling */
+/* =================================================================== */
+
+#event-banner-container {
+  background-image: url("https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80");
+  background-size: cover;
+  background-attachment: fixed;
+  border-radius: 20px;
+  padding: 10px 30px;
+  /* position: absolute; */
+  height: 30%;
+  /* z-index: -100;
+  left: 100;  */
+}
+
+#event-info-float-container {
+  background-color: blue;
+  /* position: absolute; */
+  /* z-index: 100; */
+}
+
+#event-info-container {
+  background-color: white;
+  /* position: absolute;
+
+  z-index: -100; */
 }
