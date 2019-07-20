@@ -166,7 +166,8 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/event/edit/:id", isAuthenticated, function(req, res) {
+  //customer editing event
+  app.get("/customer/event/edit/:id", isAuthenticated, function(req, res) {
     db.Events.findOne({
       where: {
         eventid: req.params.id

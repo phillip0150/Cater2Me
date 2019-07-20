@@ -49,7 +49,7 @@
             
             <div class="col-lg-4">
                 {{#if event.vendorid}}
-                    <button href="/vendor/{{event.vendorid}}" type="button" href="/vendor/{{event.vendorid}}" class="btn btn-primary btn-lg" id="home">Back home</button>
+                    <button vendor-ID="{{event.vendorid}}" type="button" class="btn btn-primary btn-lg" id="homeVendor">Back home</button>
                 {{else}}
                     <button type="button" vendor-id="{{vendorid}}" event-id="{{event.eventid}}" class="vendorAcceptBtn" id="eventAccept">Accept Event</button>
                  {{/if}}

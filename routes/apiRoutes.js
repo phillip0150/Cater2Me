@@ -47,20 +47,6 @@ module.exports = function(app) {
     });
   });
   
-  //Getting an event based on a user
-  app.get("/api/events/:id", function(req,res){
-    db.Events.findAll({
-      where: {
-        userid: req.params.id
-      }
-    }).then(function(caterdb) {
-      //we are creating this object, because we want to send it to our handlebars
-      var hbsObject = {
-        event: caterdb
-      };
-      res.render("user", hbsObject);
-    });
-  });
   
   //Create Event
   app.post("/api/createEvent/:id", function(req, res) {
