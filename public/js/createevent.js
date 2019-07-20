@@ -4,11 +4,11 @@ $(function () {
   //create var to store values
 
 
-  $("#wrongmodal").hide();
+  // $("#wrongmodal").hide();
 
-  function error(){
-    $("#wrongmodal").show();
-  }
+  // function error(){
+  //   $("#wrongmodal").show();
+  // }
 
 
 
