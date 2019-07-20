@@ -16,7 +16,7 @@ body {
 }
 
 .lead {
-  margin-right: 10rem;
+  text-align: center !important ;
 }
 
 p {
@@ -37,6 +37,10 @@ p {
 
 .list-group-item {
   line-height: 2.5;
+}
+
+.container {
+  margin-top: 120px;
 }
 
 .log-in {
