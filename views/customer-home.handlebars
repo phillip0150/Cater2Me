@@ -7,7 +7,7 @@
     <div class="col-12-lg view-events-col">
       <div class="card">
         <div class="table-responsive">
-          <table class="table vendor-home-table text-align" id="">
+          <table class="table view-table text-align" id="">
             <h4 id="accept-h4">Accepted Jobs:</h4>
             <thead class="thead-light">
               <tr>
@@ -38,11 +38,11 @@
   </div>
 
   {{!-- Pending Vendors Events Row Starts --}}
-  <div class="row view-events-row" id="row1">
+  <div class="row view-events-row" id="row2">
     <div class="col-12-lg view-events-col">
       <div class="card">
         <div class="table-responsive">
-          <table class="table vendor-home-table text-align" id="">
+          <table class="table events-table text-align" id="">
             <h4 id="accept-h4">Vendor Offer:</h4>
             <thead class="thead-light">
               <tr>
@@ -50,6 +50,7 @@
                 <th>LOCATION</th>
                 <th>OCCASION</th>
                 <th>SIZE</th>
+                <th></th>
                 <th></th>
               </tr>
             </thead>
@@ -74,12 +75,12 @@
     </div>
   </div>
     <!-- CUSTOMER VIEW JOBS ROW -->
-    <div class="row view-job-row" id="">
-        <div class="col-12-lg view-job-col">
+    <div class="row view-events-row" id="row3">
+        <div class="col-12-lg view-events-col">
             <div class="card">
-                <div class="table-responsive">
-                    <table class="table" id="madeEventTable">
-                        <h4 id="events-h4"> Your Upcoming Events: </h4>
+                <div class="table-responsive ">
+                    <table class="table events-table " id="madeEventTable">
+                        <h4 id="accept-h4"> Your Unassigned Events: </h4>
                         <thead class="thead-light">
                             <tr>
                                 <th>EVENT</th>
@@ -87,17 +88,15 @@
                                 <th>LOCATION</th>
                                 <th>OCCASION</th>
                                 <th></th>
-                                <th></th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="text-left">
                             {{#each customer.customer}}
                             <tr>
                                 <td>{{this.name}}</td>
                                 <td>{{this.phone}}</td>
                                 <td>{{this.city}}, {{state}} </td>
                                 <td>{{this.occasion}}</td>
-                                {{!-- <td><button class="moreInfoBtn btn btn-primary" data-id="{{ this.eventid }}" >More Info</button></td> --}}
                                 <td><button class="editBtn btn btn-primary" event-id="{{ this.eventid }}">Edit</button></td>
                             </tr>
                             {{/each}}

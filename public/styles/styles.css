@@ -20,6 +20,7 @@ p {
   margin-top: 0px;
   margin-bottom: 0px;
 }
+
 .navbar-header {
   position: absolute;
   top: 0;
@@ -48,6 +49,13 @@ p {
 .log-out {
   background-color: #132149;
   color: white;
+}
+
+td {
+  border-bottom-style: none;
+  text-align: center;
+  padding: 20px;
+  /* margin: 60px; */
 }
 
 /* Hamburger Menu Styling */
@@ -257,10 +265,6 @@ a:hover {
   border-radius: 20px;
 }
 
-#row1 {
-  margin-bottom: 30px;
-}
-
 #vendorTitle {
   color: white;
   margin-left: 20px;
@@ -273,7 +277,7 @@ a:hover {
 .view-events-row {
   display: flex;
   justify-content: center;
-  margin-bottom: 12px;
+  margin-bottom: 25px;
 }
 
 .view-events-col {
@@ -289,7 +293,12 @@ a:hover {
   border-radius: 10px;
 }
 
-.vendor-home-table {
+.add-event-row {
+  margin-bottom: 15px;
+}
+
+/* PREVIOUSLY .vendor-home-table */
+.events-table {
   padding: 10px;
   width: 100%;
   min-width: 100%;
@@ -340,7 +349,7 @@ a:hover {
   color: white;
 }
 
-.view-job-row {
+/* .view-job-row {
   display: flex;
   justify-content: center;
   margin-bottom: 12px;
@@ -352,17 +361,15 @@ a:hover {
   width: 95%;
 }
 
-.view-job-col table {
-  background: white;
-  border-radius: 10px;
-}
+.customer-home-table {
+  padding: 10px;
+  width: 100%;
+  min-width: 100%;
+  margin-bottom: 0;
+  background-color: transparent;
+} */
 
-td {
-  border-bottom-style: solid;
-  text-align: center;
-  padding: 20px;
-  /* margin: 60px; */
-}
+
 
 #madeEventTable {
   width: 100%;
