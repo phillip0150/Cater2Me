@@ -47,9 +47,8 @@ $(function () {
       password: $("#passwordUser").val().trim()
     };
 
-    console.log(newUser);
-    console.log(newVendor.password.length);
-    if(newUser.password.length < 7|| newUser.phone.length <11){
+   
+    if(newUser.password.length < 7){
       error();
     
     }

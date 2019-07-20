@@ -36,6 +36,41 @@
     </div>
   </div>
 
+    {{!-- Pending Events Row Starts --}}
+  <div class="row view-events-row" id="row1">
+    <div class="col-12-lg view-events-col">
+      <div class="card">
+        <div class="table-responsive">
+          <table class="table vendor-home-table text-align" id="">
+            <h4 id="accept-h4">Pending Jobs:</h4>
+            <thead class="thead-light">
+              <tr>
+                <th>EVENT</th>
+                <th>LOCATION</th>
+                <th>OCCASION</th>
+                <th>SIZE</th>
+                <th></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {{#each pending.pendingCurrent}}
+              <tr>
+                <td> {{ this.name }} </td>
+                <td> {{ this.city }}, {{ this.state }} </td>
+                <td> {{ this.occasion }} </td>
+                <td> {{ this.size }} </td>
+                <td> <button class="btn btn-primary moreInfoBtn" data-id="{{this.eventid}}"> More
+                    Info </button></td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
   {{!-- Available Events Row Starts --}}
   <div class="row view-events-row">
     <div class="col-12-lg view-events-col" id="row2">

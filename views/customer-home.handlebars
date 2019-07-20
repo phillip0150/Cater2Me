@@ -1,7 +1,78 @@
 <div class="container customer-home-body-container">
 
-    <h1 class="cust-name" id="name-of-customer">Welcome {{name}}</h1>
+    <h1 class="cust-name" user-info="{{customer.userid}}" id="name-of-customer">Welcome {{customer.name}}</h1>
 
+{{!-- Accepted Events Row Starts --}}
+  <div class="row view-events-row" id="row1">
+    <div class="col-12-lg view-events-col">
+      <div class="card">
+        <div class="table-responsive">
+          <table class="table vendor-home-table text-align" id="">
+            <h4 id="accept-h4">Accepted Jobs:</h4>
+            <thead class="thead-light">
+              <tr>
+                <th>EVENT</th>
+                <th>LOCATION</th>
+                <th>OCCASION</th>
+                <th>SIZE</th>
+                <th></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {{#each accepted.events}}
+              <tr>
+                <td> {{ this.name }} </td>
+                <td> {{ this.city }}, {{ this.state }} </td>
+                <td> {{ this.occasion }} </td>
+                <td> {{ this.size }} </td>
+                <td> <button class="btn btn-primary moreInfoBtn" data-id="{{this.eventid}}"> More
+                    Info </button></td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{!-- Pending Vendors Events Row Starts --}}
+  <div class="row view-events-row" id="row1">
+    <div class="col-12-lg view-events-col">
+      <div class="card">
+        <div class="table-responsive">
+          <table class="table vendor-home-table text-align" id="">
+            <h4 id="accept-h4">Vendor Offer:</h4>
+            <thead class="thead-light">
+              <tr>
+                <th>EVENT</th>
+                <th>LOCATION</th>
+                <th>OCCASION</th>
+                <th>SIZE</th>
+                <th></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {{#each vendor.vendor}}
+              <tr>
+                <td> {{ this.name }} </td>
+                <td> {{ this.city }}, {{ this.state }} </td>
+                <td> {{ this.occasion }} </td>
+                <td> {{ this.size }} </td>
+                <td> <button class="btn btn-primary acceptBtn" data-id="{{this.eventid}}"> Accept
+                     </button></td>
+                <td><button class="btn btn-primary declineBtn" data-id="{{this.eventid}}"> Decline
+                     </button></td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
     <!-- CUSTOMER VIEW JOBS ROW -->
     <div class="row view-job-row" id="">
         <div class="col-12-lg view-job-col">
@@ -20,12 +91,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {{#each customer}}
+                            {{#each customer.customer}}
                             <tr>
-                                <td>{{name}}</td>
-                                <td>{{phone}}</td>
-                                <td>{{city}}, {{state}} </td>
-                                <td>{{occasion}}</td>
+                                <td>{{this.name}}</td>
+                                <td>{{this.phone}}</td>
+                                <td>{{this.city}}, {{state}} </td>
+                                <td>{{this.occasion}}</td>
                                 {{!-- <td><button class="moreInfoBtn btn btn-primary" data-id="{{ this.eventid }}" >More Info</button></td> --}}
                                 <td><button class="editBtn btn btn-primary" data-id="{{ this.eventid }}">Edit</button></td>
                             </tr>
@@ -37,11 +108,13 @@
         </div>
     </div>
 
+    
+
     <!-- CUSTOMER ADD NEW EVENT BUTTON-ROW  -->
     <div class="row justify-content-md-center add-event-row" id="btn-row">
         <div class="col col-lg-2 add-event-col">
-            <a href="/event/create/{{userid}}">
-                <button href="/event/create/{{userid}}" id="submit"
+            <a href="/event/create/{{customer.userid}}">
+                <button href="/event/create/{{customer.userid}}" id="submit"
                     class="btn btn-outline-light custuser create-new-event">Create New Event</button>
             </a>
         </div>

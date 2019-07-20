@@ -17,4 +17,11 @@ $("#eventAccept").on("click" ,function (){
     window.location.href= "/vendor/"+vendorId;
   });
 });
+
+$("#homeCustomer").on("click" ,function (){
+           
+  
+  window.location.href= "/customer/";
+
+});
   
