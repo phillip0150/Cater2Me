@@ -315,6 +315,21 @@ a:hover {
   margin-bottom: 15px;
 }
 
+.vendor-search-form {
+  width:90%;
+  flex-wrap: wrap;
+  float: left;
+}
+
+#resetSearch {
+  flex-wrap: wrap;
+  float: right;
+  bottom: 20px;
+  margin-bottom: 1rem;
+}
+
+
+
 /* Event Page Styling */
 /* =================================================================== */
 #eventAccept {
