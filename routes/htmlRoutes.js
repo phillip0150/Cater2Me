@@ -1,6 +1,6 @@
 var db = require("../models");
 var isAuthenticated = require("../config/middleware/isAuthenticated");
-
+var isAuthenticatedVendor = require("../config/middleware/isAuthenticatedVendor");
 
 module.exports = function(app) {
 
@@ -35,7 +35,7 @@ module.exports = function(app) {
 
   //Vendor homepage handlebars
   //TODO add isAuthenticated when finished testing
-  app.get("/vendor/:id", function(req,res){
+  app.get("/vendor/:id",isAuthenticatedVendor, function(req,res){
     //Ask DB to find all events available where there are no vendors assigned
     db.Events.findAll({
       where: {
@@ -79,7 +79,7 @@ module.exports = function(app) {
   });
 
   //  create event page
-  app.get("/event/create/:id", function(req,res){
+  app.get("/event/create/:id", isAuthenticated, function(req,res){
     var hbsObject = {
       id: req.params.id
     };
@@ -91,7 +91,8 @@ module.exports = function(app) {
     res.redirect("/");
   });
 
-  app.get("/event/:id/:vendorid", function(req, res) {
+  //vendor veiwing event
+  app.get("/event/:id/:vendorid", isAuthenticatedVendor, function(req, res) {
     db.Events.findOne({
       where: {
         eventid: req.params.id
@@ -106,7 +107,7 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/event/edit/:id", function(req, res) {
+  app.get("/event/edit/:id", isAuthenticated, function(req, res) {
     db.Events.findOne({
       where: {
         eventid: req.params.id
