@@ -1,6 +1,6 @@
 $("#size").hide();
 $("#state").hide();
-
+// var vendorID = $(".vendorInfo").attr()
 var placeArray = (window.location.pathname).split("/");
 var vendorId = placeArray.slice(-1)[0];
 
@@ -33,7 +33,7 @@ $(".moreInfoBtn").on("click", function () {
   console.log("I've been clicked");
   var btnID = ($(this).attr("data-id"));
   console.log(btnID);
-  window.location.href = "/event/" + btnID;
+  window.location.href = "/event/" + btnID +"/"+ vendorId;
 });
 
 // SEARCH INPUTS 

@@ -1,8 +1,9 @@
 module.exports = function(req, res, next){
   
-  if(req.user.userid){
+  if(req.user.vendorid){
     return next();
   }
-
+  
   return res.redirect("/");
 };
+  
