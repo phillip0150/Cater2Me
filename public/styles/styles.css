@@ -222,6 +222,7 @@ a:hover {
 
 .card-image {
   border-radius: 10px;
+  width: 100%;
 }
 
 /* Create Account Page Styling */
