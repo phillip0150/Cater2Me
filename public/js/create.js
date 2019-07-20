@@ -73,11 +73,47 @@ $(function () {
   $(".create-vendor").on("submit", function (event) {
     event.preventDefault();
 
+    if($("#userphoto").val().trim()=== ""){
+      var theuserphoto = "http://izuum.com/noimage.jpg";
+    }
+    else{
+      var theuserphoto = $("#userphoto").val().trim();
+      console.log(theuserphoto);
+    }
+
+    if($("#photo1").val().trim()===""){
+      var thephoto1 = "http://izuum.com/noimage.jpg";
+    }
+    else{
+      var thephoto1 = $("#photo1").val().trim();
+    }
+
+    if($("#photo2").val().trim()===""){
+      var thephoto2 = "http://izuum.com/noimage.jpg";
+    }
+    else{
+      var thephoto2 = $("#photo2").val().trim();
+    }
+
+    if($("#photo3").val().trim()===""){
+      var thephoto3 = "http://izuum.com/noimage.jpg";
+    }
+    else{
+      var thephoto3 = $("#photo3").val().trim();
+    }
+
     var newVendor = {
       name: $("#nameVendor").val().trim(),
       email: $("#emailVendor").val().trim(),
       password: $("#passwordVendor").val().trim(),
-      phone: $("#phone").val().trim()
+      phone: $("#phone").val().trim(),
+      food: $("#food").val().trim(),
+      aboutme: $("#aboutme").val().trim(),
+      userphoto: theuserphoto,
+      photo1: thephoto1,
+      photo2: thephoto2,
+      photo3: thephoto3,
+
     };
 
     console.log(newVendor.password.length);

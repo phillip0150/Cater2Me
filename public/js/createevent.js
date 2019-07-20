@@ -4,11 +4,16 @@ $(function () {
   //create var to store values
 
 
+  $("#wrongmodal").hide();
+
+  function error(){
+    $("#wrongmodal").show();
+  }
 
 
 
   //send those values to /api/createVendor
-  $(".create-event").on("submit", function (event) {
+  $("#submit").on("click", function (event) {
     event.preventDefault();
     var theUserId = $("#userid").val();
     var newEvent = {
@@ -20,24 +25,28 @@ $(function () {
       occasion: $("#occasion").val().trim(),
       courses: $("#courses").val().trim(),
       consideration: $("#consideration").val().trim(),
-      size: $("#size").val(),
+      size: $("#size").val().trim(),
       alcohol: $("#alcohol").val(),
       decor: $("#decor").val().trim(),
+      date: $("#date").val().trim(),
+      time: $("#time").val().trim(),
       comments: $("#comments").val().trim()
     };
-    
     console.log(newEvent);
 
     $.ajax("/api/createEvent/" + theUserId, {
       type: "POST",
       data: newEvent
-    }).then(
+    }).always(
       function () {
         console.log("created a new event!");
         window.location.href = "/customer";
       }
     );
+    
+
   });
+
 
 
 
