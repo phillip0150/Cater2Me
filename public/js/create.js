@@ -49,7 +49,7 @@ $(function () {
 
     console.log(newUser);
     console.log(newVendor.password.length);
-    if(newVendor.password.length < 7|| newVendor.email.includes("@") || newVendor.phone.length <11){
+    if(newUser.password.length < 7|| newUser.phone.length <11){
       error();
     
     }
@@ -82,7 +82,7 @@ $(function () {
     };
 
     console.log(newVendor.password.length);
-    if(newVendor.password.length < 7|| newVendor.email.includes("@") || newVendor.phone.length <11){
+    if(newVendor.password.length < 7|| newVendor.phone.length <11){
       error();
     
     }

@@ -64,12 +64,14 @@ module.exports = function(app) {
           }
         }).then(function(userData) {
           console.log(userData.name);
-          var vendorName = userData.name;
+          var vendorInfo = {
+            vendor: userData
+          };
 
           res.render("vendor-home", {
             accepted: acceptedEvents, 
             available: nullVendorEvents, 
-            vendorName: vendorName
+            vendorInfo: vendorInfo
           });
         });
       });
@@ -89,7 +91,7 @@ module.exports = function(app) {
     res.redirect("/");
   });
 
-  app.get("/event/:id", function(req, res) {
+  app.get("/event/:id/:vendorid", function(req, res) {
     db.Events.findOne({
       where: {
         eventid: req.params.id
@@ -97,7 +99,8 @@ module.exports = function(app) {
     }).then(function(caterdb) {
       //we are creating this object, because we want to send it to our handlebars
       var hbsObject = {
-        event: caterdb
+        event: caterdb,
+        vendorid: req.params.vendorid
       };
       res.render("event", hbsObject);
     });
