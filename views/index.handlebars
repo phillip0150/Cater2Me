@@ -28,14 +28,13 @@
 
 
   {{!-- CARD CONTAINER AND CARDS FOR INFORMATION ABOUT US --}}
-  <div class="container card-info-container">
-    <div class="row info-row">
-      <div class="col-6-lg" id="about-col">
-        <div class="card about-card">
-          <img src="images/mission-01.png"
-             class="card-img-top card-image" alt="cater image">
+  <div class="container" id="card-info-container">
+    <div class="row">
+      <div class="col-md-6 info-col col-md-offset-2" id="about-us-col">
+        <div class="card info-card">
+          <img src="/images/mission-01.png" style="width: 100%;" class="card-img-top card-image" alt="cater image">
           <div class="card-body">
-            <h5 class="card-title">About Us!</h5>
+            {{!-- <h5 class="card-title">About Us!</h5> --}}
             <p class="card-text"> Since the beginning of time food has been what has brought people together(or
               separated them). When we created “Cater 2 Me” we set out to completely change the way people cater the
               important events and celebrations that bring joy or disperse sorrow with their loved ones. With “Cater 2
@@ -44,17 +43,18 @@
           </div>
         </div>
       </div>
-      <div class="col-6-lg info-col" id="howto-col">
-        <div class="card" id="how-does-it-card">
-          <img src="images/howto-01.png"
-            class="card-img-top card-image" alt="cater image">
+      <div class="col-md-6 info-col" id="how-does-it-col">
+        <div class="card info-card">
+          <img src="/images/howto-01.png" style="width: 100%;" class="card-img-top card-image" alt="cater image">
           <div class="card-body">
-            <h5 class="card-title">How Does It Work?</h5>
+            {{!-- <h5 class="card-title">How Does It Work?</h5> --}}
             <p class="card-text">You post an event that needs catering. A vendor who's willing to cater sends an offer.
-              You accept or decline. It's that easy! Easier than riding a bike or.....you get what we're saying! Bonne
+              You accept or decline. It's that easy! Easier than riding a bike or...you get what we're saying! Bonne
               Appétit! </p>
           </div>
         </div>
+      </div>
+    </div>
 
         {{!-- MODAL  --}}
         <div class="modal" tabindex="-1" role="dialog" id="wrongmodal">
