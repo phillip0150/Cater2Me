@@ -24,4 +24,10 @@ $("#homeCustomer").on("click" ,function (){
   window.location.href= "/customer/";
 
 });
-  
+
+
+$("#homeVendor").on("click" ,function (){
+           
+  window.location.href= "/vendor/"+$("#homeVendor").attr("vendor-ID");
+
+});
