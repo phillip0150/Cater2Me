@@ -24,6 +24,7 @@ p {
   margin-top: 0px;
   margin-bottom: 0px;
 }
+
 .navbar-header {
   position: absolute;
   top: 0;
@@ -196,7 +197,7 @@ a:hover {
   max-width: 60%;
   margin-top: 120px;
   background-color: rgba(255, 255, 255, 0.931);
-  border-radius: 25px;
+  border-radius: 20px;
 }
 
 .login-row {
@@ -204,32 +205,22 @@ a:hover {
 }
 
 .login-col {
-  min-width: 650px;
+  width: 85%;
 }
 
 #card-info-container {
   margin-top: 20px;
+  width: 62%;
 }
 
-<<<<<<< HEAD
 .info-col {
   width: 200px;
 }
 
 .info-card {
   background-color:rgba(255, 255, 255, 0.924);
-=======
-.about-us-card {
-  background-color: rgba(255, 255, 255, 0.931);
   max-width: 100%;
-  border-radius: 10px;
-}
-
-.how-does-it-card {
-  background-color: rgba(255, 255, 255, 0.931);
->>>>>>> master
-  max-width: 100%;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 .card-image {
