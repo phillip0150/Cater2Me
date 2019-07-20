@@ -135,6 +135,8 @@ module.exports = function(app) {
     res.redirect("/");
   });
 
+  //customer veiwing vendor profile
+
   //vendor veiwing event
   app.get("/event/:id/:vendorid", isAuthenticatedVendor, function(req, res) {
     db.Events.findOne({
@@ -166,7 +168,7 @@ module.exports = function(app) {
   });
 
   //customer editing event
-  app.get("/customer/event/edit/:id", isAuthenticated, function(req, res) {
+  app.get("/customer/event/edit/:id/", isAuthenticated, function(req, res) {
     db.Events.findOne({
       where: {
         eventid: req.params.id
@@ -177,6 +179,20 @@ module.exports = function(app) {
         event: caterdb
       };
       res.render("editevent", hbsObject);
+    });
+  });
+
+  app.get("/customer/:customerid/vendorview/:vendorid", function(req,res) {
+    db.Vendor.findOne({
+      where: {
+        vendorid: req.params.vendorid
+      }
+    }).then(function(caterdb){
+      var hbsObject ={
+        vendorInfo: caterdb,
+        customerid: req.params.customerid
+      };
+      res.render("vendor-profile", hbsObject);
     });
   });
   

@@ -40,6 +40,32 @@ module.exports = function (sequelize, DataTypes) {
       validate: {
         len: [8],
       }
+    },
+    food: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate :{
+        len: [1]
+      }
+    },
+    aboutme: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      validate: {
+        len: [3]
+      }
+    },
+    userphoto: {
+      type: DataTypes.TEXT,
+    },
+    photo1: {
+      type: DataTypes.TEXT,
+    },
+    photo2: {
+      type: DataTypes.TEXT,
+    },
+    photo3: {
+      type: DataTypes.TEXT,
     }
   });
 

@@ -23,13 +23,13 @@
         {{!-- end modal --}}
         <div class="row" id="create-event-row">
             <div class="col-10 offset-1 login-col w-100">
-                <h3>Create an Event!</h3>
+                <h3>Edit your event!</h3>
                 <form class="clearfix mb-4 create-event" action="">
                     <div class="form-group">
                         
                         <label for="example-text">Event Name</label>
-                        <input type="text" id="name" class="form-control" aria-describedby="example-text"
-                            placeholder="Name" value={{event.name}} required>
+                        <input type="" id="name" class="form-control" aria-describedby="example-text"
+                            placeholder="Name" value="{{event.name}}" required>
 
                         <label for="example-text">Phone</label>
                         <input type="text" id="phone" class="form-control" aria-describedby="example-text"
@@ -37,7 +37,7 @@
 
                         <label for="city">City</label>
                         <input type="text" id="city" class="form-control" aria-describedby="" placeholder="City"
-                            value={{event.city}} required>
+                            value="{{event.city}}" required>
 
                         <label for="example-text">State</label>
                         <select class="custom-select" id="state" required>
@@ -97,7 +97,7 @@
 
                         <label for="courses">Courses</label>
                         <input type="number" id="courses" class="form-control" aria-describedby=""
-                            placeholder="Number of Courses" value={{event.courses}} required>
+                            placeholder="Number of Courses" value="{{event.courses}}" required>
 
                         <label for="example-text">Occasion</label>
                         <select class="custom-select" id="occasion" aria-describedby="" required>
@@ -120,7 +120,7 @@
 
                         <label for="considerations">Any Considerations?</label>
                         <input type="text" id="consideration" class="form-control" aria-describedby="considerations"
-                            placeholder="Kosher, Vegan, Halal, etc.." value={{event.consideration}}>
+                            placeholder="Kosher, Vegan, Halal, etc.." value="{{event.consideration}}">
 
                         <label for="alcohol">Alcohol</label>
                         <select class="custom-select" id="alcohol" aria-describedby="alcohol" required>
@@ -136,9 +136,17 @@
                             <option value="no">No</option>
                         </select>
 
+                        <label for="date">Date</label>
+                         <input type='date' id="date" class="form-control" value="{{event.date}}" required/>
+
+                         <label for="time">Time</label>
+                         <input type="time" id="time"
+                            min="9:00" max="18:00" class="form-control" value="{{event.time}}" required>
+
+
                         <label for="comments">Comments</label>
                         <input type="text" id="comments" class="form-control" aria-describedby="comments"
-                            placeholder="Any Kid's Meals? Dislikes?" value={{event.comments}}>
+                            placeholder="Any Kid's Meals? Dislikes?" value="{{event.comments}}">
 
                     </div>
 
@@ -168,6 +176,8 @@
       size: $("#size").val(),
       alcohol: $("#alcohol").val(),
       decor: $("#decor").val().trim(),
+      date: $("#date").val().trim(),
+      time: $("#time").val().trim(),
       comments: $("#comments").val().trim()
     };
     
