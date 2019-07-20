@@ -10,9 +10,9 @@ $(document).ready(function() {
 
   $(".editBtn").on("click", function () {
     console.log("I've been clicked");
-    var eventID = ($(this).attr("data-id"));
+    var eventID = ($(this).attr("event-id"));
     console.log(eventID);
-    window.location.href = "/event/edit/" + eventID;
+    window.location.href = "/customer/event/edit/" + eventID;
   });
 
   $(".declineBtn").on("click", function() {
