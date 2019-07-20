@@ -154,7 +154,7 @@ module.exports = function(app) {
     });
   });
 
-  // get event by decor needed ------------------does work, 0 = false 1 = true-------------------------
+  //getting event and editing it
   app.post("/api/event/edit/:id", function(req, res){
     db.Events.update({name: req.body.name,
       phone: req.body.phone,
@@ -171,8 +171,36 @@ module.exports = function(app) {
     });
    
   });
-    
   
-  // get event by booze needed
-  //multiple queries at once
+  //api to decline an event
+  app.post("/api/event/decline/:eventId/:userId", function(req, res){
+    db.Events.update({
+      vendorid: null,
+      customerAccept: false
+    },
+    {
+      where:{
+        userid: req.params.userId,
+        eventid: req.params.eventId
+      }
+    }).then(function(){
+      res.redirect("/customer");
+    });
+  });
+
+  //api to accept an event
+  app.post("/api/event/accept/:eventId/:userId", function(req, res){
+    db.Events.update({
+      customerAccept: true
+    },
+    {
+      where:{
+        userid: req.params.userId,
+        eventid: req.params.eventId
+      }
+    }).then(function(){
+      res.redirect("/customer");
+    });
+  });
+  
 };
