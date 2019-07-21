@@ -151,7 +151,7 @@ a:hover {
   text-align: center;
   width: 140px;
   height: 150px;
-  margin: 19px 0 0 230px;
+  margin: 19px 0 0 -50px;
   padding: 8px;
   /* border-radius: 20px; */
 
@@ -161,7 +161,7 @@ a:hover {
   /* to stop flickering of text in safari */
 
   transform-origin: 0% 0%;
-  transform: translate(-100%, 0);
+  transform: translate(100%, 0);
 
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 
@@ -182,8 +182,8 @@ a:hover {
  * And let's slide it in from the left
  */
 #menuToggle input:checked ~ ul {
-  transform: translateX(-200%), ;
-  /* transform: none; */
+  /* transform: translate(-200%); */
+  transform: none;
 }
 
 /* Index Page Styling */
