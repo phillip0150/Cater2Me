@@ -1,101 +1,69 @@
-{{!-- <div class="container customer-home-body-container"> --}}
+<div class="container" id="event-container">
+    <div class="row justify-content-center">
+        <div class="col-lg-12">
 
-    {{!-- <h1 class="cust-name" id="name-of-customer">{{event.name}}</h1>
-                        <td>{{event.name}}</td>
-                        <td>{{event.phone}}</td>
-                        <td>{{event.city}}</td>
-                        <td>{{event.state}}</td>
-                        <td>{{event.occasion}}</td>
-                        <td>{{event.size}}</td>
-                        <td>{{event.courses}}</td>
-                        <td>{{event.consideration}}</td>
-                        <td>{{event.alcohol}}</td>
-                        <td>{{event.decor}}</td>
-                        <td>{{event.comments}}</td> --}}
-    {{!-- <!-- CUSTOMER ADD NEW EVENT BUTTON-ROW  -->
-    <div class="container">
-        <div class="row">
+            <!-- Image/Top of the Card -->
+            <div class="card bg-light">
+                <img src="/images/event-page/party.png" class="card-img" alt="...">
+                <div class="card-img-overlay text-center">
+                    <h6 class="card-text">{{ event.date }}</h6>
+                    <br>
+                    <h1 class="card-title">{{ event.name }}</h1>
+                </div>
 
-            <div class="col-lg-3"></div>
-            <div class="col-lg-2"></div>
-
-            <div class="col-lg-4">
-                {{#if event.vendorid}}
-                <button vendor-ID="{{event.vendorid}}" type="button" class="btn btn-primary btn-lg" id="homeVendor">Back
-                    home</button>
-                {{else}}
-                <button type="button" vendor-id="{{vendorid}}" event-id="{{event.eventid}}" class="vendorAcceptBtn"
-                    id="eventAccept">Accept Event</button>
-                {{/if}}
-            </div>
-
-            <div class="col-lg-3"></div>
-        </div>
-    </div> --}}
-
-    <div class="container" id="event-container">
-        <div class="row justify-content-center">
-            <div class="col-lg-12">
-
-                <!-- Image/Top of the Card -->
-                <div class="card bg-light">
-                    <img src="/images/event-page/party.png" class="card-img" alt="...">
-                    <div class="card-img-overlay text-center">
-                        <h6 class="card-text">This is where the date goes</h6>
-                        <br>
-                        <h1 class="card-title">Event Title</h1>
-                    </div>
-
-                    <!-- First Row of the Card -->
-                    <div class="card-body" id="event-slice-body">
-                        <div class="slice-row row justify-content-center">
-                            <div class="col-sm-2 slice-col text-center">
-                                <i class="fas fa-map-marker-alt fa-lg float-left"></i>
-                                <h4 class="float-left">Location</h4>
-                            </div>
-                            <div class=" col-sm-2 slice-col text-center">
-                                <i class="fas fa-user-friends fa-lg float-left"></i>
-                                <h4 class="float-left">People</h4>
-                            </div>
-                            <div class=" col-sm-2 slice-col text-center">
-                                <i class="fas fa-map-marker-alt fa-lg float-left"></i>
-                                <h4 class="float-left">Food</h4>
-                            </div>
+                <!-- First Row of the Card -->
+                <div class="card-body" id="event-slice-body">
+                    <div class="slice-row row justify-content-center">
+                        <div class="col-sm-3 slice-col text-center">
+                            <i class="fas fa-map-marker-alt fa-lg float-left"></i>
+                            <h4 class="float-left">{{ event.city }}, {{ event.state }}</h4>
+                        </div>
+                        <div class=" col-sm-3 slice-col text-center">
+                            <i class="fas fa-user-friends fa-lg float-left"></i>
+                            <h4 class="float-left">{{ event.size }} People</h4>
+                        </div>
+                        <div class=" col-sm-3 slice-col text-center">
+                            <i class="fas fa-utensils fa-lg float-left"></i>
+                            <h4 class="float-left">{{ event.courses }} Courses</h4>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Second Row of the Card -->
-                    <div class="card-body" id="event-main-body">
-                        <div class="row" id="event-main-row">
-                            <div class="col-md-8" id="event-main-col">
-                                <h4 class="card-title">Customer Name: </h4>
-                                <h5 class="card-title">Date/Time: </h5>
-                                <p class="card-text">Special Considerations: </p>
-                                <p class="card-text">Comments: Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                    Odit ullam provident atque iure quo culpa est quia recusandae harum debitis, minima
-                                    doloribus in adipisci rerum. Consequuntur nihil earum mollitia reiciendis.</p>
-                            </div>
+                <!-- Second Row of the Card -->
+                <div class="card-body" id="event-main-body">
+                    <div class="row" id="event-main-row">
+                        <div class="col-md-8" id="event-main-col">
+                            <h4 class="card-title">Customer Name: </h4>
+                            <p class="card-text">Special Considerations: {{ event.consideration }}</p>
+                            <p class="card-text">Comments: {{ event.comments }}</p>
                         </div>
-                        <div class="row justify-content-center" id="event-blocks-row">
-                            <div class="col-md-2 event-blocks">
-                                <h5> Occasion </h5>
-                            </div>
-                            <div class="col-md-2 event-blocks">
-                                <h5>Courses</h5>
-                            </div>
-                            <div class="col-md-2 event-blocks">
-                                <h5>Alcohol</h5>
-                            </div>
-                            <div class="col-md-2 event-blocks">
-                                <h5>Decor</h5>
-                            </div>
+                    </div>
+                    <div class="row justify-content-center" id="event-blocks-row">
+                        <div class="col-md-2 event-blocks">
+                            <h5> Occasion: </h5>
+                            <p>{{ event.occasion }}</p>
                         </div>
-                        <div class="row justify-content-center btn-row">
-                            <button vendor-ID="{{event.vendorid}}" type="button" class="btn btn-primary btn-lg"
-                                id="homeVendor">Back home</button>
+                        <div class="col-md-2 event-blocks">
+                            <h5>Date: </h5>
+                            <p>{{ event.date }}</p>
+                        </div>
+                        <div class="col-md-2 event-blocks">
+                            <h5>Alcohol: </h5>
+                            <p>{{ event.alcohol }}</p>
+                        </div>
+                        <div class="col-md-2 event-blocks">
+                            <h5>Decor: </h5>
+                            <p>{{ event.decor }}</p>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center btn-row">
+                        <div class="col-lg-9">
+                            <button vendor-ID="{{event.vendorid}}" type="button" class="btn btn-primary btn-lg float-right"
+                                id="homeVendor">Back
+                                home</button>
                             {{#unless event.vendorid}}
                             <button type="button" vendor-id="{{vendorid}}" event-id="{{event.eventid}}"
-                                class="vendorAcceptBtn btn-primary btn-lg btn" id="eventAccept">Accept Event</button>
+                                class="vendorAcceptBtn btn-primary btn-lg btn float-right" id="eventAccept">Accept Event</button>
                             {{/unless}}
                             {{!-- <button type="button" id="homeBtn" class="btn btn-lg btn-primary"> Home </button>
                             <div class="padding-div"></div>
@@ -105,9 +73,10 @@
                 </div>
             </div>
         </div>
+    </div>
 
     {{!-- </div> --}}
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    {{!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -115,7 +84,7 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> --}}
 
-    {{!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script> --}}
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="/js/event.js"></script>
