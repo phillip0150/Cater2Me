@@ -33,15 +33,12 @@ p {
   width: 20rem;
 }
 
-.navbar-light .navbar-nav .nav-link {
-  color: white;
+.nav-btn-row {
+  margin-right: 3rem;
 }
 
-.nav-link {
-  display: flex;
-  flex-wrap: wrap; 
-  margin-left: 96%!important;
-  text-align: right;
+.homeBtn-col {
+  margin-right: 25px;
 }
 
 .list-group-item {
