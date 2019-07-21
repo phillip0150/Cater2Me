@@ -417,27 +417,84 @@ a:hover {
 /* Event Page Styling */
 /* =================================================================== */
 
-#event-banner-container {
-  background-image: url("https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80");
-  background-size: cover;
-  background-attachment: fixed;
-  border-radius: 20px;
-  padding: 10px 30px;
-  /* position: absolute; */
-  height: 30%;
-  /* z-index: -100;
-  left: 100;  */
+#event-container {
+  font-family: "Quicksand", sans-serif;
+  margin-bottom: 100px;
+  margin-top: 150px;
+  /* background-color:rgba(255, 255, 255, 0.952);  */
 }
 
-#event-info-float-container {
-  background-color: blue;
-  /* position: absolute; */
-  /* z-index: 100; */
+#event-container h1 {
+  font-size: 3.5rem;
+  
 }
 
-#event-info-container {
-  background-color: white;
-  /* position: absolute;
+.card-img-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1.25rem;
+}
 
-  z-index: -100; */
+.card-img-overlay h6 {
+  margin-top: 2.2rem;
+  font-size: 15pt;
+}
+
+#event-slice-body {
+  background-image: linear-gradient(to right, #132149, #132149, #344d8b);
+  /* background-color: #132149; */
+  padding: 1rem 0rem .5rem 0rem;
+  color: white;
+  height: 4rem;
+}
+
+.slice-col {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.slice-col .fa-map-marker-alt, .slice-col .fa-user-friends {
+  margin-right: 10px;
+  margin-top: 4px;
+}
+
+#event-main-body {
+  padding: 1.25rem;
+}
+
+#event-main-col{
+  margin-left: 8rem;
+}
+
+#event-blocks-row {
+  margin-top: 2rem;
+  margin-left: .6rem;
+  padding-bottom: 3rem;
+}
+
+.event-blocks {
+  background-image: linear-gradient(to bottom right, #132149, #132149, #344d8b);
+  color: white;
+  margin-right: 2rem;
+  border-radius: 8px;
+  padding: .6rem .6rem .6rem 1rem;
+  height: 8rem;
+}
+
+.btn-row {
+  padding-bottom: 2rem;
+}
+
+.padding-div {
+  width: 50px;
+}
+
+list-group-item {
+  background-color: #33383d;
+  color: white;
 }
