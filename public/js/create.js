@@ -73,8 +73,8 @@ $(function () {
   $(".create-vendor").on("submit", function (event) {
     event.preventDefault();
 
-    if($("#userphoto").val().trim()=== ""){
-      var theuserphoto = "http://izuum.com/noimage.jpg";
+    if($("#userphoto").val().trim()=== "" || $("#userphoto").val().trim()=== null){
+      var theuserphoto = "https://thispersondoesnotexist.com/image";
     }
     else{
       var theuserphoto = $("#userphoto").val().trim();

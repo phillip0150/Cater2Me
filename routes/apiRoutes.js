@@ -32,6 +32,7 @@ module.exports = function(app) {
       password: req.body.password,
       food: req.body.food,
       aboutme: req.body.aboutme,
+      userphoto: req.body.userphoto,
       photo1: req.body.photo1,
       photo2: req.body.photo2,
       photo3: req.body.photo3,
