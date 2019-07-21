@@ -99,10 +99,21 @@ module.exports = function(app) {
         var acceptedEvents = {
           events: morecaterdb
         };
-        res.render("vendor-home", {accepted: acceptedEvents, available: nullVendorEvents});
+
+        db.Vendor.findOne({
+          where: {
+            vendorid: req.params.vendorid
+          }
+        }).then(function(userData) {
+          console.log(userData.name);
+          var vendorInfo = {
+            vendor: userData
+          };
+          res.render("vendor-home", {accepted: acceptedEvents, available: nullVendorEvents, vendorInfo: vendorInfo});
+
+        });
 
       });
-
     });
   });
   
@@ -125,10 +136,21 @@ module.exports = function(app) {
         var acceptedEvents = {
           events: morecaterdb
         };
-        res.render("vendor-home", {accepted: acceptedEvents, available: nullVendorEvents});
+        db.Vendor.findOne({
+          where: {
+            vendorid: req.params.vendorid
+          }
+        }).then(function(userData) {
+          console.log(userData.name);
+          var vendorInfo = {
+            vendor: userData
+          };
+        
+          res.render("vendor-home", {accepted: acceptedEvents, available: nullVendorEvents, vendorInfo: vendorInfo});
+
+        });
 
       });
-
     });
   });
 
