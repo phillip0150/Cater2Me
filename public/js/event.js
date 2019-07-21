@@ -30,4 +30,4 @@ $("#homeVendor").on("click" ,function (){
 
 $("#homeVendorbottom").on("click", function (){
   console.log("I've been clicked!");
-})
+});
