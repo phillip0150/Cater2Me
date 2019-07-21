@@ -152,6 +152,7 @@ module.exports = function(app) {
       res.render("event", hbsObject);
     });
   });
+
   //customer viewing event
   app.get("/event/:id/", isAuthenticated, function(req, res) {
     db.Events.findOne({

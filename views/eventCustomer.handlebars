@@ -1,42 +1,73 @@
-<div class="container customer-home-body-container">
+<div class="container" id="event-container">
+    <div class="row justify-content-center">
+        <div class="col-lg-12">
 
-    <h1 class="cust-name" id="name-of-customer">{{event.name}}</h1>
+            <!-- Image/Top of the Card -->
+            <div class="card bg-light">
+                <img src="/images/event-page/party.png" class="card-img" alt="...">
+                <div class="card-img-overlay text-center">
+                    <h6 class="card-text">{{ event.date }}</h6>
+                    <br>
+                    <h1 class="card-title">{{ event.name }}</h1>
+                </div>
 
-    <!-- CUSTOMER VIEW JOBS ROW -->
-    <div class="row view-job-row">
-        <div class="col-12-lg view-job-col txt-white">
-            <table id="madeEventTable">
-                <thead>
-                    <tr>
-                        <th>NAME</th>
-                        <th>PHONE</th>
-                        <th>CITY</th>
-                        <th>STATE</th>
-                        <th>OCCASION</th>
-                        <th>SIZE</th>
-                        <th>COURSES</th>
-                        <th>CONSIDERATION</th>
-                        <th>ALCOHOL</th>
-                        <th>DECOR</th>
-                        <th>COMMENTS</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>{{event.name}}</td>
-                        <td>{{event.phone}}</td>
-                        <td>{{event.city}}</td>
-                        <td>{{event.state}}</td>
-                        <td>{{event.occasion}}</td>
-                        <td>{{event.size}}</td>
-                        <td>{{event.courses}}</td>
-                        <td>{{event.consideration}}</td>
-                        <td>{{event.alcohol}}</td>
-                        <td>{{event.decor}}</td>
-                        <td>{{event.comments}}</td>
-                    </tr>
-                </tbody>
-            </table>
+                <!-- First Row of the Card -->
+                <div class="card-body" id="event-slice-body">
+                    <div class="slice-row row justify-content-center">
+                        <div class="col-sm-3 slice-col text-center">
+                            <i class="fas fa-map-marker-alt fa-lg float-left"></i>
+                            <h4 class="float-left">{{ event.city }}, {{ event.state }}</h4>
+                        </div>
+                        <div class=" col-sm-3 slice-col text-center">
+                            <i class="fas fa-user-friends fa-lg float-left"></i>
+                            <h4 class="float-left">{{ event.size }} People</h4>
+                        </div>
+                        <div class=" col-sm-3 slice-col text-center">
+                            <i class="fas fa-utensils fa-lg float-left"></i>
+                            <h4 class="float-left">{{ event.courses }} Courses</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second Row of the Card -->
+                <div class="card-body" id="event-main-body">
+                    <div class="row" id="event-main-row">
+                        <div class="col-md-8" id="event-main-col">
+                            <h4 class="card-title">Customer Name: </h4>
+                            <p class="card-text">Special Considerations: {{ event.consideration }}</p>
+                            <p class="card-text">Comments: {{ event.comments }}</p>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center" id="event-blocks-row">
+                        <div class="col-md-2 event-blocks">
+                            <h5> Occasion: </h5>
+                            <p>{{ event.occasion }}</p>
+                        </div>
+                        <div class="col-md-2 event-blocks">
+                            <h5>Date: </h5>
+                            <p>{{ event.date }}</p>
+                        </div>
+                        <div class="col-md-2 event-blocks">
+                            <h5>Alcohol: </h5>
+                            <p>{{ event.alcohol }}</p>
+                        </div>
+                        <div class="col-md-2 event-blocks">
+                            <h5>Decor: </h5>
+                            <p>{{ event.decor }}</p>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center btn-row">
+                        <div class="col-lg-9">
+                            {{!-- {{#unless event.vendorid}} --}}
+                            <button href="/customer" type="button" class="btn btn-primary btn-lg" id="homeCustomer">Back home</button>
+                            
+                            {{!-- <button type="button" id="homeBtn" class="btn btn-lg btn-primary"> Home </button>
+                            <div class="padding-div"></div>
+                            <button type="button" id="acceptBtn" class="btn btn-lg btn-primary"> Accept </button> --}}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

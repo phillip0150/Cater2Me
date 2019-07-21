@@ -58,6 +58,7 @@
                     </div>
                     <div class="row justify-content-center btn-row">
                         <div class="col-lg-9">
+                            {{!-- {{#unless event.vendorid}} --}}
                             <a class="" href="/vendor/{{ vendorid }}">
                                 <button vendor-ID="{{vendorid}}" type="button"
                                     class="btn btn-primary btn-lg float-right" id="homeVendor">Back
@@ -68,6 +69,7 @@
                                 class="vendorAcceptBtn btn-primary btn-lg btn float-right" id="eventAccept">Accept
                                 Event</button>
                             {{/unless}}
+                            
                             {{!-- <button type="button" id="homeBtn" class="btn btn-lg btn-primary"> Home </button>
                             <div class="padding-div"></div>
                             <button type="button" id="acceptBtn" class="btn btn-lg btn-primary"> Accept </button> --}}
@@ -89,5 +91,5 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script> --}}
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    {{!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script> --}}
     <script type="text/javascript" src="/js/event.js"></script>
