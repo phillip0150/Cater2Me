@@ -20,6 +20,7 @@ p {
   margin-top: 0px;
   margin-bottom: 0px;
 }
+
 .navbar-header {
   position: absolute;
   top: 0;
@@ -30,6 +31,14 @@ p {
 
 #navbar-logo {
   width: 20rem;
+}
+
+.nav-btn-row {
+  margin-right: 3rem;
+}
+
+.homeBtn-col {
+  margin-right: 25px;
 }
 
 .list-group-item {
@@ -48,6 +57,12 @@ p {
 .log-out {
   background-color: #132149;
   color: white;
+}
+
+td {
+  border-bottom-style: none;
+  text-align: left;
+  padding: 20px;
 }
 
 /* Hamburger Menu Styling */
@@ -188,11 +203,11 @@ a:hover {
 
 /* Index Page Styling */
 /* =================================================================== */
-.index-body-container {
+#index-body-container {
   max-width: 60%;
   margin-top: 120px;
   background-color: rgba(255, 255, 255, 0.931);
-  border-radius: 25px;
+  border-radius: 20px;
 }
 
 .login-row {
@@ -200,24 +215,22 @@ a:hover {
 }
 
 .login-col {
-  min-width: 650px;
+  width: 85%;
 }
 
-.card-info-container {
-  max-width: 90%;
-  margin-top: 40px;
+#card-info-container {
+  margin-top: 20px;
+  width: 62%;
 }
 
-.about-us-card {
-  background-color: rgba(255, 255, 255, 0.931);
+.info-col {
+  width: 200px;
+}
+
+.info-card {
+  background-color:rgba(255, 255, 255, 0.924);
   max-width: 100%;
-  border-radius: 10px;
-}
-
-.how-does-it-card {
-  background-color: rgba(255, 255, 255, 0.931);
-  max-width: 100%;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 .card-image {
@@ -259,10 +272,6 @@ a:hover {
   border-radius: 20px;
 }
 
-#row1 {
-  margin-bottom: 30px;
-}
-
 #vendorTitle {
   color: white;
   margin-left: 20px;
@@ -275,7 +284,7 @@ a:hover {
 .view-events-row {
   display: flex;
   justify-content: center;
-  margin-bottom: 12px;
+  margin-bottom: 25px;
 }
 
 .view-events-col {
@@ -291,7 +300,12 @@ a:hover {
   border-radius: 10px;
 }
 
-.vendor-home-table {
+.add-event-row {
+  margin-bottom: 15px;
+}
+
+/* PREVIOUSLY .vendor-home-table */
+.events-table {
   padding: 10px;
   width: 100%;
   min-width: 100%;
@@ -307,6 +321,21 @@ a:hover {
 #avail-h4 {
   margin-bottom: 15px;
 }
+
+.vendor-search-form {
+  width:90%;
+  flex-wrap: wrap;
+  float: left;
+}
+
+#resetSearch {
+  flex-wrap: wrap;
+  float: right;
+  bottom: 20px;
+  margin-bottom: 1rem;
+}
+
+
 
 /* Event Page Styling */
 /* =================================================================== */
@@ -342,7 +371,7 @@ a:hover {
   color: white;
 }
 
-.view-job-row {
+/* .view-job-row {
   display: flex;
   justify-content: center;
   margin-bottom: 12px;
@@ -354,17 +383,13 @@ a:hover {
   width: 95%;
 }
 
-.view-job-col table {
-  background: white;
-  border-radius: 10px;
-}
-
-td {
-  border-bottom-style: solid;
-  text-align: center;
-  padding: 20px;
-  /* margin: 60px; */
-}
+.customer-home-table {
+  padding: 10px;
+  width: 100%;
+  min-width: 100%;
+  margin-bottom: 0;
+  background-color: transparent;
+} */
 
 #madeEventTable {
   width: 100%;
@@ -395,4 +420,100 @@ td {
 
 .create-event-btn {
   margin-right: 20px;
+}
+
+/* Event Page Styling */
+/* =================================================================== */
+
+#event-container {
+  font-family: "Quicksand", sans-serif;
+  margin-bottom: 100px;
+  margin-top: 150px;
+  /* background-color:rgba(255, 255, 255, 0.952);  */
+}
+
+#event-container h1 {
+  font-size: 3.5rem;
+  
+}
+
+.card-img-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1.25rem;
+}
+
+.card-img-overlay h6 {
+  text-transform: capitalize;
+  margin-top: 2.2rem;
+  font-size: 15pt;
+}
+
+.card-img-overlay h1 {
+  text-transform: capitalize;
+}
+
+#event-slice-body {
+  background-image: linear-gradient(to right, #132149, #132149, #344d8b);
+  /* background-color: #132149; */
+  padding: 1rem 0rem .5rem 0rem;
+  color: white;
+  height: 4rem;
+  text-transform: capitalize;
+}
+
+.slice-row {
+  margin-left: 3rem;
+}
+
+.slice-col {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.slice-col .fa-map-marker-alt, .slice-col .fa-user-friends, .slice-col .fa-utensils {
+  margin-right: 10px;
+  margin-top: 4px;
+}
+
+#event-main-body {
+  padding: 1.25rem;
+}
+
+#event-main-col{
+  margin-left: 8rem;
+}
+
+#event-blocks-row {
+  margin-top: 2rem;
+  margin-left: .6rem;
+  padding-bottom: 3rem;
+}
+
+.event-blocks {
+  background-image: linear-gradient(to bottom right, #132149, #132149, #344d8b);
+  color: white;
+  margin-right: 2rem;
+  border-radius: 8px;
+  padding: .6rem .6rem .6rem 1rem;
+  height: 8rem;
+  text-transform: capitalize;
+}
+
+.btn-row {
+  padding-bottom: 2rem;
+}
+
+.padding-div {
+  width: 50px;
+}
+
+list-group-item {
+  background-color: #33383d;
+  color: white;
 }

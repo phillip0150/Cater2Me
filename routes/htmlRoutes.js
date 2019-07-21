@@ -65,8 +65,8 @@ module.exports = function(app) {
   });
 
   //Vendor homepage handlebars
-  //TODO add isAuthenticated when finished testing
-  app.get("/vendor/:id",isAuthenticatedVendor, function(req,res){
+  //TODO add isAuthenticatedVendor when finished testing
+  app.get("/vendor/:id", function(req,res){
     //Ask DB to find all events available where there are no vendors assigned
     db.Events.findAll({
       where: {
@@ -152,6 +152,7 @@ module.exports = function(app) {
       res.render("event", hbsObject);
     });
   });
+
   //customer viewing event
   app.get("/event/:id/", isAuthenticated, function(req, res) {
     db.Events.findOne({

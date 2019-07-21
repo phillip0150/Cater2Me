@@ -1,5 +1,6 @@
 $("#eventAccept").on("click" ,function (){
-           
+  console.log("I've been clicked");
+
   var vendorId = $(this).attr("vendor-id");
   var eventId = $(this).attr("event-id");
   var eventUpdate = {
@@ -19,15 +20,14 @@ $("#eventAccept").on("click" ,function (){
 });
 
 $("#homeCustomer").on("click" ,function (){
-           
-  
   window.location.href= "/customer/";
-
 });
 
 
-$("#homeVendor").on("click" ,function (){
-           
+$("#homeVendor").on("click" ,function (){          
   window.location.href= "/vendor/"+$("#homeVendor").attr("vendor-ID");
+});
 
+$("#homeVendorbottom").on("click", function (){
+  console.log("I've been clicked!");
 });
