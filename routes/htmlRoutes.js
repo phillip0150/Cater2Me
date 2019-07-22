@@ -66,7 +66,7 @@ module.exports = function(app) {
 
   //Vendor homepage handlebars
   //TODO add isAuthenticatedVendor when finished testing
-  app.get("/vendor/:id", function(req,res){
+  app.get("/vendor/:id", isAuthenticatedVendor, function(req,res){
     //Ask DB to find all events available where there are no vendors assigned
     db.Events.findAll({
       where: {
