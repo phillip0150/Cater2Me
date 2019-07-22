@@ -340,8 +340,13 @@ a:hover {
 /* Event Page Styling */
 /* =================================================================== */
 #eventAccept {
-  background-color: #132149;
-  color: white;
+  /* background-color: #132149;
+  color: white; */
+  margin: 15px;
+}
+
+#homeVendor {
+  margin: 15px;
 }
 
 .eventName {
